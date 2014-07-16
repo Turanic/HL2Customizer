@@ -123,9 +123,7 @@
             this.credits.Size = new System.Drawing.Size(271, 126);
             this.credits.TabIndex = 23;
             this.credits.TabStop = false;
-            this.credits.Text = "                                       Credits\r\n\r\nDeveloper : \r\nTuranic\r\n\r\nForum " +
-    "administrator:\r\nAvoidPaypal\r\n\r\nMain testers :\r\nHomer\r\nPhenix\r\n\r\nSpecial thanks t" +
-    "o:\r\nMystick\r\nStanislav\r\nMino\r\nJora";
+            this.credits.Text = resources.GetString("credits.Text");
             // 
             // okButton
             // 

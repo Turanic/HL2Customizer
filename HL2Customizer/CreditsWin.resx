@@ -121,7 +121,7 @@
   <data name="logoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAACACAYAAAC7gW9qAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABeVSURBVHhe7Z0HdFXVmsffzJvy
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAABeVSURBVHhe7Z0HdFXVmsffzJvy
         ZmbNzJu6ZmbZpQpCaNISmglFJHR8QOihiRAgSMILKAFJLHQCioAgAqL0JiAtwhPpSO9FughIj6jwzff/
         cs7lnHO/c3PLuXnjm/et9Vu5OXfvffb+n93Pvnv/at++fX8s/oVJY8YxMcyvGc1dVFEvFgKlmfeZy8xN
         5g9MS0ZzG1XUi1Hkb5kkZi1zjyELR5jfM//EaH6jgnoxShRnRjJHGWvCrXzPTGDKM1oYnqNe9Bg89QbM
@@ -224,5 +224,30 @@
         +iHM6sUogcNcWjBInO8wVgffMn9yBy87wdAUx/FeYayJ38bgjOI/2aO3rfwrM5g5zqCso3mryGhuo4p6
         sZDAGcI4qbYzYzv+qvDY96v/BdnIavKz2VRIAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="credits.Text" xml:space="preserve">
+    <value>                                       Credits
+
+Supervisor :
+Turanic
+
+Developer : 
+Turanic
+Peaf
+
+Forum administrator:
+Turanic
+AvoidPaypal
+
+Main testers :
+AvoidPaypal
+Homer
+Phenix
+
+Special thanks to:
+Mystick
+Stanislav
+Mino
+Jora</value>
   </data>
 </root>

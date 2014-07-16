@@ -198,7 +198,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\dsp_presets.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="todo.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\weapon_stunstick.txt" />
   </ItemGroup>

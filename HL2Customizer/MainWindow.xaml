@@ -95,7 +95,7 @@
                     </GroupBox>
                     <ListView x:Name="menueditor_menuElementsList" HorizontalAlignment="Left" Height="340" Margin="94,30,0,0" VerticalAlignment="Top" Width="199" IsSynchronizedWithCurrentItem="True" SelectionMode="Single" AlternationCount="1" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" IsHitTestVisible="True" Grid.Column="1" />
                     <Button Name="menueditor_delButton" HorizontalAlignment="Left" Margin="55,330,0,0" VerticalAlignment="Top" Width="34" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="delButton_Click" Grid.Column="1" Height="34">
-                        <Image Source="Resources/deleteIcon.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Height="32" Width="32"/>
+                        <Image Source="Resources/deleteIcon.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Height="24" Width="24"/>
                     </Button>
                     <GroupBox Header="Design customization" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="376" Width="309" Grid.Column="1">
                         <StackPanel>
