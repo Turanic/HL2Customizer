@@ -870,7 +870,7 @@ namespace HL2Customizer
             {
                 MenuElement e = gmm.MenuLabels[i];
                 if (e != null)
-                    menueditor_menuElementsList.Items.Add(e.label);
+                    menueditor_menuElementsList.Items.Add(e.Label);
             }
         }
 
@@ -880,9 +880,9 @@ namespace HL2Customizer
             {
                 foreach (MenuElement elmt in array)
                     if (delete)
-                        gmm.MenuLabels[elmt.id] = null;
+                        gmm.MenuLabels[elmt.Id] = null;
                     else
-                        gmm.MenuLabels[elmt.id] = elmt;
+                        gmm.MenuLabels[elmt.Id] = elmt;
                 RefreshList();
             }
         }

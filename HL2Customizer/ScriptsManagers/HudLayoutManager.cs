@@ -56,7 +56,7 @@ namespace HL2Customizer
                 else if (definingHudElement)
                 {
                     string[] str = line.Split('\"');
-                    HudLayout[i].properties.Add(Tuple.Create(str[1], str[3]));
+                    HudLayout[i].Properties.Add(Tuple.Create(str[1], str[3]));
                 }
                 else
                 {
@@ -74,10 +74,10 @@ namespace HL2Customizer
             {
                 if(HudLayout[i].Element == element)
                 {
-                    for (int j = 0; j < HudLayout[i].properties.Count(); j++)
+                    for (int j = 0; j < HudLayout[i].Properties.Count(); j++)
                     {
-                        if (HudLayout[i].properties[j].Item1 == property)
-                            HudLayout[i].properties[j] = Tuple.Create(property, value);
+                        if (HudLayout[i].Properties[j].Item1 == property)
+                            HudLayout[i].Properties[j] = Tuple.Create(property, value);
                     }
                     break;
                 }
@@ -88,7 +88,7 @@ namespace HL2Customizer
         {
             HudElement e = new HudElement(element);
             for (int i = 0; i < values.Count(); i++)
-                e.properties.Add(Tuple.Create(values[i].Item1, values[i].Item2));
+                e.Properties.Add(Tuple.Create(values[i].Item1, values[i].Item2));
             HudLayout.Add(e);
         }
 
@@ -108,7 +108,7 @@ namespace HL2Customizer
             {
                 sw.WriteLine(indent + e.Element);
                 sw.WriteLine(indent + "{");
-                foreach (Tuple<string,string> p in e.properties)
+                foreach (Tuple<string,string> p in e.Properties)
                     sw.WriteLine(indent + indent +"\"" + p.Item1 + "\"" +indent +"\"" + p.Item2 + "\"");
                 sw.WriteLine(indent + "}");
             }

@@ -213,7 +213,10 @@
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Margin="0,-1,0,1">
                     <ComboBox x:Name="weaponeditor_wpnType" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="weaponeditor_wpnType_SelectionChanged"/>
                     <Label Content="Choose the weapon to modify : " HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top"/>
-                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,88,0,0" VerticalAlignment="Top" Height="294" Width="632"/>
+                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,88,0,0" VerticalAlignment="Top" Height="294" Width="632">
+                    </GroupBox>
+                    <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="311,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="167,117,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="66,117,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1"/>
                 </Grid>
             </TabItem>

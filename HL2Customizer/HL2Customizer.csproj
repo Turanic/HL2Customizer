@@ -86,6 +86,8 @@
       <DependentUpon>resfile.resx</DependentUpon>
     </Compile>
     <Compile Include="ScriptsManagers\DSPManager.cs" />
+    <Compile Include="ScriptsManagers\WeaponScriptManager.cs" />
+    <Compile Include="ToolClasses\WeaponScript.cs" />
     <Compile Include="ToolClasses\Serializer.cs" />
     <Compile Include="ToolClasses\HudInformations.cs" />
     <Compile Include="ToolClasses\SavedData.cs" />

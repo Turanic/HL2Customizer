@@ -9,12 +9,12 @@ namespace HL2Customizer
     [Serializable]
     public struct HudElement
     {
-        public string Element;
-        public List<Tuple<string, string>> properties;
-        public HudElement(string element)
+        public string Element { get; private set; }
+        public List<Tuple<string, string>> Properties { get; private set; }
+        public HudElement(string elmt) : this()
         {
-            Element = element;
-            properties = new List<Tuple<string, string>>();
+            Element = elmt;
+            Properties = new List<Tuple<string, string>>();
         }
     }
 }
