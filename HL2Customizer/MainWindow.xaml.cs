@@ -151,6 +151,26 @@ namespace HL2Customizer
         string[] AuxLblPos = new string[] { "UP", "DOWN", "NONE" };
         #endregion
 
+        //WPN EDITOR
+        #region weaponeditor
+        Tuple<string, string, char>[] WpnsTypes = new Tuple<string, string, char>[]
+        {
+            Tuple.Create("Gravity gun", "physcannon", 'm'),
+            Tuple.Create("Crowbar", "crowbar", 'c'),
+            Tuple.Create("Stunstick", "stunstick", 'n'),
+            Tuple.Create("Grenade", "frag", 'k'),
+            Tuple.Create("Mine", "slam", 'o'),
+            Tuple.Create("Pistol", "pistol", 'd'),
+            Tuple.Create("SMG", "smg1", 'a'),
+            Tuple.Create("AR2", "ar2", 'l'),
+            Tuple.Create("Shotgun", "shotgun", 'b'),
+            Tuple.Create("Magnum", "357", 'e'),
+            Tuple.Create("Crossbow", "crossbow", 'g'),
+            Tuple.Create("RPG", "rpg", 'i'),
+        };
+
+        #endregion
+
         #endregion
 
         public MainWindow()
@@ -420,6 +440,15 @@ namespace HL2Customizer
                 auxeditor_auxlabelpos.Items.Add(i);
             for (int i = 0; i < AuxLblPos.Count(); i++)
                 if (AuxLblPos[i] == hlm.AuxPowerLabelPos) auxeditor_auxlabelpos.SelectedIndex = i;
+
+            #endregion
+
+            //WPN EDITOR
+            #region weaponeditor
+
+            foreach (Tuple<string, string, char> Wpn in WpnsTypes)
+                weaponeditor_wpnType.Items.Add(Wpn.Item1);
+            weaponeditor_wpnType.SelectedIndex = 0;
 
             #endregion
 
@@ -1192,6 +1221,16 @@ namespace HL2Customizer
             auxeditor_tileWidthSlider.Value = 9;
             auxeditor_gapSlider.Value = 2;
             auxeditor_rbMinimal.IsChecked = true;
+        }
+
+        #endregion
+
+        //WPN EDITOR
+        #region weaponeditor
+
+        private void weaponeditor_wpnType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weaponeditor_wpnIcon.Content = WpnsTypes[weaponeditor_wpnType.SelectedIndex].Item3;
         }
 
         #endregion

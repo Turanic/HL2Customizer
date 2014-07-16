@@ -144,6 +144,16 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] halflife2 {
+            get {
+                object obj = ResourceManager.GetObject("halflife2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon hl2c {
@@ -222,11 +232,378 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.4.4.
+        ///   Looks up a localized string similar to 0.4.6.
         /// </summary>
         internal static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // 357
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;			&quot;#HL2_357Handgun&quot;
+        ///	&quot;viewmodel&quot;			&quot;models/weapons/v_357.mdl&quot;
+        ///	&quot;playermodel&quot;		&quot;models/weapons/w_357.mdl&quot;
+        ///	&quot;anim_prefix&quot;		&quot;python&quot;
+        ///	&quot;bucket&quot;			&quot;1&quot;
+        ///	&quot;bucket_position&quot;	&quot;1&quot;
+        ///
+        ///	&quot;clip_size&quot;			&quot;6&quot;
+        ///	&quot;default_clip&quot;		&quot;6&quot;
+        ///	&quot;primary_ammo&quot;		&quot;357&quot;
+        ///	&quot;secondary_ammo&quot;	&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;		&quot;7&quot;
+        ///	&quot;item_flags&quot;		&quot;0&quot;
+        ///
+        ///	&quot;damage&quot;		&quot;75&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;sin [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_357 {
+            get {
+                return ResourceManager.GetString("weapon_357", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Assault Rifle 2
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_Pulse_Rifle&quot;
+        ///	&quot;viewmodel&quot;			&quot;models/weapons/v_irifle.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_irifle.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;ar2&quot;
+        ///	&quot;bucket&quot;			&quot;2&quot;
+        ///	&quot;bucket_position&quot;		&quot;1&quot;
+        ///
+        ///	&quot;clip_size&quot;			&quot;30&quot;
+        ///	&quot;default_clip&quot;			&quot;60&quot;
+        ///
+        ///	&quot;clip2_size&quot;			&quot;-1&quot;
+        ///	&quot;default_clip2&quot;			&quot;-1&quot;
+        ///
+        ///	&quot;primary_ammo&quot;			&quot;AR2&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;AR2AltFire&quot;
+        ///
+        ///	&quot;weight&quot;			&quot;5&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///	&quot;damage&quot;			&quot;11&quot;
+        ///
+        ///	// S [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_ar2 {
+            get {
+                return ResourceManager.GetString("weapon_ar2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Crossbow
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;		&quot;#HL2_Crossbow&quot;
+        ///	&quot;viewmodel&quot;		&quot;models/weapons/v_crossbow.mdl&quot;
+        ///	&quot;playermodel&quot;	&quot;models/weapons/w_crossbow.mdl&quot;
+        ///	&quot;anim_prefix&quot;	&quot;bow&quot;
+        ///	&quot;bucket&quot;			&quot;3&quot;
+        ///	&quot;bucket_position&quot;	&quot;1&quot;
+        ///
+        ///	&quot;clip_size&quot;		&quot;1&quot;
+        ///	&quot;default_clip&quot;		&quot;5&quot;
+        ///	&quot;primary_ammo&quot;		&quot;XBowBolt&quot;
+        ///	&quot;secondary_ammo&quot;	&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;		&quot;6&quot;
+        ///	&quot;item_flags&quot;		&quot;0&quot;
+        ///
+        ///	&quot;damage&quot;		&quot;100&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_crossbow {
+            get {
+                return ResourceManager.GetString("weapon_crossbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Crowbar
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_Crowbar&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_crowbar.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_crowbar.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;crowbar&quot;
+        ///	&quot;bucket&quot;				&quot;0&quot;
+        ///	&quot;bucket_position&quot;		&quot;0&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;-1&quot;
+        ///	&quot;primary_ammo&quot;			&quot;None&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;0&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sounds)
+        ///	 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_crowbar {
+            get {
+                return ResourceManager.GetString("weapon_crowbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_Grenade&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_grenade.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_grenade.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;Grenade&quot;
+        ///	&quot;bucket&quot;				&quot;4&quot;
+        ///	&quot;bucket_position&quot;		&quot;0&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;-1&quot;
+        ///	&quot;clip2_size&quot;			&quot;-1&quot;
+        ///	&quot;default_clip&quot;			&quot;1&quot;
+        ///	&quot;default_clip2&quot;			&quot;-1&quot;
+        ///
+        ///	&quot;primary_ammo&quot;			&quot;grenade&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;1&quot;
+        ///	&quot;item_flags&quot;			&quot;18&quot;	// ITEM_FLAG_NOAUTORELOAD | ITEM_FLAG_EXHAUSTI [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_frag {
+            get {
+                return ResourceManager.GetString("weapon_frag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Physics Gun
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_GravityGun&quot;
+        ///	&quot;viewmodel&quot;			&quot;models/weapons/v_physcannon.mdl&quot;
+        ///	&quot;playermodel&quot;		&quot;models/weapons/w_Physics.mdl&quot;
+        ///	&quot;anim_prefix&quot;		&quot;gauss&quot;
+        ///	&quot;bucket&quot;			&quot;0&quot;
+        ///	&quot;bucket_position&quot;	&quot;2&quot;
+        ///	&quot;clip_size&quot;			&quot;0&quot;
+        ///	&quot;clip2_size&quot;		&quot;0&quot;
+        ///	&quot;primary_ammo&quot;		&quot;None&quot;
+        ///	&quot;secondary_ammo&quot;	&quot;None&quot;
+        ///	&quot;default_clip&quot;		&quot;0&quot;
+        ///	&quot;default_clip2&quot;		&quot;0&quot;
+        ///	&quot;weight&quot;			&quot;0&quot;
+        ///	&quot;autoswitchto&quot;		&quot;0&quot;
+        ///	&quot;autoswitchfrom&quot;	&quot;0&quot;
+        ///	&quot;item_flags&quot;		&quot;2&quot;
+        ///
+        ///	S [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_physcannon {
+            get {
+                return ResourceManager.GetString("weapon_physcannon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Pistol
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_Pistol&quot;
+        ///	&quot;viewmodel&quot;			&quot;models/weapons/v_pistol.mdl&quot;
+        ///	&quot;playermodel&quot;		&quot;models/weapons/w_pistol.mdl&quot;
+        ///	&quot;anim_prefix&quot;		&quot;pistol&quot;
+        ///	&quot;bucket&quot;			&quot;1&quot;
+        ///	&quot;bucket_position&quot;	&quot;0&quot;
+        ///
+        ///	&quot;clip_size&quot;			&quot;18&quot;
+        ///	&quot;primary_ammo&quot;		&quot;Pistol&quot;
+        ///	&quot;secondary_ammo&quot;	&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;			&quot;2&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///	&quot;damage&quot;			&quot;8&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sound [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_pistol {
+            get {
+                return ResourceManager.GetString("weapon_pistol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Missile Launcher
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_RPG&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_rpg.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_rocket_launcher.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;missile launcher&quot;
+        ///	&quot;bucket&quot;				&quot;4&quot;
+        ///	&quot;bucket_position&quot;		&quot;1&quot;
+        ///	&quot;autoswitchfrom&quot;		&quot;1&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;-1&quot;
+        ///	&quot;clip2_size&quot;			&quot;-1&quot;
+        ///	&quot;default_clip&quot;			&quot;3&quot;
+        ///	&quot;default_clip2&quot;			&quot;-1&quot;
+        ///
+        ///	&quot;primary_ammo&quot;			&quot;rpg_round&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;0&quot;
+        ///	&quot;item_fl [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_rpg {
+            get {
+                return ResourceManager.GetString("weapon_rpg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Shotgun
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_Shotgun&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_shotgun.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_shotgun.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;shotgun&quot;
+        ///	&quot;bucket&quot;				&quot;3&quot;
+        ///	&quot;bucket_position&quot;		&quot;0&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;6&quot;
+        ///	&quot;primary_ammo&quot;			&quot;Buckshot&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;4&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///	&quot;damage&quot;			&quot;9&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;sin [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_shotgun {
+            get {
+                return ResourceManager.GetString("weapon_shotgun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Slam
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_SLAM&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_slam.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_slam.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;slam&quot;
+        ///	&quot;bucket&quot;				&quot;4&quot;
+        ///	&quot;bucket_position&quot;		&quot;2&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;3&quot;
+        ///	&quot;primary_ammo&quot;			&quot;None&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;slam&quot;
+        ///	&quot;default_clip2&quot;			&quot;3&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;1&quot;
+        ///	&quot;item_flags&quot;			&quot;2&quot;
+        ///
+        ///	// Weapon Sprite data is loaded by the Client DLL.
+        ///	TextureData
+        ///	{
+        ///		&quot;weapon&quot;
+        ///		{
+        ///				&quot;font [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_slam {
+            get {
+                return ResourceManager.GetString("weapon_slam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Small Machine Gun 1
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_SMG1&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_smg1.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_smg1.mdl&quot;	//FIXME: 
+        ///	&quot;anim_prefix&quot;			&quot;smg2&quot;
+        ///	&quot;bucket&quot;				&quot;2&quot;
+        ///	&quot;bucket_position&quot;		&quot;0&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;45&quot;
+        ///	&quot;clip2_size&quot;			&quot;-1&quot;
+        ///
+        ///	&quot;default_clip&quot;			&quot;45&quot;
+        ///	&quot;default_clip2&quot;			&quot;-1&quot;
+        ///
+        ///	&quot;primary_ammo&quot;			&quot;SMG1&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;SMG1_Grenade&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;3&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///	&quot;damage&quot;			&quot;5 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_smg1 {
+            get {
+                return ResourceManager.GetString("weapon_smg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // stunstick
+        ///
+        ///WeaponData
+        ///{
+        ///	// Weapon data is loaded by both the Game and Client DLLs.
+        ///	&quot;printname&quot;	&quot;#HL2_StunBaton&quot;
+        ///	&quot;viewmodel&quot;				&quot;models/weapons/v_stunstick.mdl&quot;
+        ///	&quot;playermodel&quot;			&quot;models/weapons/w_stunbaton.mdl&quot;
+        ///	&quot;anim_prefix&quot;			&quot;stunbaton&quot;
+        ///	&quot;bucket&quot;				&quot;0&quot;
+        ///	&quot;bucket_position&quot;		&quot;1&quot;
+        ///
+        ///	&quot;clip_size&quot;				&quot;-1&quot;
+        ///	&quot;primary_ammo&quot;			&quot;None&quot;
+        ///	&quot;secondary_ammo&quot;		&quot;None&quot;
+        ///
+        ///	&quot;weight&quot;				&quot;0&quot;
+        ///	&quot;item_flags&quot;			&quot;0&quot;
+        ///
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string weapon_stunstick {
+            get {
+                return ResourceManager.GetString("weapon_stunstick", resourceCulture);
             }
         }
         

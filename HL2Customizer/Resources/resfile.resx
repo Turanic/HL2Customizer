@@ -134,7 +134,7 @@
     <value>hudanimations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>0.4.4</value>
+    <value>0.4.6</value>
     <comment>Version de HL2Customizer</comment>
   </data>
   <data name="sourcescheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -163,5 +163,44 @@
   </data>
   <data name="autoexec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>autoexec.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="weapon_357" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_357.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_ar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_ar2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_crossbow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_crossbow.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_crowbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_crowbar.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_frag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_frag.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_physcannon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_physcannon.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_pistol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_pistol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_rpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_rpg.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_shotgun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_shotgun.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_slam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_slam.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_smg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_smg1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="weapon_stunstick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>weapon_stunstick.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="halflife2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>halflife2.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

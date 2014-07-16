@@ -150,6 +150,7 @@
     <AppDesigner Include="Properties\" />
     <EmbeddedResource Include="Resources\clientscheme.res" />
     <EmbeddedResource Include="Resources\autoexec.cfg" />
+    <Resource Include="Resources\halflife2.ttf" />
     <Resource Include="Resources\XHAIR.ttf" />
     <Resource Include="Resources\Example.hcd" />
     <Resource Include="Resources\Default.hcd" />
@@ -194,6 +195,43 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\dsp_presets.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_stunstick.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_smg1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_slam.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_shotgun.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_rpg.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_pistol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_physcannon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_crowbar.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_crossbow.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_ar2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weapon_357.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
