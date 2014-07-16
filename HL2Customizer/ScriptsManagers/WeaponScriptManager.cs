@@ -9,6 +9,6 @@ namespace HL2Customizer.ScriptsManagers
     [Serializable]
     class WeaponScriptManager
     {
-
+        // TO DO
     }
 }

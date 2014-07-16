@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
-//PD
+
 namespace HL2Customizer
 {
     /// <summary>
