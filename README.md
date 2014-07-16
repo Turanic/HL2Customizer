@@ -1,19 +1,25 @@
 HL2Customizer
 =============
 
-A Windows software to customize entirely your Halflife 2 Deathmatch game
-
+A Windows software to customize entirely your Halflife 2 Deathmatch game.
+Visit http://turanic.com/HL2Customizer/index.php for more informations
 
 Credits
 -------
 
-Developer : 
+Supervisor :
 Turanic
 
+Developer : 
+Turanic
+Peaf
+
 Forum administrator:
+Turanic
 AvoidPaypal
 
 Main testers :
+AvoidPaypal
 Homer
 Phenix
 
