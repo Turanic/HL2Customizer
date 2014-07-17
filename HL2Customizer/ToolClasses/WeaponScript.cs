@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 namespace HL2Customizer
 {
     [Serializable]
-    public struct WeaponScript
+    public class WeaponScript
     {
-        public string Name { get; private set; }
-        public WeaponScript(string name) : this()
+        public string Name { get; set; }
+        public string ScriptFile { get; private set; }
+        public WeaponScript(string name, string file)
         {
             Name = name;
+            ScriptFile = file;
+
         }
     }
 }

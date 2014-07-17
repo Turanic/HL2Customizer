@@ -30,6 +30,7 @@ namespace HL2Customizer
         CfgManager cfgm;
         HudAnimationsManager ham;
         HudLayoutManager hlm;
+        WeaponScriptManager wsm;
         GameMenuManager gmm;
         DSPManager dspm;
 
@@ -153,20 +154,20 @@ namespace HL2Customizer
 
         //WPN EDITOR
         #region weaponeditor
-        Tuple<string, string, char>[] WpnsTypes = new Tuple<string, string, char>[]
+        Tuple<string, char>[] WpnsTypes = new Tuple<string, char>[]
         {
-            Tuple.Create("Gravity gun", "physcannon", 'm'),
-            Tuple.Create("Crowbar", "crowbar", 'c'),
-            Tuple.Create("Stunstick", "stunstick", 'n'),
-            Tuple.Create("Grenade", "frag", 'k'),
-            Tuple.Create("Mine", "slam", 'o'),
-            Tuple.Create("Pistol", "pistol", 'd'),
-            Tuple.Create("SMG", "smg1", 'a'),
-            Tuple.Create("AR2", "ar2", 'l'),
-            Tuple.Create("Shotgun", "shotgun", 'b'),
-            Tuple.Create("Magnum", "357", 'e'),
-            Tuple.Create("Crossbow", "crossbow", 'g'),
-            Tuple.Create("RPG", "rpg", 'i'),
+            Tuple.Create("Gravity gun", 'm'),
+            Tuple.Create("Crowbar", 'c'),
+            Tuple.Create("Stunstick", 'n'),
+            Tuple.Create("Grenade", 'k'),
+            Tuple.Create("Mine", 'o'),
+            Tuple.Create("Pistol", 'd'),
+            Tuple.Create("SMG", 'a'),
+            Tuple.Create("AR2", 'l'),
+            Tuple.Create("Shotgun", 'b'),
+            Tuple.Create("Magnum", 'e'),
+            Tuple.Create("Crossbow", 'g'),
+            Tuple.Create("RPG", 'i'),
         };
 
         #endregion
@@ -195,6 +196,7 @@ namespace HL2Customizer
                 new SourceSchemeManager(),
                 new HudLayoutManager(),
                 new HudAnimationsManager(),
+                new WeaponScriptManager(),
                 new GameMenuManager(),
                 new CfgManager(),
                 new DSPManager());
@@ -214,6 +216,7 @@ namespace HL2Customizer
             cfgm = save.Cfgm;
             ham = save.Ham;
             hlm = new HudLayoutManager(save.Hlm);
+            wsm = new WeaponScriptManager(save.Wsm);
             gmm = save.Gmm;
             dspm = save.Dspm;
 
@@ -446,7 +449,7 @@ namespace HL2Customizer
             //WPN EDITOR
             #region weaponeditor
 
-            foreach (Tuple<string, string, char> Wpn in WpnsTypes)
+            foreach (Tuple<string, char> Wpn in WpnsTypes)
                 weaponeditor_wpnType.Items.Add(Wpn.Item1);
             weaponeditor_wpnType.SelectedIndex = 0;
 
@@ -493,6 +496,7 @@ namespace HL2Customizer
                     csm.WriteFile(ref Paths);
                     csm.AddFonts(ref Paths);
                     ham.WriteFile(ref Paths);
+                    wsm.WriteFiles(ref Paths);
                     ssm.WriteFile(ref Paths);
                     dspm.WriteFile(ref Paths);
 
@@ -605,7 +609,7 @@ namespace HL2Customizer
                     #endregion
 
                     HudInformations infos = new HudInformations("previous");
-                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, gmm, cfgm, dspm);
+                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm);
                     Serializer.SerializeHudData(save);
                     System.Windows.MessageBox.Show("Done ! Your hud is ready ;D. You can now start Half-life 2 Deathmatch.", "Success !!", MessageBoxButton.OK);
 
@@ -1013,7 +1017,7 @@ namespace HL2Customizer
         {
             SetProperties();
             HudInformations infos = new HudInformations(file_SaveNameBox.Text);
-            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, gmm, cfgm, dspm);
+            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm);
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\" + infos.Name + ".hcd"))
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("You already saved a hud with this name... do you want to erease the previous one?", "Save already exist", MessageBoxButton.YesNo);
@@ -1230,7 +1234,18 @@ namespace HL2Customizer
 
         private void weaponeditor_wpnType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            weaponeditor_wpnIcon.Content = WpnsTypes[weaponeditor_wpnType.SelectedIndex].Item3;
+            weaponeditor_wpnIcon.Content = WpnsTypes[weaponeditor_wpnType.SelectedIndex].Item2;
+            weaponeditor_wpnNameBox.Text = wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name;
+        }
+
+        private void weaponeditor_loadOldConfig_Click(object sender, RoutedEventArgs e)
+        {
+            weaponeditor_wpnNameBox.Text = wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name;
+        }
+
+        private void weaponeditor_saveNewConfig_Click(object sender, RoutedEventArgs e)
+        {
+            wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name = weaponeditor_wpnNameBox.Text;
         }
 
         #endregion

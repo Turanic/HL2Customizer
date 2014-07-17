@@ -14,18 +14,21 @@ namespace HL2Customizer
         public SourceSchemeManager Ssm { get; set; }
         public HudLayoutManager Hlm { get; set; }
         public HudAnimationsManager Ham { get; set; }
+        public WeaponScriptManager Wsm { get; set; }
         public GameMenuManager Gmm { get; set; }
         public CfgManager Cfgm { get; set; }
         public DSPManager Dspm { get; set; }
 
         public SavedData(HudInformations infos, ClientSchemeManager csm, SourceSchemeManager ssm,
-            HudLayoutManager hlm, HudAnimationsManager ham, GameMenuManager gmm, CfgManager cfgm, DSPManager dspm)
+            HudLayoutManager hlm, HudAnimationsManager ham, WeaponScriptManager wsm, GameMenuManager gmm,
+            CfgManager cfgm, DSPManager dspm)
         {
              this.Infos = infos;
              this.Csm = csm;
              this.Ssm = ssm;
              this.Hlm = hlm;
              this.Ham = ham;
+             this.Wsm = wsm;
              this.Gmm = gmm;
              this.Cfgm = cfgm;
              this.Dspm = dspm;
