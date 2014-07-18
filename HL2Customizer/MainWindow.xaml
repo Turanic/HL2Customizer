@@ -25,22 +25,22 @@
                     <Button HorizontalAlignment="Left" Margin="25,182,0,0" VerticalAlignment="Top" Width="100" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="Button_Click" Grid.ColumnSpan="2">
                         <Image Source="Resources/applyButton.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
                     </Button>
-                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="1,196,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="3"/>
-                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="181,188,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="154" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
-                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="163,223,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1"/>
+                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="287,198,0,0" VerticalAlignment="Top" Width="154" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="149,193,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="154" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="169,223,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1" RenderTransformOrigin="0.054,0.688"/>
                     <Label Content="Exemple :  C:\Program Files (x86)\Steam\SteamApps\common\Half-Life 2 Deathmatch" HorizontalAlignment="Left" Margin="89,332,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="497" Grid.ColumnSpan="4"/>
                     <CheckBox x:Name="basicConfigs_deleteRB" Content="Delete the custom hud" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="163,170,0,0" VerticalAlignment="Top" Height="24" Width="160" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="127,40,0,0" VerticalAlignment="Top" Height="267" Width="474" Grid.Column="1" Grid.ColumnSpan="3">
-                        <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="206,221,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
+                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="153,158,0,0" VerticalAlignment="Top" Height="24" Width="160" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1"/>
+                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="122,40,0,0" VerticalAlignment="Top" Height="267" Width="480" Grid.Column="1" Grid.ColumnSpan="3">
+                        <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="19,218,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
                     </GroupBox>
                     <Button x:Name="basicConfigs_creditsButton" Content="About" HorizontalAlignment="Left" Margin="203,5,0,0" VerticalAlignment="Top" Width="74" Click="creditsButton_Click" Grid.Column="3"/>
-                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="153,180,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="64" Width="76" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
-                    <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="153,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="76" Grid.Column="3"/>
-                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="163,255,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="123,164,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
+                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="153,174,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1"/>
                     <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="175,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
-                    <Label Content="Size: " Grid.Column="3" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="3" HorizontalAlignment="Left" Margin="37,250,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Size: " Grid.Column="1" HorizontalAlignment="Left" Margin="144,247,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="1" HorizontalAlignment="Left" Margin="186,247,0,0" VerticalAlignment="Top"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="117,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Advanced configs">

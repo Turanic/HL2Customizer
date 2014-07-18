@@ -57,9 +57,9 @@ namespace HL2Customizer
             switch (CrosshairSize)
             {
                 case 'S': csize = 40; break;
-                case 'M': csize = 60; break;
+                case 'M': csize = 64; break;
                 case 'L': csize = 80; break;
-                case 'G': csize = 100; break;
+                case 'G': csize = 128; break;
                 default: goto case 'S';
             }
 

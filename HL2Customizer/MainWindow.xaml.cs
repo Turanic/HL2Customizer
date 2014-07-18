@@ -827,6 +827,16 @@ namespace HL2Customizer
                 case 3: basicConfigs_crosshairSizeLabel.Content = "Giant"; break;
                 default: goto case 0;
             }
+            int csize;
+            switch ((int)basicConfigs_xhairSizeSlider.Value)
+            {
+                case 0: csize = 40; break;
+                case 1: csize = 64;  break;
+                case 2: csize = 80; break;
+                case 3: csize = 104;break;
+                default: goto case 0;
+            }
+            basicConfigs_previewCrosshair.FontSize = csize;
         }
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
