@@ -202,15 +202,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HL2Customizer"
-        "ProductCode" = "8:{B9244A6F-6CAC-4869-84BA-154456125B11}"
-        "PackageCode" = "8:{0C33E515-545F-4208-868F-153C2DA335A9}"
+        "ProductCode" = "8:{DF4DC42F-C50C-49B8-AB9A-A544938F1A31}"
+        "PackageCode" = "8:{23D2AC6B-BDF1-45F6-AD15-7E2F26D307EB}"
         "UpgradeCode" = "8:{DB655E85-FABF-4223-B57A-F568F61CF0A9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.4.6"
+        "ProductVersion" = "8:0.4.7"
         "Manufacturer" = "8:Turanic"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://94.23.62.54/HL2Customizer/index.html"
@@ -738,7 +738,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E42EB7ACEEDC4DF8BA61AC06718033F8"
             {
-            "SourcePath" = "8:..\\HL2Customizer\\obj\\Debug\\HL2Customizer.exe"
+            "SourcePath" = "8:..\\HL2Customizer\\obj\\Release\\HL2Customizer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_000B598F06444A3992266F0A4CA2E59E"

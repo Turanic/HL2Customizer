@@ -232,7 +232,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.4.6.
+        ///   Looks up a localized string similar to 0.4.7.
         /// </summary>
         internal static string Version {
             get {
@@ -246,7 +246,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;			&quot;#HL2_357Handgun&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;			&quot;models/weapons/v_357.mdl&quot;
         ///	&quot;playermodel&quot;		&quot;models/weapons/w_357.mdl&quot;
         ///	&quot;anim_prefix&quot;		&quot;python&quot;
@@ -263,7 +263,7 @@ namespace HL2Customizer.Resources {
         ///
         ///	&quot;damage&quot;		&quot;75&quot;
         ///
-        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;sin [rest of string was truncated]&quot;;.
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; s [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_357 {
             get {
@@ -277,7 +277,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_Pulse_Rifle&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;			&quot;models/weapons/v_irifle.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_irifle.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;ar2&quot;
@@ -297,7 +297,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;item_flags&quot;			&quot;0&quot;
         ///	&quot;damage&quot;			&quot;11&quot;
         ///
-        ///	// S [rest of string was truncated]&quot;;.
+        ///	// Sounds for  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_ar2 {
             get {
@@ -311,7 +311,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;		&quot;#HL2_Crossbow&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;		&quot;models/weapons/v_crossbow.mdl&quot;
         ///	&quot;playermodel&quot;	&quot;models/weapons/w_crossbow.mdl&quot;
         ///	&quot;anim_prefix&quot;	&quot;bow&quot;
@@ -328,7 +328,7 @@ namespace HL2Customizer.Resources {
         ///
         ///	&quot;damage&quot;		&quot;100&quot;
         ///
-        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e.  [rest of string was truncated]&quot;;.
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_crossbow {
             get {
@@ -342,7 +342,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_Crowbar&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_crowbar.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_crowbar.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;crowbar&quot;
@@ -357,7 +357,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;item_flags&quot;			&quot;0&quot;
         ///
         ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sounds)
-        ///	 [rest of string was truncated]&quot;;.
+        ///	SoundD [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_crowbar {
             get {
@@ -369,7 +369,7 @@ namespace HL2Customizer.Resources {
         ///   Looks up a localized string similar to WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_Grenade&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_grenade.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_grenade.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;Grenade&quot;
@@ -385,7 +385,8 @@ namespace HL2Customizer.Resources {
         ///	&quot;secondary_ammo&quot;		&quot;None&quot;
         ///
         ///	&quot;weight&quot;				&quot;1&quot;
-        ///	&quot;item_flags&quot;			&quot;18&quot;	// ITEM_FLAG_NOAUTORELOAD | ITEM_FLAG_EXHAUSTI [rest of string was truncated]&quot;;.
+        ///	&quot;item_flags&quot;			&quot;18&quot;	// ITEM_FLAG_NOAUTORELOAD | ITEM_FLAG_EXHAUSTIBLE
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_frag {
             get {
@@ -399,7 +400,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_GravityGun&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;			&quot;models/weapons/v_physcannon.mdl&quot;
         ///	&quot;playermodel&quot;		&quot;models/weapons/w_Physics.mdl&quot;
         ///	&quot;anim_prefix&quot;		&quot;gauss&quot;
@@ -416,7 +417,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;autoswitchfrom&quot;	&quot;0&quot;
         ///	&quot;item_flags&quot;		&quot;2&quot;
         ///
-        ///	S [rest of string was truncated]&quot;;.
+        ///	SoundData        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_physcannon {
             get {
@@ -430,7 +431,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_Pistol&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;			&quot;models/weapons/v_pistol.mdl&quot;
         ///	&quot;playermodel&quot;		&quot;models/weapons/w_pistol.mdl&quot;
         ///	&quot;anim_prefix&quot;		&quot;pistol&quot;
@@ -445,7 +446,8 @@ namespace HL2Customizer.Resources {
         ///	&quot;item_flags&quot;			&quot;0&quot;
         ///	&quot;damage&quot;			&quot;8&quot;
         ///
-        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sound [rest of string was truncated]&quot;;.
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sounds)
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_pistol {
             get {
@@ -459,7 +461,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_RPG&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_rpg.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_rocket_launcher.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;missile launcher&quot;
@@ -476,7 +478,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;secondary_ammo&quot;		&quot;None&quot;
         ///
         ///	&quot;weight&quot;				&quot;0&quot;
-        ///	&quot;item_fl [rest of string was truncated]&quot;;.
+        ///	&quot;item_flag [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_rpg {
             get {
@@ -490,7 +492,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_Shotgun&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_shotgun.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_shotgun.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;shotgun&quot;
@@ -505,7 +507,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;item_flags&quot;			&quot;0&quot;
         ///	&quot;damage&quot;			&quot;9&quot;
         ///
-        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;sin [rest of string was truncated]&quot;;.
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_sh [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_shotgun {
             get {
@@ -519,7 +521,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_SLAM&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_slam.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_slam.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;slam&quot;
@@ -539,7 +541,7 @@ namespace HL2Customizer.Resources {
         ///	{
         ///		&quot;weapon&quot;
         ///		{
-        ///				&quot;font [rest of string was truncated]&quot;;.
+        ///				&quot;font&quot;		 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_slam {
             get {
@@ -553,7 +555,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_SMG1&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_smg1.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_smg1.mdl&quot;	//FIXME: 
         ///	&quot;anim_prefix&quot;			&quot;smg2&quot;
@@ -571,7 +573,8 @@ namespace HL2Customizer.Resources {
         ///
         ///	&quot;weight&quot;				&quot;3&quot;
         ///	&quot;item_flags&quot;			&quot;0&quot;
-        ///	&quot;damage&quot;			&quot;5 [rest of string was truncated]&quot;;.
+        ///	&quot;damage&quot;			&quot;5&quot;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_smg1 {
             get {
@@ -585,7 +588,7 @@ namespace HL2Customizer.Resources {
         ///WeaponData
         ///{
         ///	// Weapon data is loaded by both the Game and Client DLLs.
-        ///	&quot;printname&quot;	&quot;#HL2_StunBaton&quot;
+        ///	&quot;printname&quot;	&quot;|NAME|&quot;
         ///	&quot;viewmodel&quot;				&quot;models/weapons/v_stunstick.mdl&quot;
         ///	&quot;playermodel&quot;			&quot;models/weapons/w_stunbaton.mdl&quot;
         ///	&quot;anim_prefix&quot;			&quot;stunbaton&quot;
@@ -599,7 +602,7 @@ namespace HL2Customizer.Resources {
         ///	&quot;weight&quot;				&quot;0&quot;
         ///	&quot;item_flags&quot;			&quot;0&quot;
         ///
-        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot;  [rest of string was truncated]&quot;;.
+        ///	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 &quot;single_shot&quot; sounds)        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string weapon_stunstick {
             get {

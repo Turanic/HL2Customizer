@@ -7,35 +7,40 @@
             <TabItem Header="Basics">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="49*"/>
-                        <ColumnDefinition Width="311*"/>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="313*"/>
+                        <ColumnDefinition Width="21*"/>
+                        <ColumnDefinition Width="284*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Main color :" HorizontalAlignment="Left" Margin="276.5,64,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="120" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Main color :" HorizontalAlignment="Left" Margin="277,64,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="120" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
                     <Image HorizontalAlignment="Left" Height="128" Margin="10,30,0,0" VerticalAlignment="Top" Width="128" Panel.ZIndex="1" Source="Resources/HLogo.png" Grid.ColumnSpan="2"/>
-                    <Label Content="Secondary color :" HorizontalAlignment="Left" Margin="276.5,91,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <Label Content="Crosshair color :" HorizontalAlignment="Left" Margin="276.5,118,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <Label x:Name="basicConfigs_title" Content="HL2 Customizer" Panel.ZIndex="2" Height="30" Width="292" FontSize="16" FontWeight="Bold" Foreground="#FFAE0000" VerticalAlignment="Top" Margin="85.5,5,244,0" HorizontalContentAlignment="Center" Grid.Column="1"/>
-                    <ComboBox x:Name="basicConfigs_mainColorBox" HorizontalAlignment="Left" Margin="464.5,72,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="1"/>
-                    <ComboBox x:Name="basicConfigs_secColorBox" HorizontalAlignment="Left" Margin="464.5,99,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="1"/>
-                    <ComboBox x:Name="basicConfigs_crossColorBox" HorizontalAlignment="Left" Margin="464.5,126,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="1"/>
-                    <TextBox x:Name="basicConfigs_pathTextBox" HorizontalAlignment="Left" Height="24" Margin="10,362,0,0" TextWrapping="Wrap" Text="Chose your Halflife2 DM folder, it's in Steam\SteamApps\Common" VerticalAlignment="Top" Width="689" IsEnabled="False" Grid.ColumnSpan="2"/>
+                    <Label Content="Secondary color :" HorizontalAlignment="Left" Margin="277,91,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Crosshair color :" HorizontalAlignment="Left" Margin="277,118,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label x:Name="basicConfigs_title" Content="HL2 Customizer" Panel.ZIndex="2" Height="30" Width="292" FontSize="16" FontWeight="Bold" Foreground="#FFAE0000" VerticalAlignment="Top" Margin="85,5,241,0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <ComboBox x:Name="basicConfigs_mainColorBox" HorizontalAlignment="Left" Margin="131,72,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_secColorBox" HorizontalAlignment="Left" Margin="131,99,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_crossColorBox" HorizontalAlignment="Left" Margin="131,126,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <TextBox x:Name="basicConfigs_pathTextBox" HorizontalAlignment="Left" Height="24" Margin="10,362,0,0" TextWrapping="Wrap" Text="Chose your Halflife2 DM folder, it's in Steam\SteamApps\Common" VerticalAlignment="Top" Width="689" IsEnabled="False" Grid.ColumnSpan="4"/>
                     <Button x:Name="basicConfigs_browsePathButton" Content="Browse" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="74" Click="browsePathButton_Click" RenderTransformOrigin="0.649,1.95"/>
                     <Button HorizontalAlignment="Left" Margin="25,182,0,0" VerticalAlignment="Top" Width="100" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="Button_Click" Grid.ColumnSpan="2">
                         <Image Source="Resources/applyButton.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
                     </Button>
-                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="334.5,196,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="1"/>
-                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="181.5,188,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="153" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="162.5,232,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1"/>
-                    <CheckBox x:Name="basicConfigs_giantRB" Content="Giant crosshair" HorizontalAlignment="Left" Margin="236.5,235,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1"/>
-                    <Label Content="Exemple :  C:\Program Files (x86)\Steam\SteamApps\common\Half-Life 2 Deathmatch" HorizontalAlignment="Left" Margin="89,332,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="497" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="1,196,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="3"/>
+                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="181,188,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="154" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="163,223,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1"/>
+                    <Label Content="Exemple :  C:\Program Files (x86)\Steam\SteamApps\common\Half-Life 2 Deathmatch" HorizontalAlignment="Left" Margin="89,332,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="497" Grid.ColumnSpan="4"/>
                     <CheckBox x:Name="basicConfigs_deleteRB" Content="Delete the custom hud" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="162.5,170,0,0" VerticalAlignment="Top" Height="24" Width="161" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1"/>
-                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="126.5,40,0,0" VerticalAlignment="Top" Height="267" Width="475" Grid.Column="1"/>
-                    <Button x:Name="basicConfigs_creditsButton" Content="About" HorizontalAlignment="Left" Margin="536.5,5,0,0" VerticalAlignment="Top" Width="75" Click="creditsButton_Click" Grid.Column="1"/>
-                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="486.5,180,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="64" Width="77" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="1"/>
-                    <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="486.5,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
-                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="162.5,255,0,0" VerticalAlignment="Top" Height="24" Width="161" Panel.ZIndex="2" IsChecked="True" Grid.Column="1"/>
-                    <Button x:Name="basicConfigs_help" Content="?" Grid.Column="1" HorizontalAlignment="Left" Margin="509,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
+                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="163,170,0,0" VerticalAlignment="Top" Height="24" Width="160" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="127,40,0,0" VerticalAlignment="Top" Height="267" Width="474" Grid.Column="1" Grid.ColumnSpan="3">
+                        <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="206,221,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
+                    </GroupBox>
+                    <Button x:Name="basicConfigs_creditsButton" Content="About" HorizontalAlignment="Left" Margin="203,5,0,0" VerticalAlignment="Top" Width="74" Click="creditsButton_Click" Grid.Column="3"/>
+                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="153,180,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="64" Width="76" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
+                    <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="153,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="76" Grid.Column="3"/>
+                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="163,255,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="175,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
+                    <Label Content="Size: " Grid.Column="3" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="3" HorizontalAlignment="Left" Margin="37,250,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Advanced configs">
@@ -109,7 +114,7 @@
                     <ComboBox Name="menueditor_bgBox" Margin="487,109,38,261" Panel.ZIndex="2" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Files">
+            <TabItem Header="Files" Margin="236,0,-240,-3">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -144,7 +149,7 @@
                     <Button x:Name="file_ImportButton" Content="Import" HorizontalAlignment="Left" Margin="451,358,0,0" VerticalAlignment="Top" Width="75" Click="file_ImportButton_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Aux. Power editor">
+            <TabItem Header="Aux. Power editor" Margin="-37,0,33,-3">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
                     <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="478,190,0,0" VerticalAlignment="Top" Height="156" Width="143">
                         <StackPanel>
@@ -209,18 +214,21 @@
                     <ComboBox x:Name="auxeditor_auxlabelpos" HorizontalAlignment="Left" Margin="584,127,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Adv. Weapon editor">
+            <TabItem Header="Adv. Weapon editor" Margin="-33,0,29,-3">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Margin="0,-1,0,1">
                     <ComboBox x:Name="weaponeditor_wpnType" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="weaponeditor_wpnType_SelectionChanged"/>
                     <Label Content="Choose the weapon to modify : " HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top"/>
-                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,88,0,0" VerticalAlignment="Top" Height="255" Width="635">
-                        
-                    </GroupBox>
+                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,88,0,0" VerticalAlignment="Top" Height="255" Width="635"/>
+                    <Label Content="Additionnal crosshair :" HorizontalAlignment="Left" Margin="167,155,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="weaponeditor_CrosshairBox" HorizontalAlignment="Left" Margin="311,159,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2"/>
                     <Button x:Name="weaponeditor_saveNewConfig" Content="Save new weapon config" HorizontalAlignment="Left" Margin="516,305,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_saveNewConfig_Click"/>
                     <Button x:Name="weaponeditor_loadOldConfig" Content="Restore config" HorizontalAlignment="Left" Margin="333,305,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_loadOldConfig_Click"/>
                     <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="311,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
                     <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="167,117,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="66,117,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1"/>
+                    <CheckBox x:Name="weaponeditor_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="436,165,0,0" VerticalAlignment="Top" Panel.ZIndex="2"/>
+                    <ComboBox x:Name="weaponeditor_colorBox" HorizontalAlignment="Left" Margin="461,24,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2"/>
+                    <Label Content="Secondary crosshair color : " HorizontalAlignment="Left" Margin="301,20,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>

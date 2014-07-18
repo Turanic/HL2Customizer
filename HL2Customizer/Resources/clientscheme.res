@@ -544,22 +544,189 @@ Scheme
 			{
 				"name"		"Xhair"
 				"tall"		"|CROSS_SIZE|"
-				"weight"	"0"
+				"weight"	"2"
 				"antialias" "|ANTIALIASED|"
 				"outline"   "|OUTLINED|"
 				"additive"	"0"
 				"yres"		"1 10000"
 			}
 		}
-		Crosshairs|KEEPXHAIR|
+		Crosshairs
 		{
 			"1"
 			{
 				"name"		"HalfLife2"
-				"tall"		"40" [!$OSX]
-				"tall"		"41" [$OSX]
-				"weight"	"0"
+				"tall"		"40"
+				"weight"	"1"
 				"antialias" "0"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		physcannon_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|PHYSCANNON_ANTIALIASED|"
+				"outline"   "|PHYSCANNON_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		crowbar_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|CROWBAR_ANTIALIASED|"
+				"outline"   "|CROWBAR_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		stunstick_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|STUNSTICK_ANTIALIASED|"
+				"outline"   "|STUNSTICK_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		frag_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|FRAG_ANTIALIASED|"
+				"outline"   "|FRAG_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		slam_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|SLAM_ANTIALIASED|"
+				"outline"   "|SLAM_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		pistol_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|PISTOL_ANTIALIASED|"
+				"outline"   "|PISTOL_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		smg1_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|SMG1_ANTIALIASED|"
+				"outline"   "|SMG1_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		ar2_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|AR2_ANTIALIASED|"
+				"outline"   "|AR2_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		shotgun_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|SHOTGUN_ANTIALIASED|"
+				"outline"   "|SHOTGUN_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		357_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|357_ANTIALIASED|"
+				"outline"   "|357_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		crossbow_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|CROSSBOW_ANTIALIASED|"
+				"outline"   "|CROSSBOW_OUTLINED|"
+				"additive"	"0"
+				"custom"	"1"
+				"yres"		"1 10000"
+			}
+		}
+		rpg_crosshair
+		{
+			"1"
+			{
+				"name"		"XHAIR"
+				"tall"		"|CROSS_SIZE2|"
+				"weight"	"0"
+				"antialias" "|RPG_ANTIALIASED|"
+				"outline"   "|RPG_OUTLINED|"
 				"additive"	"0"
 				"custom"	"1"
 				"yres"		"1 10000"

@@ -152,8 +152,8 @@
     <AppDesigner Include="Properties\" />
     <EmbeddedResource Include="Resources\clientscheme.res" />
     <EmbeddedResource Include="Resources\autoexec.cfg" />
-    <Resource Include="Resources\halflife2.ttf" />
     <Resource Include="Resources\XHAIR.ttf" />
+    <Resource Include="Resources\halflife2.ttf" />
     <Resource Include="Resources\Example.hcd" />
     <Resource Include="Resources\Default.hcd" />
     <Resource Include="Resources\ScoreBoard.res" />

@@ -11,11 +11,12 @@ namespace HL2Customizer
     {
         public string Name { get; set; }
         public string ScriptFile { get; private set; }
-        public WeaponScript(string name, string file)
+        public char Crosshair { get; set; }
+        public WeaponScript(string name, string file, char crosshair)
         {
             Name = name;
             ScriptFile = file;
-
+            Crosshair = crosshair;
         }
     }
 }

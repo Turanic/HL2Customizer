@@ -12,23 +12,24 @@ namespace HL2Customizer
     public class WeaponScriptManager
     {
         public WeaponScript[] Weapons { get; set; }
+        public bool KeepXhair { private get; set; }
 
         public WeaponScriptManager()
         {
             Weapons = new WeaponScript[]
             {
-                new WeaponScript("Gravity gun", "physcannon"),
-                new WeaponScript("Crowbar", "crowbar"),
-                new WeaponScript("Stunstick", "stunstick"),
-                new WeaponScript("Frag grenade", "frag"),
-                new WeaponScript("S.L.A.M", "slam"),
-                new WeaponScript("9mm Pistol", "pistol"),
-                new WeaponScript("Sub machine gun", "smg1"),
-                new WeaponScript("Rifle", "ar2"),
-                new WeaponScript("Shotgun", "shotgun"),
-                new WeaponScript("357 Magnum", "357"),
-                new WeaponScript("Crossbow", "crossbow"),
-                new WeaponScript("Rocket launcher", "rpg"),
+                new WeaponScript("Gravity gun", "physcannon", ' '),
+                new WeaponScript("Crowbar", "crowbar", ' '),
+                new WeaponScript("Stunstick", "stunstick", ' '),
+                new WeaponScript("Frag grenade", "frag", ' '),
+                new WeaponScript("S.L.A.M", "slam", ' '),
+                new WeaponScript("9mm Pistol", "pistol", ' '),
+                new WeaponScript("Sub machine gun", "smg1", ' '),
+                new WeaponScript("Rifle", "ar2", ' '),
+                new WeaponScript("Shotgun", "shotgun", ' '),
+                new WeaponScript("357 Magnum", "357", ' '),
+                new WeaponScript("Crossbow", "crossbow", ' '),
+                new WeaponScript("Rocket launcher", "rpg", ' '),
             };
         }
 
@@ -52,6 +53,8 @@ namespace HL2Customizer
                 while ((line = sr.ReadLine()) != null)
                 {
                     if (line.Contains("|NAME|")) line = line.Replace("|NAME|", Weapons[i].Name);
+                    if (line.Contains("|KEEPXHAIR|")) line = line.Replace("|KEEPXHAIR|", (KeepXhair ? "Crosshairs" : Weapons[i].ScriptFile+"_crosshair"));
+                    if (line.Contains("|CROSSHAIR|")) line = line.Replace("|CROSSHAIR|", (KeepXhair ? "Q" : Weapons[i].Crosshair.ToString()));
                     sw.WriteLine(line);
                 }
 

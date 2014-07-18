@@ -53,6 +53,7 @@ namespace HL2Customizer
             Tuple.Create("little cross", 'c'),
             Tuple.Create("X cross", 'g'),
             Tuple.Create("Empty cross", 'k'),
+            Tuple.Create("cross + dot", 'r'),
             Tuple.Create("Aiming cross", 'j'),
             Tuple.Create("demi-cross", 'l'),
             Tuple.Create("demi-empty cross", 'm'),
@@ -60,8 +61,13 @@ namespace HL2Customizer
             Tuple.Create("box", 's'),
             Tuple.Create("cypher", 'n'),
             Tuple.Create("Xcypher", 't'),
+            Tuple.Create("spikes", 'u'),
+            Tuple.Create("spikes + dot", 'v'),
+            Tuple.Create("vertical spikes", 'w'),
+            Tuple.Create("vertical spikes + dot", 'x'),
             Tuple.Create("circle", 'h'),
-            Tuple.Create("big circle", 'r'),
+            Tuple.Create("circle + dot", 'y'),
+            Tuple.Create("brackets + dot", 'z'),
             Tuple.Create("bar", 'f'),
             Tuple.Create("double bar", 'q'),
             Tuple.Create("default", 'p'),
@@ -242,16 +248,26 @@ namespace HL2Customizer
                 basicConfigs_mainColorBox.Items.Add(color);
                 basicConfigs_secColorBox.Items.Add(color);
                 basicConfigs_crossColorBox.Items.Add(color);
+                weaponeditor_colorBox.Items.Add(color);
                 if (color == csm.MainColor) basicConfigs_mainColorBox.SelectedIndex = i;
                 if (color == csm.SecondaryColor) basicConfigs_secColorBox.SelectedIndex = i;
                 if (color == csm.CrossColor) basicConfigs_crossColorBox.SelectedIndex = i;
+                if (color == csm.SecCrossColor) weaponeditor_colorBox.SelectedIndex = i;
             }
 
             //Checkbox loads
             basicConfigs_dontChangeCrosshairRB.IsChecked = !hlm.AdvCrosshair;
             basicConfigs_outlinedRB.IsChecked = csm.OutlinedCrosshairs;
-            basicConfigs_giantRB.IsChecked = csm.GiantCrosshairs;
             basicConfigs_keepQuickInfosRB.IsChecked = cfgm.QuickInfos;
+
+            switch (csm.CrosshairSize)
+            {
+                case 'S': basicConfigs_xhairSizeSlider.Value = 0; break;
+                case 'M': basicConfigs_xhairSizeSlider.Value = 1; break;
+                case 'L': basicConfigs_xhairSizeSlider.Value = 2; break;
+                case 'G': basicConfigs_xhairSizeSlider.Value = 3; break;
+                default: goto case 'S';
+            }
 
             string path = PathSaver.LoadPath();
             if (path != null) basicConfigs_pathTextBox.Text = path;
@@ -448,6 +464,11 @@ namespace HL2Customizer
 
             //WPN EDITOR
             #region weaponeditor
+
+            // # Sec crosshair color is filled in basicconfigs initialization #
+
+            foreach (Tuple<string, char> crosshair in Crosshairs)
+                weaponeditor_CrosshairBox.Items.Add(crosshair.Item1);
 
             foreach (Tuple<string, char> Wpn in WpnsTypes)
                 weaponeditor_wpnType.Items.Add(Wpn.Item1);
@@ -652,10 +673,19 @@ namespace HL2Customizer
             }
 
             csm.SetProperties(basicConfigs_mainColorBox.Text, basicConfigs_secColorBox.Text,
-            basicConfigs_crossColorBox.Text, (bool)basicConfigs_outlinedRB.IsChecked,
-            (bool)basicConfigs_giantRB.IsChecked, (bool)basicConfigs_dontChangeCrosshairRB.IsChecked);
+            basicConfigs_crossColorBox.Text, weaponeditor_colorBox.Text, (bool)basicConfigs_outlinedRB.IsChecked);
 
+            switch ((int)basicConfigs_xhairSizeSlider.Value)
+            {
+                case 0: csm.CrosshairSize = 'S'; break;
+                case 1: csm.CrosshairSize = 'M'; break;
+                case 2: csm.CrosshairSize = 'L'; break;
+                case 3: csm.CrosshairSize = 'G'; break;
+                default: goto case 0;
+            }
 
+            csm.KeepXhair = (bool)basicConfigs_dontChangeCrosshairRB.IsChecked;
+            wsm.KeepXhair = (bool)basicConfigs_dontChangeCrosshairRB.IsChecked;
             ssm.SetProperties(MenuColors[menueditor_txtBox1.SelectedIndex],
                 MenuColors[menueditor_txtBox2.SelectedIndex],
                 MenuColors[menueditor_bgBox.SelectedIndex]);
@@ -776,14 +806,26 @@ namespace HL2Customizer
         {
             basicConfigs_CrosshairBox.IsEnabled = false;
             basicConfigs_outlinedRB.IsEnabled = false;
-            basicConfigs_giantRB.IsEnabled = false;
+            basicConfigs_xhairSizeSlider.IsEnabled = false;
         }
 
         private void dontChangeCrosshairRB_Unchecked(object sender, RoutedEventArgs e)
         {
             basicConfigs_CrosshairBox.IsEnabled = true;
             basicConfigs_outlinedRB.IsEnabled = true;
-            basicConfigs_giantRB.IsEnabled = true;
+            basicConfigs_xhairSizeSlider.IsEnabled = true;
+        }
+
+        private void basicConfigs_xhairSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            switch ((int)basicConfigs_xhairSizeSlider.Value)
+            {
+                case 0: basicConfigs_crosshairSizeLabel.Content = "Small"; break;
+                case 1: basicConfigs_crosshairSizeLabel.Content = "Medium"; break;
+                case 2: basicConfigs_crosshairSizeLabel.Content = "Large"; break;
+                case 3: basicConfigs_crosshairSizeLabel.Content = "Giant"; break;
+                default: goto case 0;
+            }
         }
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1236,6 +1278,11 @@ namespace HL2Customizer
         {
             weaponeditor_wpnIcon.Content = WpnsTypes[weaponeditor_wpnType.SelectedIndex].Item2;
             weaponeditor_wpnNameBox.Text = wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name;
+
+            for (int i = 0; i < Crosshairs.Count(); i++)
+                if (Crosshairs[i].Item2 == wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Crosshair) weaponeditor_CrosshairBox.SelectedIndex = i;
+
+            weaponeditor_outlinedRB.IsChecked = csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex];
         }
 
         private void weaponeditor_loadOldConfig_Click(object sender, RoutedEventArgs e)
@@ -1246,6 +1293,8 @@ namespace HL2Customizer
         private void weaponeditor_saveNewConfig_Click(object sender, RoutedEventArgs e)
         {
             wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name = weaponeditor_wpnNameBox.Text;
+            csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex] = (bool)weaponeditor_outlinedRB.IsChecked;
+            wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Crosshair = Crosshairs[weaponeditor_CrosshairBox.SelectedIndex].Item2;
         }
 
         #endregion
