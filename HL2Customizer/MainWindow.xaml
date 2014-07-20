@@ -12,58 +12,65 @@
                         <ColumnDefinition Width="21*"/>
                         <ColumnDefinition Width="284*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Main color :" HorizontalAlignment="Left" Margin="277,64,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="120" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Main color :" HorizontalAlignment="Left" Margin="153,56,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="120" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
                     <Image HorizontalAlignment="Left" Height="128" Margin="10,30,0,0" VerticalAlignment="Top" Width="128" Panel.ZIndex="1" Source="Resources/HLogo.png" Grid.ColumnSpan="2"/>
-                    <Label Content="Secondary color :" HorizontalAlignment="Left" Margin="277,91,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
-                    <Label Content="Crosshair color :" HorizontalAlignment="Left" Margin="277,118,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Secondary color :" HorizontalAlignment="Left" Margin="153,83,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+                    <Label Content="Crosshair color :" HorizontalAlignment="Left" Margin="153,110,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
                     <Label x:Name="basicConfigs_title" Content="HL2 Customizer" Panel.ZIndex="2" Height="30" Width="292" FontSize="16" FontWeight="Bold" Foreground="#FFAE0000" VerticalAlignment="Top" Margin="85,5,241,0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3"/>
-                    <ComboBox x:Name="basicConfigs_mainColorBox" HorizontalAlignment="Left" Margin="131,72,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
-                    <ComboBox x:Name="basicConfigs_secColorBox" HorizontalAlignment="Left" Margin="131,99,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
-                    <ComboBox x:Name="basicConfigs_crossColorBox" HorizontalAlignment="Left" Margin="131,126,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_mainColorBox" HorizontalAlignment="Left" Margin="77,56,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_secColorBox" HorizontalAlignment="Left" Margin="77,83,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_crossColorBox" HorizontalAlignment="Left" Margin="77,110,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
                     <TextBox x:Name="basicConfigs_pathTextBox" HorizontalAlignment="Left" Height="24" Margin="10,362,0,0" TextWrapping="Wrap" Text="Chose your Halflife2 DM folder, it's in Steam\SteamApps\Common" VerticalAlignment="Top" Width="689" IsEnabled="False" Grid.ColumnSpan="4"/>
                     <Button x:Name="basicConfigs_browsePathButton" Content="Browse" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="74" Click="browsePathButton_Click" RenderTransformOrigin="0.649,1.95"/>
                     <Button HorizontalAlignment="Left" Margin="25,182,0,0" VerticalAlignment="Top" Width="100" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="Button_Click" Grid.ColumnSpan="2">
                         <Image Source="Resources/applyButton.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
                     </Button>
-                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="287,198,0,0" VerticalAlignment="Top" Width="154" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
-                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="149,193,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="154" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="169,223,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1" RenderTransformOrigin="0.054,0.688"/>
+                    <ComboBox x:Name="basicConfigs_CrosshairBox" HorizontalAlignment="Left" Margin="287,231,0,0" VerticalAlignment="Top" Width="154" Panel.ZIndex="2" SelectionChanged="CrosshairBox_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Crosshair style :" HorizontalAlignment="Left" Margin="149,226,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="154" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+                    <CheckBox x:Name="basicConfigs_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="169,256,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Grid.Column="1" RenderTransformOrigin="0.054,0.688"/>
                     <Label Content="Exemple :  C:\Program Files (x86)\Steam\SteamApps\common\Half-Life 2 Deathmatch" HorizontalAlignment="Left" Margin="89,332,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="497" Grid.ColumnSpan="4"/>
                     <CheckBox x:Name="basicConfigs_deleteRB" Content="Delete the custom hud" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="153,158,0,0" VerticalAlignment="Top" Height="24" Width="160" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1"/>
-                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="122,40,0,0" VerticalAlignment="Top" Height="267" Width="480" Grid.Column="1" Grid.ColumnSpan="3">
-                        <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="19,218,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
+                    <CheckBox x:Name="basicConfigs_dontChangeCrosshairRB" Content="Keep the original crosshair" HorizontalAlignment="Left" Margin="153,187,0,0" VerticalAlignment="Top" Height="24" Width="160" Checked="dontChangeCrosshairRB_Checked" Unchecked="dontChangeCrosshairRB_Unchecked" Panel.ZIndex="2" Grid.Column="1"/>
+                    <GroupBox Header="Basic style" HorizontalAlignment="Left" Margin="122,40,0,0" VerticalAlignment="Top" Height="292" Width="480" Grid.Column="1" Grid.ColumnSpan="3">
+                        <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="18,247,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
                     </GroupBox>
                     <Button x:Name="basicConfigs_creditsButton" Content="About" HorizontalAlignment="Left" Margin="203,5,0,0" VerticalAlignment="Top" Width="74" Click="creditsButton_Click" Grid.Column="3"/>
-                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="123,164,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
-                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="153,174,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1"/>
-                    <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="175,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
-                    <Label Content="Size: " Grid.Column="1" HorizontalAlignment="Left" Margin="144,247,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="1" HorizontalAlignment="Left" Margin="186,247,0,0" VerticalAlignment="Top"/>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="117,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="125,193,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
+                    <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="153,203,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1"/>
+                    <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="95,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
+                    <Label Content="Size: " Grid.Column="1" HorizontalAlignment="Left" Margin="144,280,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="1" HorizontalAlignment="Left" Margin="186,280,0,0" VerticalAlignment="Top"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="119,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <ComboBox x:Name="basicConfigs_auxCrossColorBox" HorizontalAlignment="Left" Margin="77,136,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
+                    <Label Content="Auxiliary crosshair color :" HorizontalAlignment="Left" Margin="153,136,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="222" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <Button x:Name="basicConfigs_donationButton" Content="Donate" Grid.Column="3" HorizontalAlignment="Left" Margin="122,5,0,0" VerticalAlignment="Top" Width="75" Click="basicConfigs_donationButton_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Advanced configs">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-                    <ComboBox x:Name="advancedconfigs_ModelsBox" HorizontalAlignment="Left" Margin="198,104,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Choose a model :" HorizontalAlignment="Left" Margin="44,100,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="advancedconfigs_WeaponsBox" HorizontalAlignment="Left" Margin="199,29,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Choose a default weapon :" HorizontalAlignment="Left" Margin="45,25,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="advancedconfigs_RateBox" HorizontalAlignment="Left" Margin="167.5,213,0,0" VerticalAlignment="Top" Width="135" Panel.ZIndex="2" SelectionChanged="updateRateBox" Height="23" Grid.Column="1" />
-                    <Rectangle Fill="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" HorizontalAlignment="Left" Height="121" Margin="13.5,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="305" Panel.ZIndex="1" Grid.Column="1"/>
-                    <Label x:Name="advancedconfigs_rateLabel" Content="30 000" HorizontalAlignment="Left" Margin="80.5,213,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label x:Name="advancedconfigs_updateLabel" Content="33" HorizontalAlignment="Left" Margin="103.5,240,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label x:Name="advancedconfigs_cmdLabel" Content="33" HorizontalAlignment="Left" Margin="103.5,267,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label Content="Rate :" HorizontalAlignment="Left" Margin="25.5,213,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label Content="UpdateRate :" HorizontalAlignment="Left" Margin="25.5,240,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label Content="CmdRate :" HorizontalAlignment="Left" Margin="25.5,267,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="167.5,242,0,0" TextWrapping="Wrap" Text="Warning: some rates are not allowed on some servers" VerticalAlignment="Top" Height="49" Width="135" Panel.ZIndex="2" Grid.Column="1"/>
-                    <CheckBox x:Name="advancedconfigs_dontTuchThisRB" Content="Don't modify my rates" HorizontalAlignment="Left" Margin="13.5,189,0,0" VerticalAlignment="Top" IsChecked="True" Panel.ZIndex="1" Height="15" Grid.Column="1"/>
-                    <Label Content="Amount of red when taking damage : " HorizontalAlignment="Left" Margin="428,100,0,0" VerticalAlignment="Top"/>
-                    <Slider x:Name="advancedconfigs_redScreenScroller" HorizontalAlignment="Left" Margin="496,126,0,0" VerticalAlignment="Top" Height="26" Width="148" TickPlacement="BottomRight" SmallChange="1" Maximum="3" ValueChanged="redScreenScroller_ValueChanged"/>
-                    <Label x:Name="advancedconfigs_redAmountLabel" Content="FULL" HorizontalAlignment="Left" Margin="443,126,0,0" VerticalAlignment="Top" Width="48"/>
-                    <GroupBox Header="Rates config" HorizontalAlignment="Left" Height="168" Margin="0.5,172,0,0" VerticalAlignment="Top" Width="331" Content="" Grid.Column="1"/>
-                    <GroupBox Header="Other options" HorizontalAlignment="Left" Height="165" Margin="496,175,0,0" VerticalAlignment="Top" Width="192">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="21*"/>
+                        <ColumnDefinition Width="694*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="advancedconfigs_ModelsBox" HorizontalAlignment="Left" Margin="176,170,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label Content="Choose a model :" HorizontalAlignment="Left" Margin="22,166,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="advancedconfigs_WeaponsBox" HorizontalAlignment="Left" Margin="177,95,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label Content="Choose a default weapon :" HorizontalAlignment="Left" Margin="23,91,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="advancedconfigs_RateBox" HorizontalAlignment="Left" Margin="209,259,0,0" VerticalAlignment="Top" Width="202" Panel.ZIndex="2" SelectionChanged="updateRateBox" Height="23" Grid.Column="1" />
+                    <Rectangle Fill="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" HorizontalAlignment="Left" Height="121" Margin="0,250,0,0" Stroke="Black" VerticalAlignment="Top" Width="421" Panel.ZIndex="1" Grid.Column="1"/>
+                    <Label x:Name="advancedconfigs_rateLabel" Content="30 000" HorizontalAlignment="Left" Margin="85,259,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label x:Name="advancedconfigs_updateLabel" Content="33" HorizontalAlignment="Left" Margin="109,286,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label x:Name="advancedconfigs_cmdLabel" Content="33" HorizontalAlignment="Left" Margin="109,313,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label Content="Rate :" HorizontalAlignment="Left" Margin="12,259,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label Content="UpdateRate :" HorizontalAlignment="Left" Margin="12,286,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label Content="CmdRate :" HorizontalAlignment="Left" Margin="12,313,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="242,291,0,0" TextWrapping="Wrap" Text="Warning: some rates are not allowed on some servers" VerticalAlignment="Top" Height="49" Width="134" Panel.ZIndex="2" Grid.Column="1"/>
+                    <CheckBox x:Name="advancedconfigs_dontTuchThisRB" Content="Don't modify my rates" HorizontalAlignment="Left" Margin="0,235,0,0" VerticalAlignment="Top" IsChecked="True" Panel.ZIndex="1" Height="15" Grid.Column="1"/>
+                    <Label Content="Amount of red when taking damage : " HorizontalAlignment="Left" Margin="402,140,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Slider x:Name="advancedconfigs_redScreenScroller" HorizontalAlignment="Left" Margin="470,166,0,0" VerticalAlignment="Top" Height="26" Width="148" TickPlacement="BottomRight" SmallChange="1" Maximum="3" ValueChanged="redScreenScroller_ValueChanged" Grid.Column="1"/>
+                    <Label x:Name="advancedconfigs_redAmountLabel" Content="FULL" HorizontalAlignment="Left" Margin="417,166,0,0" VerticalAlignment="Top" Width="48" Grid.Column="1"/>
+                    <GroupBox Header="Rates config" HorizontalAlignment="Left" Height="168" Margin="7,218,0,0" VerticalAlignment="Top" Width="447" Content="" Grid.ColumnSpan="2"/>
+                    <GroupBox Header="Other options" HorizontalAlignment="Left" Height="165" Margin="438,221,0,0" VerticalAlignment="Top" Width="229" Grid.Column="1">
                         <StackPanel>
                             <CheckBox x:Name="advancedconfigs_consoleRB" Content="Enable console at start" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top" Panel.ZIndex="2" Height="19" Width="164"/>
                             <CheckBox x:Name="advancedconfigs_motdRB" Content="Disable html on motd" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top" Panel.ZIndex="2"/>
@@ -72,12 +79,15 @@
                             <CheckBox x:Name="advancedconfigs_filterRB" Content="Enable console spam filter" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top" Panel.ZIndex="2"/>
                         </StackPanel>
                     </GroupBox>
-                    <Label x:Name="advancedconfigs_interpLabel" Content="0.1" HorizontalAlignment="Left" Margin="103.5,294,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <Label Content="Interp :" HorizontalAlignment="Left" Margin="25.5,294,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
-                    <CheckBox x:Name="advancedconfigs_noDfltWeapCB" Content="Show all weapons" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Checked="noDfltWeapCB_Checked" Unchecked="noDfltWeapCB_Unchecked"/>
-                    <Label Content="Lenght of beep sound after explosions : " HorizontalAlignment="Left" Margin="427,28,0,0" VerticalAlignment="Top"/>
-                    <Slider x:Name="advancedconfigs_bipLenghtScroller" HorizontalAlignment="Left" Margin="496,54,0,0" VerticalAlignment="Top" Height="26" Width="148" TickPlacement="BottomRight" SmallChange="1" Maximum="3" ValueChanged="bipLenghtScroller_ValueChanged"/>
-                    <Label x:Name="advancedconfigs_bipLenghtLabel" Content="LONG" HorizontalAlignment="Left" Margin="438,54,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.104,0.538"/>
+                    <Label x:Name="advancedconfigs_interpLabel" Content="0.1" HorizontalAlignment="Left" Margin="109,340,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <Label Content="Interp :" HorizontalAlignment="Left" Margin="12,340,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="27" Grid.Column="1"/>
+                    <CheckBox x:Name="advancedconfigs_noDfltWeapCB" Content="Show all weapons" HorizontalAlignment="Left" Margin="22,76,0,0" VerticalAlignment="Top" Checked="noDfltWeapCB_Checked" Unchecked="noDfltWeapCB_Unchecked" Grid.Column="1"/>
+                    <Label Content="Lenght of beep sound after explosions : " HorizontalAlignment="Left" Margin="402,74,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Slider x:Name="advancedconfigs_bipLenghtScroller" HorizontalAlignment="Left" Margin="471,100,0,0" VerticalAlignment="Top" Height="26" Width="148" TickPlacement="BottomRight" SmallChange="1" Maximum="3" ValueChanged="bipLenghtScroller_ValueChanged" Grid.Column="1"/>
+                    <Label x:Name="advancedconfigs_bipLenghtLabel" Content="LONG" HorizontalAlignment="Left" Margin="413,100,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.104,0.538" Grid.Column="1"/>
+                    <Button x:Name="advancedconfigs_brandButton" Content="Add brand" HorizontalAlignment="Left" Margin="506,9,0,0" VerticalAlignment="Top" Width="75" Click="advancedconfigs_brandButton_Click" Grid.Column="1"/>
+                    <TextBox x:Name="advancedconfigs_brandTextBox" HorizontalAlignment="Left" Height="23" Margin="381,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button x:Name="advancedconfigs_delBrandButton" Content="Remove brand" HorizontalAlignment="Left" Margin="587,10,0,0" VerticalAlignment="Top" Width="97" Click="advancedconfigs_delBrandButton_Click" Grid.Column="1"/>
 
                 </Grid>
             </TabItem>
@@ -114,42 +124,7 @@
                     <ComboBox Name="menueditor_bgBox" Margin="487,109,38,261" Panel.ZIndex="2" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Files" Margin="236,0,-240,-3">
-                <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="0*"/>
-                    </Grid.ColumnDefinitions>
-                    <GroupBox Header="Save current hud" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="184" Width="257">
-                        <StackPanel>
-                            <Label x:Name="file_SaveCreatorName" Content="Creator : None"  Margin="10,0,10,0"/>
-                            <Label Content="Save name:" Margin="10,20,10,0"/>
-                            <TextBox x:Name="file_SaveNameBox" Height="23" TextWrapping="Wrap" Text="Unamed hud"  Margin="10,10,10,0"/>
-                            <Button x:Name="file_SaveButton" Content="Save current hud" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="131" Click="file_SaveButton_Click"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="Load a hud" HorizontalAlignment="Left" Margin="20,199,0,0" VerticalAlignment="Top" Height="187" Width="257">
-                        <StackPanel>
-                            <Button x:Name="file_LoadHudButton" Content="Load selected hud" Margin="25,20,48,0" Click="file_LoadHudButton_Click"/>
-                            <Button x:Name="file_DeleteHudButton" Content="Delete selected hud" Margin="25,10,48,0" Click="file_DeleteHudButton_Click"/>
-                            <ComboBox x:Name="file_LoadHudBox" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="172"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="Export hud" HorizontalAlignment="Left" Margin="282,10,0,0" VerticalAlignment="Top" Height="184" Width="427"/>
-                    <Label Content="Choose the hud to export:" HorizontalAlignment="Left" Margin="295,35,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="file_ExportHudBox" HorizontalAlignment="Left" Margin="497,39,0,0" VerticalAlignment="Top" Width="172"/>
-                    <TextBox x:Name="file_ExportPathBox" HorizontalAlignment="Left" Height="23" Margin="307,102,0,0" TextWrapping="Wrap" Text="Destination" VerticalAlignment="Top" Width="362"/>
-                    <Button x:Name="file_ExportButton" Content="Export" HorizontalAlignment="Left" Margin="451,164,0,0" VerticalAlignment="Top" Width="75" Click="file_ExportButton_Click"/>
-                    <Button x:Name="file_ExportBrowseButton" Content="Browse to the destination" HorizontalAlignment="Left" Margin="307,77,0,0" VerticalAlignment="Top" Width="163" Click="file_ExportBrowseButton_Click"/>
-                    <GroupBox Header="Import hud" HorizontalAlignment="Left" Margin="282,199,0,0" VerticalAlignment="Top" Height="187" Width="427"/>
-                    <Label Content="Hud name :" HorizontalAlignment="Left" Margin="305,302,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="file_ImportBrowseButton" Content="Browse to the saved file" HorizontalAlignment="Left" Margin="307,237,0,0" VerticalAlignment="Top" Width="163" Click="file_ImportBrowseButton_Click"/>
-                    <TextBox x:Name="file_ImportPathBox" HorizontalAlignment="Left" Height="23" Margin="307,262,0,0" TextWrapping="Wrap" Text="file to import" VerticalAlignment="Top" Width="362"/>
-                    <TextBox x:Name="file_ImportFileNameBox" HorizontalAlignment="Left" Height="24" Margin="381,306,0,0" TextWrapping="Wrap" Text="Imported_Hud" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="file_ImportButton" Content="Import" HorizontalAlignment="Left" Margin="451,358,0,0" VerticalAlignment="Top" Width="75" Click="file_ImportButton_Click"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Aux. Power editor" Margin="-37,0,33,-3">
+            <TabItem Header="Aux. Power editor">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
                     <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="478,190,0,0" VerticalAlignment="Top" Height="156" Width="143">
                         <StackPanel>
@@ -214,21 +189,57 @@
                     <ComboBox x:Name="auxeditor_auxlabelpos" HorizontalAlignment="Left" Margin="584,127,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Adv. Weapon editor" Margin="-33,0,29,-3">
-                <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Margin="0,-1,0,1">
+            <TabItem Header="Adv. Weapon editor">
+                <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
                     <ComboBox x:Name="weaponeditor_wpnType" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="weaponeditor_wpnType_SelectionChanged"/>
                     <Label Content="Choose the weapon to modify : " HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top"/>
-                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,88,0,0" VerticalAlignment="Top" Height="255" Width="635"/>
-                    <Label Content="Additionnal crosshair :" HorizontalAlignment="Left" Margin="167,155,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="weaponeditor_CrosshairBox" HorizontalAlignment="Left" Margin="311,159,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2"/>
-                    <Button x:Name="weaponeditor_saveNewConfig" Content="Save new weapon config" HorizontalAlignment="Left" Margin="516,305,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_saveNewConfig_Click"/>
-                    <Button x:Name="weaponeditor_loadOldConfig" Content="Restore config" HorizontalAlignment="Left" Margin="333,305,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_loadOldConfig_Click"/>
-                    <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="311,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
-                    <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="167,117,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="66,117,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1"/>
-                    <CheckBox x:Name="weaponeditor_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="436,165,0,0" VerticalAlignment="Top" Panel.ZIndex="2"/>
-                    <ComboBox x:Name="weaponeditor_colorBox" HorizontalAlignment="Left" Margin="461,24,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2"/>
-                    <Label Content="Secondary crosshair color : " HorizontalAlignment="Left" Margin="301,20,0,0" VerticalAlignment="Top"/>
+                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,130,0,0" VerticalAlignment="Top" Height="204" Width="626"/>
+                    <Label Content="Additionnal crosshair :" HorizontalAlignment="Left" Margin="163,193,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="weaponeditor_CrosshairBox" HorizontalAlignment="Left" Margin="307,197,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="weaponeditor_CrosshairBox_SelectionChanged"/>
+                    <Button x:Name="weaponeditor_saveNewConfig" Content="Save new weapon config" HorizontalAlignment="Left" Margin="378,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_saveNewConfig_Click" RenderTransformOrigin="0.49,0.682"/>
+                    <Button x:Name="weaponeditor_loadOldConfig" Content="Restore config" HorizontalAlignment="Left" Margin="143,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_loadOldConfig_Click"/>
+                    <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="307,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+                    <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="163,155,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="62,155,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1"/>
+                    <CheckBox x:Name="weaponeditor_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="432,203,0,0" VerticalAlignment="Top" Panel.ZIndex="2" IsEnabled="False"/>
+                    <Label x:Name="weaponeditor_previewMainCrosshair" Content="h" HorizontalAlignment="Left" Margin="522,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="516,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="140"/>
+                    <Label x:Name="weaponeditor_previewSecCrosshair" Content="h" HorizontalAlignment="Left" Margin="522,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Files">
+                <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Save current hud" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="184" Width="257">
+                        <StackPanel>
+                            <Label x:Name="file_SaveCreatorName" Content="Creator : None"  Margin="10,0,10,0"/>
+                            <Label Content="Save name:" Margin="10,20,10,0"/>
+                            <TextBox x:Name="file_SaveNameBox" Height="23" TextWrapping="Wrap" Text="Unamed hud"  Margin="10,10,10,0"/>
+                            <Button x:Name="file_SaveButton" Content="Save current hud" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="131" Click="file_SaveButton_Click"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Load a hud" HorizontalAlignment="Left" Margin="20,199,0,0" VerticalAlignment="Top" Height="187" Width="257">
+                        <StackPanel>
+                            <Button x:Name="file_LoadHudButton" Content="Load selected hud" Margin="25,20,48,0" Click="file_LoadHudButton_Click"/>
+                            <Button x:Name="file_DeleteHudButton" Content="Delete selected hud" Margin="25,10,48,0" Click="file_DeleteHudButton_Click"/>
+                            <ComboBox x:Name="file_LoadHudBox" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="172"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Export hud" HorizontalAlignment="Left" Margin="282,10,0,0" VerticalAlignment="Top" Height="184" Width="427"/>
+                    <Label Content="Choose the hud to export:" HorizontalAlignment="Left" Margin="295,35,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="file_ExportHudBox" HorizontalAlignment="Left" Margin="497,39,0,0" VerticalAlignment="Top" Width="172"/>
+                    <TextBox x:Name="file_ExportPathBox" HorizontalAlignment="Left" Height="23" Margin="307,102,0,0" TextWrapping="Wrap" Text="Destination" VerticalAlignment="Top" Width="362"/>
+                    <Button x:Name="file_ExportButton" Content="Export" HorizontalAlignment="Left" Margin="451,164,0,0" VerticalAlignment="Top" Width="75" Click="file_ExportButton_Click"/>
+                    <Button x:Name="file_ExportBrowseButton" Content="Browse to the destination" HorizontalAlignment="Left" Margin="307,77,0,0" VerticalAlignment="Top" Width="163" Click="file_ExportBrowseButton_Click"/>
+                    <GroupBox Header="Import hud" HorizontalAlignment="Left" Margin="282,199,0,0" VerticalAlignment="Top" Height="187" Width="427"/>
+                    <Label Content="Hud name :" HorizontalAlignment="Left" Margin="305,302,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="file_ImportBrowseButton" Content="Browse to the saved file" HorizontalAlignment="Left" Margin="307,237,0,0" VerticalAlignment="Top" Width="163" Click="file_ImportBrowseButton_Click"/>
+                    <TextBox x:Name="file_ImportPathBox" HorizontalAlignment="Left" Height="23" Margin="307,262,0,0" TextWrapping="Wrap" Text="file to import" VerticalAlignment="Top" Width="362"/>
+                    <TextBox x:Name="file_ImportFileNameBox" HorizontalAlignment="Left" Height="24" Margin="381,306,0,0" TextWrapping="Wrap" Text="Imported_Hud" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="file_ImportButton" Content="Import" HorizontalAlignment="Left" Margin="451,358,0,0" VerticalAlignment="Top" Width="75" Click="file_ImportButton_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

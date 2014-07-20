@@ -18,7 +18,7 @@ using System.IO;
 
 namespace HL2Customizer
 {
-    //donde esta mi casa
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -34,6 +34,7 @@ namespace HL2Customizer
         WeaponScriptManager wsm;
         GameMenuManager gmm;
         DSPManager dspm;
+        BrandSaver brand;
 
         //BASIC CONFIGS
         #region basicconfigs
@@ -206,7 +207,8 @@ namespace HL2Customizer
                 new WeaponScriptManager(),
                 new GameMenuManager(),
                 new CfgManager(),
-                new DSPManager());
+                new DSPManager(),
+                new BrandSaver());
             }
             Initialize(save);
         }
@@ -226,6 +228,7 @@ namespace HL2Customizer
             wsm = new WeaponScriptManager(save.Wsm);
             gmm = save.Gmm;
             dspm = save.Dspm;
+            brand = save.Brand;
 
             InitializeComponent();
             #region Initilization
@@ -249,11 +252,11 @@ namespace HL2Customizer
                 basicConfigs_mainColorBox.Items.Add(color);
                 basicConfigs_secColorBox.Items.Add(color);
                 basicConfigs_crossColorBox.Items.Add(color);
-                weaponeditor_colorBox.Items.Add(color);
+                basicConfigs_auxCrossColorBox.Items.Add(color);
                 if (color == csm.MainColor) basicConfigs_mainColorBox.SelectedIndex = i;
                 if (color == csm.SecondaryColor) basicConfigs_secColorBox.SelectedIndex = i;
                 if (color == csm.CrossColor) basicConfigs_crossColorBox.SelectedIndex = i;
-                if (color == csm.SecCrossColor) weaponeditor_colorBox.SelectedIndex = i;
+                if (color == csm.SecCrossColor) basicConfigs_auxCrossColorBox.SelectedIndex = i;
             }
 
             //Checkbox loads
@@ -323,6 +326,9 @@ namespace HL2Customizer
             foreach (string e in Rates)
                 advancedconfigs_RateBox.Items.Add(e);
             advancedconfigs_RateBox.SelectedIndex = 1;
+
+            advancedconfigs_brandButton.IsEnabled = !brand.Enabled;
+            advancedconfigs_delBrandButton.IsEnabled = brand.Enabled;
             #endregion
 
             //MENU EDITOR
@@ -466,8 +472,6 @@ namespace HL2Customizer
             //WPN EDITOR
             #region weaponeditor
 
-            // # Sec crosshair color is filled in basicconfigs initialization #
-
             foreach (Tuple<string, char> crosshair in Crosshairs)
                 weaponeditor_CrosshairBox.Items.Add(crosshair.Item1);
 
@@ -586,7 +590,7 @@ namespace HL2Customizer
                     Tuple.Create("fieldName","BrandPanel"),
                     Tuple.Create("visible","1"),
                     Tuple.Create("enabled","1"),
-                    Tuple.Create("xpos","8"),
+                    Tuple.Create("xpos","4"),
                     Tuple.Create("ypos","32"),
                     Tuple.Create("wide","160"),
                     Tuple.Create("tall","18"),
@@ -599,7 +603,7 @@ namespace HL2Customizer
                     Tuple.Create("enabled","1"),
                     Tuple.Create("labelText","HUD made with Hl2Customizer v." + HL2Customizer.Resources.resfile.Version),
                     Tuple.Create("textAlignment","center"),
-                    Tuple.Create("xpos","12"),
+                    Tuple.Create("xpos","4"),
                     Tuple.Create("ypos","32"),
                     Tuple.Create("wide","160"),
                     Tuple.Create("tall","18"),
@@ -609,29 +613,15 @@ namespace HL2Customizer
                     hlm.AddElement("Brand", s);
 
                     //SPECIAL BRAND
-                    hlm.AddElement("BrandPanel", s);
-                    s = new Tuple<string, string>[]{
-                    Tuple.Create("controlName","Label"),
-                    Tuple.Create("fieldName","SpeBrand"),
-                    Tuple.Create("visible","1"),
-                    Tuple.Create("enabled","1"),
-                    Tuple.Create("labelText","@"),
-                    Tuple.Create("textAlignment","left"),
-                    Tuple.Create("xpos","8"),
-                    Tuple.Create("ypos","64"),
-                    Tuple.Create("wide","32"),
-                    Tuple.Create("tall","32"),
-                    Tuple.Create("font","SpeBrand"),
-                    Tuple.Create("fgcolor_override", basicConfigs_mainColorBox.Text),
-                    };
-                    hlm.AddElement("SpecialBrand", s);
+                    if (brand.Enabled)
+                        hlm.AddElement("SpecialBrand", brand.GetBrand(basicConfigs_mainColorBox.Text));
 
                     hlm.WriteFile(ref Paths);
 
                     #endregion
 
                     HudInformations infos = new HudInformations("previous");
-                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm);
+                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm, brand);
                     Serializer.SerializeHudData(save);
                     System.Windows.MessageBox.Show("Done ! Your hud is ready ;D. You can now start Half-life 2 Deathmatch.", "Success !!", MessageBoxButton.OK);
 
@@ -674,7 +664,7 @@ namespace HL2Customizer
             }
 
             csm.SetProperties(basicConfigs_mainColorBox.Text, basicConfigs_secColorBox.Text,
-            basicConfigs_crossColorBox.Text, weaponeditor_colorBox.Text, (bool)basicConfigs_outlinedRB.IsChecked);
+            basicConfigs_crossColorBox.Text, basicConfigs_auxCrossColorBox.Text, (bool)basicConfigs_outlinedRB.IsChecked);
 
             switch ((int)basicConfigs_xhairSizeSlider.Value)
             {
@@ -837,17 +827,25 @@ namespace HL2Customizer
                 default: goto case 0;
             }
             basicConfigs_previewCrosshair.FontSize = csize;
+            weaponeditor_previewMainCrosshair.FontSize = csize;
+            weaponeditor_previewSecCrosshair.FontSize = csize;
         }
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             basicConfigs_previewCrosshair.Content = Crosshairs[basicConfigs_CrosshairBox.SelectedIndex].Item2.ToString();
+            weaponeditor_previewMainCrosshair.Content = Crosshairs[basicConfigs_CrosshairBox.SelectedIndex].Item2.ToString();
         }
         private void basicConfigs_help_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.turanic.com/HL2Customizer/tutorials.php");
         }
-
+        private void basicConfigs_donationButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.paypal.com/fr/cgi-bin/webscr?cmd=_"+
+            "flow&SESSION=pbvaq2l6q_b4iYkeRQVaF1IYUt6nV23gMsi2578ND0ZaulM7uHMrNlHPuNy&"+
+            "dispatch=5885d80a13c0db1f8e263663d3faee8d5402c249c5a2cfd4a145d37ec05e9a5e");
+        }
         #endregion
 
         //ADVANCED CONFIGS
@@ -914,6 +912,22 @@ namespace HL2Customizer
         {
             Weapons = DefaultWeapons;
             FillWeaponList();
+        }
+        private void advancedconfigs_brandButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (brand.ApplyBrand(advancedconfigs_brandTextBox.Text, basicConfigs_mainColorBox.Text))
+            {
+                System.Windows.MessageBox.Show("A brand has now been added", "Success", MessageBoxButton.OK);
+                advancedconfigs_brandButton.IsEnabled = false;
+                advancedconfigs_delBrandButton.IsEnabled = true;
+            }
+            else
+                System.Windows.MessageBox.Show("This brand does not exist", "Error", MessageBoxButton.OK);
+        }
+        private void advancedconfigs_delBrandButton_Click(object sender, RoutedEventArgs e)
+        {
+            advancedconfigs_brandButton.IsEnabled = true;
+            advancedconfigs_delBrandButton.IsEnabled = false;
         }
 
         #endregion
@@ -1070,7 +1084,7 @@ namespace HL2Customizer
         {
             SetProperties();
             HudInformations infos = new HudInformations(file_SaveNameBox.Text);
-            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm);
+            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm, brand);
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\" + infos.Name + ".hcd"))
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("You already saved a hud with this name... do you want to erease the previous one?", "Save already exist", MessageBoxButton.YesNo);
@@ -1288,6 +1302,16 @@ namespace HL2Customizer
         private void weaponeditor_wpnType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             weaponeditor_wpnIcon.Content = WpnsTypes[weaponeditor_wpnType.SelectedIndex].Item2;
+            loadConfig();
+        }
+
+        private void weaponeditor_loadOldConfig_Click(object sender, RoutedEventArgs e)
+        {
+            loadConfig();
+        }
+
+        private void loadConfig()
+        {
             weaponeditor_wpnNameBox.Text = wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name;
 
             for (int i = 0; i < Crosshairs.Count(); i++)
@@ -1296,16 +1320,16 @@ namespace HL2Customizer
             weaponeditor_outlinedRB.IsChecked = csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex];
         }
 
-        private void weaponeditor_loadOldConfig_Click(object sender, RoutedEventArgs e)
-        {
-            weaponeditor_wpnNameBox.Text = wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name;
-        }
-
         private void weaponeditor_saveNewConfig_Click(object sender, RoutedEventArgs e)
         {
             wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name = weaponeditor_wpnNameBox.Text;
             csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex] = (bool)weaponeditor_outlinedRB.IsChecked;
             wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Crosshair = Crosshairs[weaponeditor_CrosshairBox.SelectedIndex].Item2;
+        }
+
+        private void weaponeditor_CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            weaponeditor_previewSecCrosshair.Content = Crosshairs[weaponeditor_CrosshairBox.SelectedIndex].Item2.ToString();
         }
 
         #endregion

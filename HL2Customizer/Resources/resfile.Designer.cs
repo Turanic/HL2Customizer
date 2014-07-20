@@ -83,6 +83,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] brands {
+            get {
+                object obj = ResourceManager.GetObject("brands", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] clientscheme {
             get {
                 object obj = ResourceManager.GetObject("clientscheme", resourceCulture);

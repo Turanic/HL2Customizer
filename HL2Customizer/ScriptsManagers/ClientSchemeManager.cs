@@ -57,8 +57,8 @@ namespace HL2Customizer
             switch (CrosshairSize)
             {
                 case 'S': csize = 40; break;
-                case 'M': csize = 64; break;
-                case 'L': csize = 80; break;
+                case 'M': csize = 62; break;
+                case 'L': csize = 78; break;
                 case 'G': csize = 128; break;
                 default: goto case 'S';
             }
@@ -73,7 +73,7 @@ namespace HL2Customizer
                 if (line.Contains("|ANTIALIASED|")) line = line.Replace("|ANTIALIASED|", (OutlinedCrosshairs ? "0" : "1"));
                 if (line.Contains("|CROSS_SIZE|")) line = line.Replace("|CROSS_SIZE|", csize.ToString());
                 if (line.Contains("|CROSS_SIZE2|")) line = line.Replace("|CROSS_SIZE2|", csize.ToString());
-                if (line.Contains("|QINFOS_SIZE|")) line = line.Replace("|QINFOS_SIZE|", csize.ToString());
+                if (line.Contains("|QINFOS_SIZE|")) line = line.Replace("|QINFOS_SIZE|", (csize/2).ToString());
 
                 if (line.Contains("|PHYSCANNON_ANTIALIASED|")) line = line.Replace("|PHYSCANNON_ANTIALIASED|", (OutlinedAdditionnalCrosshairs[0] ? "0" : "1"));
                 if (line.Contains("|PHYSCANNON_OUTLINED|")) line = line.Replace("|PHYSCANNON_OUTLINED|", (OutlinedAdditionnalCrosshairs[0] ? "1" : "0"));
@@ -110,6 +110,7 @@ namespace HL2Customizer
         public void AddFonts(ref UserPaths Paths)
         {
             File.WriteAllBytes(Paths.FontsPath + @"XHAIR.ttf", HL2Customizer.Resources.resfile.XHAIR);
+            File.WriteAllBytes(Paths.FontsPath + @"brands.ttf", HL2Customizer.Resources.resfile.brands);
         }
     }
 }

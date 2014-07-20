@@ -528,7 +528,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"HalfLife2"
+				"name"		"Brands"
 				"tall"		"42"
 				"weight"	"0"
 				"antialias" "1"
@@ -1802,6 +1802,7 @@ Scheme
 		"1"		"resource/HL2MP.ttf"
 		"2"		"resource/HL2crosshairs.ttf"
 		"3"		"resource/fonts/XHAIR.ttf"
+		"7"		"resource/fonts/brands.ttf"
 	}
 
 }

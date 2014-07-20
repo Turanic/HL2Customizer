@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="ScriptsManagers\DSPManager.cs" />
     <Compile Include="ScriptsManagers\WeaponScriptManager.cs" />
+    <Compile Include="ToolClasses\BrandSaver.cs" />
     <Compile Include="ToolClasses\WeaponScript.cs" />
     <Compile Include="ToolClasses\Serializer.cs" />
     <Compile Include="ToolClasses\HudInformations.cs" />
@@ -152,6 +153,7 @@
     <AppDesigner Include="Properties\" />
     <EmbeddedResource Include="Resources\clientscheme.res" />
     <EmbeddedResource Include="Resources\autoexec.cfg" />
+    <Resource Include="Resources\brands.ttf" />
     <Resource Include="Resources\XHAIR.ttf" />
     <Resource Include="Resources\halflife2.ttf" />
     <Resource Include="Resources\Example.hcd" />
