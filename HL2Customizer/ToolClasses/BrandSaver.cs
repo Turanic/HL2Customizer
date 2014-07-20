@@ -43,12 +43,14 @@ namespace HL2Customizer
         {
             if(pass == "homeworld")
                 _brandType = 0;
-            else if (pass == "TrustSkill")
+            else if (pass == "Trust5kill")
                 _brandType = 1;
             else if (pass == "lambda")
                 _brandType = 2;
             else if (pass == "D1ablot1ns")
                 _brandType = 3;
+            else if (pass == "uNit3d")
+                _brandType = 4;
             else
                 return false;
 
