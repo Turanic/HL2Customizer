@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Net;
+using System.Text;
 using System.IO;
 
 namespace HL2Customizer
@@ -184,7 +186,20 @@ namespace HL2Customizer
 
         public MainWindow()
         {
+            try
+            {
+                WebClient client = new WebClient();
+                Stream stream = client.OpenRead("http://turanic.com/HL2Customizer/lastVersion.txt");
+                StreamReader reader = new StreamReader(stream);
+                String content = reader.ReadToEnd();
 
+                if (content.Substring(0, 3) != HL2Customizer.Resources.resfile.Version.Substring(0, 3))
+                    System.Windows.MessageBox.Show("HL2Customizer v." + content + " is available online!", "New version!", MessageBoxButton.OK);
+            }
+            catch
+            {
+                System.Windows.MessageBox.Show("The software can't access internet, you may need it for some options :/", "No internet access", MessageBoxButton.OK);
+            }
             SavedData save = null;
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\previous.hcd"))
             {

@@ -93,7 +93,6 @@
 
 		"PaintBackgroundType"	"2"
 
-		
 		"text_xpos" "8"
 		"text_ypos" "20"
 		"digit_xpos" "50"
@@ -415,7 +414,6 @@
 		"wide"	"640"
 		"tall"	"480"
 		"TextColor"	"255 255 255 192"
-
 	}
 	"HudChat"
 	{
