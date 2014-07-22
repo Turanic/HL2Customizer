@@ -21,9 +21,15 @@ namespace HL2Customizer
         public void WriteFile(ref UserPaths Paths)
         {
 
-            string file = Paths.ScriptsPath + "dsp_presets.txt";
+            string file= Paths.ScriptsPath + "dsp_presets.txt";
             File.WriteAllText(file, "");
-            StreamReader sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.dsp_presets.txt"));
+
+            StreamReader sr;
+            if(SoundVolume == 0.0f)
+                sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.dsp_presets_nodelay.txt"));
+            else
+                sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.dsp_presets.txt"));
+             
             StreamWriter sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
 
             string line;
