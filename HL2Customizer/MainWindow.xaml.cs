@@ -489,7 +489,16 @@ namespace HL2Customizer
         #region apply
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool goodPath = DefinePaths(basicConfigs_pathTextBox.Text);
+            bool goodPath;
+            try
+            {
+                goodPath = DefinePaths(basicConfigs_pathTextBox.Text);
+            }
+            catch (Exception exc)
+            {
+                System.Windows.MessageBox.Show("Major error, the software can't access your HL2DM folder for unknown reasons :/. Plz report the bug ! \n" + exc.Message, "Error", MessageBoxButton.OK);
+                return;
+            }
 
             if (!goodPath)
             {
@@ -842,9 +851,7 @@ namespace HL2Customizer
         }
         private void basicConfigs_donationButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.paypal.com/fr/cgi-bin/webscr?cmd=_"+
-            "flow&SESSION=pbvaq2l6q_b4iYkeRQVaF1IYUt6nV23gMsi2578ND0ZaulM7uHMrNlHPuNy&"+
-            "dispatch=5885d80a13c0db1f8e263663d3faee8d5402c249c5a2cfd4a145d37ec05e9a5e");
+            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DYPXG9S2UDBTN");
         }
         #endregion
 

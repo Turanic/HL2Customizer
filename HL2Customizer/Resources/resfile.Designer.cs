@@ -242,7 +242,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.4.7.
+        ///   Looks up a localized string similar to 0.4.8.
         /// </summary>
         internal static string Version {
             get {
