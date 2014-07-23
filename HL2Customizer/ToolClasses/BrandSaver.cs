@@ -51,6 +51,8 @@ namespace HL2Customizer
                 _brandType = 3;
             else if (pass == "uNit3d")
                 _brandType = 4;
+            else if (pass == ".:VrU:.")
+                _brandType = 5;
             else
                 return false;
 

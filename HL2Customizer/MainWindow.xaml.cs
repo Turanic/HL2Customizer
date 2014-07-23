@@ -198,7 +198,7 @@ namespace HL2Customizer
             }
             catch
             {
-                System.Windows.MessageBox.Show("The software can't access internet, you may need it for some options :/", "No internet access", MessageBoxButton.OK);
+                System.Windows.MessageBox.Show("The software can't access the main server, you may need it for some options :/", "No internet access", MessageBoxButton.OK);
             }
             SavedData save = null;
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\previous.hcd"))
