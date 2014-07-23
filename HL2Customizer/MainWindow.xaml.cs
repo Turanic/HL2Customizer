@@ -1339,13 +1339,13 @@ namespace HL2Customizer
             for (int i = 0; i < Crosshairs.Count(); i++)
                 if (Crosshairs[i].Item2 == wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Crosshair) weaponeditor_CrosshairBox.SelectedIndex = i;
 
-            weaponeditor_outlinedRB.IsChecked = csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex];
+            //weaponeditor_outlinedRB.IsChecked = csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex];
         }
 
         private void weaponeditor_saveNewConfig_Click(object sender, RoutedEventArgs e)
         {
             wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Name = weaponeditor_wpnNameBox.Text;
-            csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex] = (bool)weaponeditor_outlinedRB.IsChecked;
+            //csm.OutlinedAdditionnalCrosshairs[weaponeditor_wpnType.SelectedIndex] = (bool)weaponeditor_outlinedRB.IsChecked;
             wsm.Weapons[weaponeditor_wpnType.SelectedIndex].Crosshair = Crosshairs[weaponeditor_CrosshairBox.SelectedIndex].Item2;
         }
 
