@@ -257,6 +257,8 @@ namespace HL2Customizer
             {
                 Tuple<String, char> crosshair = Crosshairs[i];
                 basicConfigs_CrosshairBox.Items.Add(crosshair.Item1);
+               
+                
                 if (crosshair.Item2 == hlm.CrosshairType) basicConfigs_CrosshairBox.SelectedIndex = i;
             }
 
@@ -822,13 +824,24 @@ namespace HL2Customizer
             basicConfigs_CrosshairBox.IsEnabled = false;
             basicConfigs_outlinedRB.IsEnabled = false;
             basicConfigs_xhairSizeSlider.IsEnabled = false;
+            //Peaf Did What You See Here
+            ChangeColor("Black");
+            Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
+            basicConfigs_previewCrosshair.Foreground = brush;
+            //End Of Peaf Did What You See Here
         }
 
         private void dontChangeCrosshairRB_Unchecked(object sender, RoutedEventArgs e)
         {
+            
             basicConfigs_CrosshairBox.IsEnabled = true;
             basicConfigs_outlinedRB.IsEnabled = true;
             basicConfigs_xhairSizeSlider.IsEnabled = true;
+            //Peaf Did What You See Here
+            ChangeColor(basicConfigs_crossColorBox.Items[basicConfigs_crossColorBox.SelectedIndex].ToString());
+            Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
+            basicConfigs_previewCrosshair.Foreground = brush;
+            //End Of Peaf Did What You See Here
         }
 
         private void basicConfigs_xhairSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -854,9 +867,67 @@ namespace HL2Customizer
             weaponeditor_previewMainCrosshair.FontSize = csize;
             weaponeditor_previewSecCrosshair.FontSize = csize;
         }
+        //Peaf Did What You See Here
+        byte[] hexaColor = new byte[] { 196, 0, 0, 0 }; //faudra peut être le changer d'endroit lui
+        private void ChangeColor(string s)
+        {
+
+            switch (s)
+            {
+                case "Black": hexaColor = new byte[] { 196, 0, 0, 0 };
+                    break;
+                case "Brown": hexaColor = new byte[] { 255, 139, 69, 19 };
+                    break;
+                case "Red": hexaColor = new byte[] { 255, 255, 0, 0 };
+                    break;
+                case "Orange": hexaColor = new byte[] { 255, 255, 176, 0 };
+                    break;
+                case "Yellow": hexaColor = new byte[] { 255, 255, 255, 0 };
+                    break;
+                case "DarkGreen": hexaColor = new byte[] { 255, 0, 80, 0 };
+                    break;
+                case "Green": hexaColor = new byte[] { 255, 0, 128, 0 };
+                    break;
+                case "Lime": hexaColor = new byte[] { 255, 0, 255, 0 };
+                    break;
+                case "Cyan": hexaColor = new byte[] { 255, 0, 255, 255 };
+                    break;
+                case "Jade": hexaColor = new byte[] { 255, 64, 255, 160 };
+                    break;
+                case "Turquoise": hexaColor = new byte[] { 255, 38, 196, 236 };
+                    break;
+                case "SkyBlue": hexaColor = new byte[] { 255, 128, 160, 224 };
+                    break;
+                case "Blue": hexaColor = new byte[] { 255, 0, 0, 255 };
+                    break;
+                case "Navy": hexaColor = new byte[] { 255, 16, 16, 102 };
+                    break;
+                case "Purple": hexaColor = new byte[] { 255, 128, 0, 128 };
+                    break;
+                case "Magenta": hexaColor = new byte[] { 255, 255, 0, 255 };
+                    break;
+                case "White": hexaColor = new byte[] { 255, 255, 255, 255 };
+                    break;
+               
+
+            } 
+
+        }
+        private void basicConfigs_crossColorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (basicConfigs_crossColorBox.SelectedIndex >= 0)
+            {
+                ChangeColor(basicConfigs_crossColorBox.Items[basicConfigs_crossColorBox.SelectedIndex].ToString());
+                Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
+                basicConfigs_previewCrosshair.Foreground = brush;
+                weaponeditor_previewMainCrosshair.Foreground = brush;
+            }
+        }
+        //End Of Peaf Did What You See Here
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             basicConfigs_previewCrosshair.Content = Crosshairs[basicConfigs_CrosshairBox.SelectedIndex].Item2.ToString();
             weaponeditor_previewMainCrosshair.Content = Crosshairs[basicConfigs_CrosshairBox.SelectedIndex].Item2.ToString();
         }
@@ -1355,6 +1426,8 @@ namespace HL2Customizer
         }
 
         #endregion
+
+        
 
         #endregion
 
