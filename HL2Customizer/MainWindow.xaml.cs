@@ -140,6 +140,8 @@ namespace HL2Customizer
         MenuElement[][] LabelsListControler;
         System.Windows.Controls.CheckBox[] checkboxs;
 
+        string[] LocalsBGs;
+
         bool keeper; // needed for debug the loading
 
         Tuple<string, byte, byte, byte>[] MenuColors = new Tuple<string, byte, byte, byte>[] {
@@ -756,6 +758,10 @@ namespace HL2Customizer
             if (!Directory.Exists(Paths.HudPath)) Directory.CreateDirectory(Paths.HudPath);
             Paths.CfgPath = Paths.HudPath + @"cfg/";
             if (!Directory.Exists(Paths.CfgPath)) Directory.CreateDirectory(Paths.CfgPath);
+            Paths.MaterialsPath = Paths.HudPath + @"materials/";
+            if (!Directory.Exists(Paths.MaterialsPath)) Directory.CreateDirectory(Paths.MaterialsPath);
+            Paths.BackgroundsPath = Paths.MaterialsPath + @"Console/";
+            if (!Directory.Exists(Paths.BackgroundsPath)) Directory.CreateDirectory(Paths.BackgroundsPath);
             Paths.ResPath = Paths.HudPath + @"resource/";
             if (!Directory.Exists(Paths.ResPath)) Directory.CreateDirectory(Paths.ResPath);
             Paths.FontsPath = Paths.ResPath + @"fonts/";
@@ -1027,6 +1033,11 @@ namespace HL2Customizer
 
         //MENU EDITOR
         #region menueditor
+        private void FillLocalList()
+        {
+
+        }
+        
         private void RefreshList()
         {
             menueditor_menuElementsList.Items.Clear();
