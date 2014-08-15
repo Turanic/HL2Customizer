@@ -927,6 +927,7 @@ namespace HL2Customizer
                 Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
                 basicConfigs_previewCrosshair.Foreground = brush;
                 weaponeditor_previewMainCrosshair.Foreground = brush;
+                weaponeditor_previewSecCrosshair.Foreground = brush;
             }
         }
         //End Of Peaf Did What You See Here
