@@ -468,6 +468,10 @@ namespace HL2Customizer
 
             for (int i = 0; i < menueditor_2dbgBox.Items.Count; i++)
                 if (Convert.ToString(menueditor_2dbgBox.Items[i]) == bgm.LastBGName) menueditor_2dbgBox.SelectedIndex = i;
+
+            menueditor_2dbgRB.IsChecked = !bgm.MapBG;
+            menueditor_3dbgRB.IsChecked = bgm.MapBG;
+            menueditor_smokeEffectCB.IsChecked = bgm.SmokeEffects;
             #endregion
 
             //FILE SYSTEM

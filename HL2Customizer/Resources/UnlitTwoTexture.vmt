@@ -6,7 +6,7 @@
 	"$ignorez"       "1"
 	"$no_fullbright" "1"
 	"$nolod"         "1"
-	"$texture2"      "console/background01_effect_|EFFECT|"
+	"$texture2"      "console/|EFFECT|"
 
 	"Proxies"
 	{

@@ -11,7 +11,7 @@ namespace HL2Customizer
     [Serializable]
     public class BGsManager
     {
-        public string[] LocalsBGs { get; set; }
+        public string[] LocalsBGs { get; private set; }
         public string LastBGDirPath { get; private set; }
         public string LastBGName { get; private set; }
         public bool SmokeEffects { get; set; }
@@ -28,11 +28,20 @@ namespace HL2Customizer
 
         public void FillLocalBGs()
         {
-            LocalsBGs = new string[] { "2dbg_default.vtf" };
-            if(Directory.Exists(LastBGDirPath))
-                LocalsBGs.Concat(Directory.GetFiles(LastBGDirPath, "*.vtf"));
-            LocalsBGs.Select(x => !x.Contains("widescreen"));
-            for(int i = 0; i < LocalsBGs.Count(); i++)
+            this.LocalsBGs = new string[] { "2dbg_default.vtf" };
+            if (Directory.Exists(LastBGDirPath))
+            {
+                LocalsBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");
+                for (int i = 0; i < LocalsBGs.Count(); i++)
+                {
+                    string[] aux = LocalsBGs[i].Split('/');
+                    LocalsBGs[i] = aux[aux.Count() - 1];
+                    if (LocalsBGs[i].Contains("widescreen") || LocalsBGs[i].Contains("effect"))
+                        LocalsBGs[i] = null;
+                }
+            }
+            LocalsBGs = LocalsBGs.Where(x => x != null).ToArray();
+            for (int i = 0; i < LocalsBGs.Count(); i++)
             {
                 LocalsBGs[i] = LocalsBGs[i].Substring(5);
                 LocalsBGs[i] = LocalsBGs[i].Substring(0, LocalsBGs[i].Length - 4);
@@ -52,7 +61,7 @@ namespace HL2Customizer
                 sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.UnlitGeneric.vmt"));
 
             file = Paths.BackgroundsPath + @"background01.vmt";
-            bgfile = "2dbg_" + BGname + ".vmt";
+            bgfile = "2dbg_" + BGname + ".vtf";
             
             StreamWriter sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
             
@@ -70,7 +79,7 @@ namespace HL2Customizer
             sr.BaseStream.Position = 0;
 
             file = Paths.BackgroundsPath + @"background01_widescreen.vmt";
-            bgfile = "2dbg_" + BGname + "_widescreen.vmt";
+            bgfile = "2dbg_" + BGname + "_widescreen.vtf";
 
             sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
 

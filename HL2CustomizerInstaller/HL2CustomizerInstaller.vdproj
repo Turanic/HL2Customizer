@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AA0F91C6937297178815D9833BD612D8"
+        "OwnerKey" = "8:_E42EB7ACEEDC4DF8BA61AC06718033F8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E42EB7ACEEDC4DF8BA61AC06718033F8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,6 +35,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E42EB7ACEEDC4DF8BA61AC06718033F8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AA0F91C6937297178815D9833BD612D8"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -118,7 +130,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -144,6 +156,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AA0F91C6937297178815D9833BD612D8"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_AA0F91C6937297178815D9833BD612D8"
+                    {
+                    "Name" = "8:Ionic.Zip.Reduced.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Ionic.Zip.Reduced.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_000B598F06444A3992266F0A4CA2E59E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -203,7 +246,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HL2Customizer"
         "ProductCode" = "8:{9562554F-9404-4D5A-8288-399F88615F96}"
-        "PackageCode" = "8:{F3BA7B05-7754-476F-92F8-2E180E924DA6}"
+        "PackageCode" = "8:{29806FAE-376B-4932-BFC0-8D330ED16BAC}"
         "UpgradeCode" = "8:{DB655E85-FABF-4223-B57A-F568F61CF0A9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -213,7 +256,7 @@
         "ProductVersion" = "8:0.5.0"
         "Manufacturer" = "8:Turanic"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:http://94.23.62.54/HL2Customizer/index.html"
+        "ARPHELPLINK" = "8:http://37.59.61.210/HL2Customizer/index.html"
         "Title" = "8:HL2Customizer Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Turanic"
