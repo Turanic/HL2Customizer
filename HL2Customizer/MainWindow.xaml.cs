@@ -957,8 +957,6 @@ namespace HL2Customizer
             weaponeditor_previewSecCrosshair.Foreground = brush;
         }
 
-        private void basicConfigs_secColorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)//I don't know how to remove dat :o
-        {}
         //End Of Peaf Did What You See Here
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1497,9 +1495,6 @@ namespace HL2Customizer
         }
 
         #endregion
-
-        
-       
 
         #endregion
 

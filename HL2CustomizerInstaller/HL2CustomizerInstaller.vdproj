@@ -203,7 +203,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HL2Customizer"
         "ProductCode" = "8:{9562554F-9404-4D5A-8288-399F88615F96}"
-        "PackageCode" = "8:{A71A5DA5-F621-4447-941D-5BF86CF2AE01}"
+        "PackageCode" = "8:{F3BA7B05-7754-476F-92F8-2E180E924DA6}"
         "UpgradeCode" = "8:{DB655E85-FABF-4223-B57A-F568F61CF0A9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.IO.Compression;
-
+using Ionic.Zip;
 
 namespace HL2Customizer
 {
@@ -14,13 +13,12 @@ namespace HL2Customizer
 
         public static void Extract(string sourceDirectory, string archiveName)
         {
-            try
+            using (ZipFile zip1 = ZipFile.Read(sourceDirectory+archiveName))
             {
-                ZipFile.ExtractToDirectory(sourceDirectory + archiveName, sourceDirectory);
-            }
-            catch
-            {
-                // Probaby an overwrite bug, not rly important
+                foreach (ZipEntry e in zip1)
+                {
+                    e.Extract(sourceDirectory, ExtractExistingFileAction.OverwriteSilently);
+                }
             }
             File.Delete(sourceDirectory + archiveName);
         }
