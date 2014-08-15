@@ -243,6 +243,7 @@ namespace HL2Customizer
             hlm = new HudLayoutManager(save.Hlm);
             wsm = new WeaponScriptManager(save.Wsm);
             gmm = save.Gmm;
+            bgm = save.BGm;
             dspm = save.Dspm;
             brand = save.Brand;
 
@@ -461,7 +462,12 @@ namespace HL2Customizer
 
 
             // Get list of locals backgrounds
-            //TESTOTEST
+            bgm.FillLocalBGs();
+            foreach (string file in bgm.LocalsBGs)
+               menueditor_2dbgBox.Items.Add(file);
+
+            for (int i = 0; i < menueditor_2dbgBox.Items.Count; i++)
+                if (Convert.ToString(menueditor_2dbgBox.Items[i]) == bgm.LastBGName) menueditor_2dbgBox.SelectedIndex = i;
             #endregion
 
             //FILE SYSTEM
@@ -555,6 +561,14 @@ namespace HL2Customizer
                     wsm.WriteFiles(ref Paths);
                     ssm.WriteFile(ref Paths);
                     dspm.WriteFile(ref Paths);
+
+                    #region bg download and application
+                    File.WriteAllBytes(Paths.BackgroundsPath + @"defaultBG.zip", HL2Customizer.Resources.resfile.defaultBG);
+                    Extracter.Extract(Paths.BackgroundsPath, "defaultBG.zip");
+                    
+                    if (bgm.MapBG) bgm.ApplyBackground(ref Paths, menueditor_3dbgBox.Text);
+                    else bgm.ApplyBackground(ref Paths, menueditor_2dbgBox.Text);
+                    #endregion
 
                     #region hudanim elements creation
                     Tuple<string, string>[] s;
@@ -711,6 +725,7 @@ namespace HL2Customizer
                 MenuColors[menueditor_txtBox2.SelectedIndex],
                 MenuColors[menueditor_bgBox.SelectedIndex]);
             cfgm.SetQuickInfos((bool)basicConfigs_keepQuickInfosRB.IsChecked);
+
             hlm.Initiate();
             hlm.CrosshairType = Crosshairs[basicConfigs_CrosshairBox.SelectedIndex].Item2;
             hlm.AdvCrosshair = !(bool)basicConfigs_dontChangeCrosshairRB.IsChecked;
@@ -719,6 +734,9 @@ namespace HL2Customizer
             hlm.AuxPowerConfig[2] = auxeditor_tileWidthLabel.Content.ToString();
             hlm.AuxPowerConfig[3] = auxeditor_gapLabel.Content.ToString();
             hlm.AuxPowerLabelPos = auxeditor_auxlabelpos.Text;
+
+            bgm.MapBG = (bool)menueditor_3dbgRB.IsChecked;
+            bgm.SmokeEffects = ((bool)menueditor_2dbgRB.IsChecked && (bool)menueditor_smokeEffectCB.IsChecked);
         }
 
         private bool DefinePaths(string FileName)
@@ -1183,12 +1201,14 @@ namespace HL2Customizer
         private void menueditor_2dbgRB_Checked(object sender, RoutedEventArgs e)
         {
             menueditor_2dbgBox.IsEnabled = true;
+            menueditor_smokeEffectCB.IsEnabled = true;
             menueditor_3dbgBox.IsEnabled = false;
         }
 
         private void menueditor_3dbgRB_Checked(object sender, RoutedEventArgs e)
         {
             menueditor_2dbgBox.IsEnabled = false;
+            menueditor_smokeEffectCB.IsEnabled = false;
             menueditor_3dbgBox.IsEnabled = true;
         }
 
