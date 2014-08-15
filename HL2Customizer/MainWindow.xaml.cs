@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Net;
-using System.Text;
 using System.IO;
 
 namespace HL2Customizer
@@ -35,6 +34,7 @@ namespace HL2Customizer
         HudLayoutManager hlm;
         WeaponScriptManager wsm;
         GameMenuManager gmm;
+        BGsManager bgm;
         DSPManager dspm;
         BrandSaver brand;
 
@@ -140,8 +140,6 @@ namespace HL2Customizer
         MenuElement[][] LabelsListControler;
         System.Windows.Controls.CheckBox[] checkboxs;
 
-        string[] LocalsBGs;
-
         bool keeper; // needed for debug the loading
 
         Tuple<string, byte, byte, byte>[] MenuColors = new Tuple<string, byte, byte, byte>[] {
@@ -223,6 +221,7 @@ namespace HL2Customizer
                 new HudAnimationsManager(),
                 new WeaponScriptManager(),
                 new GameMenuManager(),
+                new BGsManager(),
                 new CfgManager(),
                 new DSPManager(),
                 new BrandSaver());
@@ -460,6 +459,9 @@ namespace HL2Customizer
             for (int i = 0; i < menueditor_bgBox.Items.Count; i++)
                 if (Convert.ToString(menueditor_bgBox.Items[i]) == ssm.BgColor.Item1) menueditor_bgBox.SelectedIndex = i;
 
+
+            // Get list of locals backgrounds
+            //TESTOTEST
             #endregion
 
             //FILE SYSTEM
@@ -649,7 +651,7 @@ namespace HL2Customizer
                     #endregion
 
                     HudInformations infos = new HudInformations("previous");
-                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm, brand);
+                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, brand);
                     Serializer.SerializeHudData(save);
                     System.Windows.MessageBox.Show("Done ! Your hud is ready ;D. You can now start Half-life 2 Deathmatch.", "Success !!", MessageBoxButton.OK);
 
@@ -1034,10 +1036,7 @@ namespace HL2Customizer
 
         //MENU EDITOR
         #region menueditor
-        private void FillLocalList()
-        {
 
-        }
         
         private void RefreshList()
         {
@@ -1220,7 +1219,7 @@ namespace HL2Customizer
         {
             SetProperties();
             HudInformations infos = new HudInformations(file_SaveNameBox.Text);
-            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, cfgm, dspm, brand);
+            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, brand);
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\" + infos.Name + ".hcd"))
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("You already saved a hud with this name... do you want to erease the previous one?", "Save already exist", MessageBoxButton.YesNo);

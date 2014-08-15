@@ -85,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>resfile.resx</DependentUpon>
     </Compile>
+    <Compile Include="ScriptsManagers\BGsManager.cs" />
     <Compile Include="ScriptsManagers\DSPManager.cs" />
     <Compile Include="ScriptsManagers\WeaponScriptManager.cs" />
     <Compile Include="ToolClasses\BrandSaver.cs" />
