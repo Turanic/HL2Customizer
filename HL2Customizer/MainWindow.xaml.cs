@@ -929,9 +929,18 @@ namespace HL2Customizer
                 Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
                 basicConfigs_previewCrosshair.Foreground = brush;
                 weaponeditor_previewMainCrosshair.Foreground = brush;
-                weaponeditor_previewSecCrosshair.Foreground = brush;
             }
         }
+
+        private void basicConfigs_auxCrossColorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ChangeColor(basicConfigs_auxCrossColorBox.Items[basicConfigs_auxCrossColorBox.SelectedIndex].ToString());
+            Brush brush = new SolidColorBrush(Color.FromArgb(hexaColor[0], hexaColor[1], hexaColor[2], hexaColor[3]));
+            weaponeditor_previewSecCrosshair.Foreground = brush;
+        }
+
+        private void basicConfigs_secColorBox_SelectionChanged(object sender, SelectionChangedEventArgs e)//I don't know how to remove dat :o
+        {}
         //End Of Peaf Did What You See Here
 
         private void CrosshairBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1468,9 +1477,13 @@ namespace HL2Customizer
         }
 
         #endregion
+
+        
        
 
         #endregion
+
+        
 
     }
 }
