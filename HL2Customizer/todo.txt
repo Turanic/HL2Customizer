@@ -5,18 +5,14 @@
 ///////////
 //Turanic//
 ////////////////////////////////////////////////////////////////////////////////////////
-* J'ai cru voire un bug quand le previous hud est d'une version differente. Le
-menu editor ne contient pas les labels du basic stuff. Faudrait check :/
-* Faut bosser sur le weaponscriptmanager, en premier lieu changer le nom ingame des 
-armes ca serait cool
-* Adapter le preview du viseur a la couleur selectionné ca serait cool --> that's
-a job for peaf x)
+* Ajouter des fonds customs au menu
 * Ca serait cool de rajouter un hudelement qui affiche l'arme en court d'utilisation.
-Faudrait que j'aille demandé à MINO si il sait comment faire ca.
+Faudrait que j'aille demander à MINO si il sait comment faire ca.
 ////////////////////////////////////////////////////////////////////////////////////////
 
 ////////
 //Peaf//
 ////////////////////////////////////////////////////////////////////////////////////////
-
+* Le preview du weapon editor est a refaire.
+* Bug des couleurs du preview viseur quand on change d'onglet
 ////////////////////////////////////////////////////////////////////////////////////////

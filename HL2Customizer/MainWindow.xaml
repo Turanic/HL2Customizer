@@ -40,7 +40,7 @@
                     <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="95,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
                     <Label Content="Size: " Grid.Column="1" HorizontalAlignment="Left" Margin="144,280,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="basicConfigs_crosshairSizeLabel" Content="Small" Grid.Column="1" HorizontalAlignment="Left" Margin="186,280,0,0" VerticalAlignment="Top"/>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="119,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
+                    <Rectangle Fill="#FF575757" HorizontalAlignment="Left" Height="140" Margin="119,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="3"/>
                     <ComboBox x:Name="basicConfigs_auxCrossColorBox" HorizontalAlignment="Left" Margin="77,136,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" Grid.Column="3"/>
                     <Label Content="Auxiliary crosshair color :" HorizontalAlignment="Left" Margin="153,136,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="222" FontSize="16" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="3"/>
                     <Button x:Name="basicConfigs_donationButton" Content="Donate" Grid.Column="3" HorizontalAlignment="Left" Margin="122,5,0,0" VerticalAlignment="Top" Width="75" Click="basicConfigs_donationButton_Click"/>
@@ -112,7 +112,7 @@
                     <Button Name="menueditor_delButton" HorizontalAlignment="Left" Margin="55,330,0,0" VerticalAlignment="Top" Width="34" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="delButton_Click" Grid.Column="1" Height="34">
                         <Image Source="Resources/deleteIcon.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Height="24" Width="24"/>
                     </Button>
-                    <GroupBox Header="Design customization" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="376" Width="309" Grid.Column="1">
+                    <GroupBox Header="Design customization" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="156" Width="309" Grid.Column="1">
                         <StackPanel>
                             <Label Content="Title color :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.818,0.734" Height="29"/>
                             <Label Content="Text color :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Height="26"/>
@@ -122,6 +122,15 @@
                     <ComboBox Name="menueditor_txtBox1" Margin="487,30,38,340" Panel.ZIndex="2" Grid.Column="1"/>
                     <ComboBox Name="menueditor_txtBox2" Margin="487,68,38,302" Panel.ZIndex="2" Grid.Column="1"/>
                     <ComboBox Name="menueditor_bgBox" Margin="487,109,38,261" Panel.ZIndex="2" Grid.Column="1"/>
+                    <GroupBox Header="Custom Background" HorizontalAlignment="Left" Margin="325,171,0,0" VerticalAlignment="Top" Height="215" Width="309" Grid.Column="1">
+                        <StackPanel Margin="42,0,63,0">
+                            <CheckBox x:Name="menueditor_dlCB" Content="Download online content" HorizontalAlignment="Left" Margin="5,15,5,15" VerticalAlignment="Top" Checked="menueditor_dlCB_Checked"/>
+                            <RadioButton x:Name="menueditor_2dbgRB" Content="Use 2D backgrounds" Margin="5,5,10,15" Checked="menueditor_2dbgRB_Checked"/>
+                            <ComboBox x:Name="menueditor_2dbgBox" Height="20" Margin="42,0,42,21" RenderTransformOrigin="0.5,0.5"/>
+                            <RadioButton x:Name="menueditor_3dbgRB" Content="Use map backgrounds" Margin="5,5,10,15" Checked="menueditor_3dbgRB_Checked"/>
+                            <ComboBox x:Name="menueditor_3dbgBox" Height="20" Margin="42,0,42,21" RenderTransformOrigin="0.5,0.5"/>
+                        </StackPanel>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Aux. Power editor">
@@ -191,20 +200,24 @@
             </TabItem>
             <TabItem Header="Adv. Weapon editor">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-                    <ComboBox x:Name="weaponeditor_wpnType" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="weaponeditor_wpnType_SelectionChanged"/>
-                    <Label Content="Choose the weapon to modify : " HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top"/>
-                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="42,130,0,0" VerticalAlignment="Top" Height="204" Width="626"/>
-                    <Label Content="Additional crosshair :" HorizontalAlignment="Left" Margin="163,193,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="weaponeditor_CrosshairBox" HorizontalAlignment="Left" Margin="307,197,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="weaponeditor_CrosshairBox_SelectionChanged"/>
-                    <Button x:Name="weaponeditor_saveNewConfig" Content="Save new weapon config" HorizontalAlignment="Left" Margin="378,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_saveNewConfig_Click" RenderTransformOrigin="0.49,0.682"/>
-                    <Button x:Name="weaponeditor_loadOldConfig" Content="Restore config" HorizontalAlignment="Left" Margin="143,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_loadOldConfig_Click"/>
-                    <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="307,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
-                    <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="163,155,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="62,155,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="701*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="weaponeditor_wpnType" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" Width="179" SelectionChanged="weaponeditor_wpnType_SelectionChanged" Grid.Column="1"/>
+                    <Label Content="Choose the weapon to modify : " HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <GroupBox Header="Weapon settings" HorizontalAlignment="Left" Margin="24,130,0,0" VerticalAlignment="Top" Height="204" Width="626" Grid.Column="1"/>
+                    <Label Content="Additional crosshair :" HorizontalAlignment="Left" Margin="145,193,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="weaponeditor_CrosshairBox" HorizontalAlignment="Left" Margin="289,197,0,0" VerticalAlignment="Top" Width="120" Panel.ZIndex="2" SelectionChanged="weaponeditor_CrosshairBox_SelectionChanged" Grid.Column="1"/>
+                    <Button x:Name="weaponeditor_saveNewConfig" Content="Save new weapon config" HorizontalAlignment="Left" Margin="360,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_saveNewConfig_Click" RenderTransformOrigin="0.49,0.682" Grid.Column="1"/>
+                    <Button x:Name="weaponeditor_loadOldConfig" Content="Restore config" HorizontalAlignment="Left" Margin="125,300,0,0" VerticalAlignment="Top" Width="147" Click="weaponeditor_loadOldConfig_Click" Grid.Column="1"/>
+                    <TextBox x:Name="weaponeditor_wpnNameBox" HorizontalAlignment="Left" Height="23" Margin="289,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Label Content="Weapon Ingame name : " HorizontalAlignment="Left" Margin="145,155,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label x:Name="weaponeditor_wpnIcon" Content="d" HorizontalAlignment="Left" Margin="44,155,0,0" VerticalAlignment="Top" FontFamily="./Resources/#halflife2" Height="64" Width="78" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" BorderThickness="1" Grid.Column="1"/>
                     <!--<CheckBox x:Name="weaponeditor_outlinedRB" Content="Outline" HorizontalAlignment="Left" Margin="432,203,0,0" VerticalAlignment="Top" Panel.ZIndex="2" IsEnabled="False"/>-->
-                    <Label x:Name="weaponeditor_previewMainCrosshair" Content="h" HorizontalAlignment="Left" Margin="522,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2"/>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="140" Margin="516,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="140"/>
-                    <Label x:Name="weaponeditor_previewSecCrosshair" Content="h" HorizontalAlignment="Left" Margin="522,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2"/>
+                    <Label x:Name="weaponeditor_previewMainCrosshair" Content="h" HorizontalAlignment="Left" Margin="504,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="1"/>
+                    <Rectangle Fill="#FF575757" HorizontalAlignment="Left" Height="140" Margin="498,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="140" Grid.Column="1"/>
+                    <Label x:Name="weaponeditor_previewSecCrosshair" Content="h" HorizontalAlignment="Left" Margin="504,161,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Files">

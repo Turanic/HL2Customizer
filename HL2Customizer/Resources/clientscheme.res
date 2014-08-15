@@ -152,7 +152,7 @@ Scheme
 		Label.SelectedTextColor			"|SECOND_COLOR|"
 		Label.BgColor					"Blank"
 		Label.DisabledFgColor1			"Blank"
-		Label.DisabledFgColor2			"LightOrange"
+		Label.DisabledFgColor2			"|SECOND_COLOR|"
 
 		ListPanel.TextColor					"|SECOND_COLOR|"
 		ListPanel.BgColor					"TransparentBlack"
@@ -169,7 +169,7 @@ Scheme
 
 		Chat.TypingText					"|SECOND_COLOR|"
 
-		Panel.FgColor					"OrangeDim"
+		Panel.FgColor					"|SECOND_COLOR|"
 		Panel.BgColor					"blank"
 
 		ProgressBar.FgColor				"|SECOND_COLOR|"
@@ -262,7 +262,7 @@ Scheme
 		"SelectionSelectedBoxBg" "0 0 0 190"
 
 		// Hint message colors
-		"HintMessageFg"			"255 255 255 255"
+		"HintMessageFg"			"|SECOND_COLOR|"
 		"HintMessageBg" 		"0 0 0 60"
 
 		"ProgressBarFg"			"255 30 13 255"

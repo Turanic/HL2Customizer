@@ -1150,6 +1150,37 @@ namespace HL2Customizer
                 }
             }
         }
+
+        private void menueditor_dlCB_Checked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                WebClient client = new WebClient();
+                Stream stream = client.OpenRead("TODO");
+                StreamReader reader = new StreamReader(stream);
+
+                //TODO
+                //foreach lines, update comboboxes
+            }
+            catch
+            {
+                System.Windows.MessageBox.Show("The software was not able to access the main server. The online content is not available", "Can't access server", MessageBoxButton.OK);
+                menueditor_dlCB.IsChecked = false;
+            }
+        }
+
+        private void menueditor_2dbgRB_Checked(object sender, RoutedEventArgs e)
+        {
+            menueditor_2dbgBox.IsEnabled = true;
+            menueditor_3dbgBox.IsEnabled = false;
+        }
+
+        private void menueditor_3dbgRB_Checked(object sender, RoutedEventArgs e)
+        {
+            menueditor_2dbgBox.IsEnabled = false;
+            menueditor_3dbgBox.IsEnabled = true;
+        }
+
         #endregion
 
         //FILE SYSTEM
@@ -1426,8 +1457,7 @@ namespace HL2Customizer
         }
 
         #endregion
-
-        
+       
 
         #endregion
 
