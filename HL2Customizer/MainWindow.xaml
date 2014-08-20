@@ -124,7 +124,7 @@
                     <ComboBox Name="menueditor_bgBox" Margin="487,109,38,261" Panel.ZIndex="2" Grid.Column="1"/>
                     <GroupBox Header="Custom Background" HorizontalAlignment="Left" Margin="325,171,0,0" VerticalAlignment="Top" Height="215" Width="309" Grid.Column="1">
                         <StackPanel Margin="42,0,63,0">
-                            <CheckBox x:Name="menueditor_dlCB" Content="Download online content" HorizontalAlignment="Left" Margin="5,5,5,15" VerticalAlignment="Top" Checked="menueditor_dlCB_Checked"/>
+                            <CheckBox x:Name="menueditor_dlCB" Content="Download online content" HorizontalAlignment="Left" Margin="5,5,5,15" VerticalAlignment="Top" Checked="menueditor_dlCB_Checked" Unchecked="menueditor_dlCB_Unchecked"/>
                             <RadioButton x:Name="menueditor_2dbgRB" Content="Use 2D backgrounds" Margin="5,5,10,10" Checked="menueditor_2dbgRB_Checked"/>
                             <CheckBox x:Name="menueditor_smokeEffectCB" Content="Use smoke effects" HorizontalAlignment="Left" Margin="42,5,10,10" VerticalAlignment="Top"/>
                             <ComboBox x:Name="menueditor_2dbgBox" Height="20" Margin="42,0,42,15" RenderTransformOrigin="0.5,0.5"/>

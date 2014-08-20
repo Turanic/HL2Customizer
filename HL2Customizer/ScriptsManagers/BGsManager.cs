@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Net;
 
 namespace HL2Customizer
 {
@@ -48,7 +49,7 @@ namespace HL2Customizer
             }
         }
 
-        public void ApplyBackground(ref UserPaths Paths, string BGname)
+        public void Apply2dBackground(ref UserPaths Paths, string BGname)
         {
             LastBGDirPath = Paths.BackgroundsPath;
             LastBGName = BGname;
@@ -62,7 +63,8 @@ namespace HL2Customizer
 
             file = Paths.BackgroundsPath + @"background01.vmt";
             bgfile = "2dbg_" + BGname + ".vtf";
-            
+
+            File.WriteAllText(file, "");
             StreamWriter sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
             
             string line;
@@ -79,6 +81,7 @@ namespace HL2Customizer
             sr.BaseStream.Position = 0;
 
             file = Paths.BackgroundsPath + @"background01_widescreen.vmt";
+            File.WriteAllText(file, "");
             bgfile = "2dbg_" + BGname + "_widescreen.vtf";
 
             sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
@@ -90,6 +93,38 @@ namespace HL2Customizer
                 sw.WriteLine(line);
             }
             sw.Close();
+        }
+
+        public void DownloadBG(string BGname, ref UserPaths Paths)
+        {
+            if (!this.LocalsBGs.Contains(BGname))
+            {
+                System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("You're going to download \"" + BGname + "\".",
+                    "Download confirmation", System.Windows.MessageBoxButton.OKCancel);
+                if (messageBoxResult == System.Windows.MessageBoxResult.OK)
+                {
+                    WebClient webClient = new WebClient();
+                    string onlineFile = "http://turanic.com/HL2Customizer/dlable_content/2dbg/" + BGname + ".zip";
+                    webClient.DownloadFile(onlineFile, Paths.BackgroundsPath + BGname + ".zip");
+                    Extracter.Extract(Paths.BackgroundsPath, BGname + ".zip");
+                }
+            }
+        }
+
+        public void DownloadMapBG(string Mapname, ref UserPaths Paths)
+        {
+            if (!this.LocalsBGs.Contains(Mapname))
+            {
+                System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("You're going to download \"" + Mapname + "\".",
+                            "Download confirmation", System.Windows.MessageBoxButton.OKCancel);
+                if (messageBoxResult == System.Windows.MessageBoxResult.OK)
+                {
+                    WebClient webClient = new WebClient();
+                    string onlineFile = "http://turanic.com/HL2Customizer/dlable_content/3dbg/" + Mapname + ".zip";
+                    webClient.DownloadFile(onlineFile, Paths.MapsPath + Mapname + ".zip");
+                    Extracter.Extract(Paths.BackgroundsPath, Mapname + ".zip");
+                }            
+            }
         }
     }
 }

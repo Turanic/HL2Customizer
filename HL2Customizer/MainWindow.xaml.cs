@@ -460,7 +460,6 @@ namespace HL2Customizer
             for (int i = 0; i < menueditor_bgBox.Items.Count; i++)
                 if (Convert.ToString(menueditor_bgBox.Items[i]) == ssm.BgColor.Item1) menueditor_bgBox.SelectedIndex = i;
 
-
             // Get list of locals backgrounds
             bgm.FillLocalBGs();
             foreach (string file in bgm.LocalsBGs)
@@ -569,9 +568,22 @@ namespace HL2Customizer
                     #region bg download and application
                     File.WriteAllBytes(Paths.BackgroundsPath + @"defaultBG.zip", HL2Customizer.Resources.resfile.defaultBG);
                     Extracter.Extract(Paths.BackgroundsPath, "defaultBG.zip");
-                    
-                    if (bgm.MapBG) bgm.ApplyBackground(ref Paths, menueditor_3dbgBox.Text);
-                    else bgm.ApplyBackground(ref Paths, menueditor_2dbgBox.Text);
+
+
+                    try
+                    {
+                        bgm.DownloadBG(menueditor_2dbgBox.Text, ref Paths);
+                    }
+                    catch (WebException exc)
+                    {
+                        System.Windows.MessageBox.Show("It was not possible to download the selected background, the default background" +
+                                "will be loaded instead. More infos : " + exc.Message, "Error", MessageBoxButton.OK);
+                        menueditor_2dbgRB.IsChecked = true;
+                        menueditor_2dbgBox.SelectedIndex = 0;
+                    }
+
+                    if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, menueditor_3dbgBox.Text);
+                    else bgm.Apply2dBackground(ref Paths, menueditor_2dbgBox.Text);
                     #endregion
 
                     #region hudanim elements creation
@@ -794,7 +806,8 @@ namespace HL2Customizer
             if (!Directory.Exists(Paths.UIPath)) Directory.CreateDirectory(Paths.UIPath);
             Paths.ScriptsPath = Paths.HudPath + @"scripts/";
             if (!Directory.Exists(Paths.ScriptsPath)) Directory.CreateDirectory(Paths.ScriptsPath);
-
+            Paths.MapsPath = Paths.HudPath + @"maps/";
+            if (!Directory.Exists(Paths.MapsPath)) Directory.CreateDirectory(Paths.MapsPath);
 
             //SPECIALE SCOREBOARD
             if (!File.Exists(Paths.UIPath + @"ScoreBoard.res"))
@@ -1196,17 +1209,29 @@ namespace HL2Customizer
             try
             {
                 WebClient client = new WebClient();
-                Stream stream = client.OpenRead("TODO");
+                Stream stream = client.OpenRead("http://turanic.com/HL2Customizer/dlable_content/2dbg/bgs_list.txt");
                 StreamReader reader = new StreamReader(stream);
 
-                //TODO
-                //foreach lines, update comboboxes
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if(!bgm.LocalsBGs.Contains(line))
+                        menueditor_2dbgBox.Items.Add(line);
+                }
+
             }
             catch
             {
                 System.Windows.MessageBox.Show("The software was not able to access the main server. The online content is not available", "Can't access server", MessageBoxButton.OK);
                 menueditor_dlCB.IsChecked = false;
             }
+        }
+
+        private void menueditor_dlCB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            menueditor_2dbgBox.Items.Clear();
+            foreach (string file in bgm.LocalsBGs)
+                menueditor_2dbgBox.Items.Add(file);
         }
 
         private void menueditor_2dbgRB_Checked(object sender, RoutedEventArgs e)
@@ -1501,8 +1526,6 @@ namespace HL2Customizer
         #endregion
 
         #endregion
-
-        
 
     }
 }
