@@ -11,7 +11,7 @@ namespace HL2Customizer
     [Serializable]
     public class CfgManager
     {
-        private string _autoexec;
+        private string _autoexec, _showconsole;
         private int _rate = 33000, _updaterate = 33, _cmdrate = 33;
         private float _interp = 0.1f;
 
@@ -22,8 +22,10 @@ namespace HL2Customizer
         public bool DisableSpray { get; private set; }
         public bool EnableConsoleFilter { get; private set; }
         public bool DontModifyRates { get; set; }
+        public bool MapBG { get; set; }
         public string Model { get; private set; }
         public string StartWeapon { get; private set; }
+        public string MapBGname { get; set; }
 
         public CfgManager()
         {
@@ -41,6 +43,7 @@ namespace HL2Customizer
         public void SetAutoexec(ref UserPaths Paths)
         {
             _autoexec = Paths.CfgPath + "valve.rc";
+            _showconsole = Paths.CfgPath + "showconsole.cfg";
         }
         public void SetProperties(bool autoswitch, bool motd, bool console, bool sprays, bool filter, string mdl, string startweapon)
         {
@@ -68,6 +71,10 @@ namespace HL2Customizer
 
         public void ConfigAutoExec()
         {
+            if (!File.Exists(_showconsole)) File.Create(_showconsole).Close();
+
+            File.WriteAllText(_showconsole, (ConsoleAtstart ? "showconsole" : "hideconsole") + "; play hl2c/startup_music.mp3");
+
             if (!File.Exists(_autoexec)) File.Create(_autoexec).Close();
 
             File.WriteAllText(_autoexec, "");
@@ -82,10 +89,10 @@ namespace HL2Customizer
                 if (line.Contains("|SPRAY|")) line = line.Replace("|SPRAY|", (DisableSpray ? "1" : "0")); 
                 if (line.Contains("|AUTOSWITCH|")) line = line.Replace("|AUTOSWITCH|", (Autoswitch ? "1" : "0"));
                 if (line.Contains("|MOTD|")) line = line.Replace("|MOTD|", (DisableMotd ? "1" : "0"));
-                if (line.Contains("|CONSOLE|")) line = line.Replace("|CONSOLE|", (ConsoleAtstart ? "showconsole" : "hideconsole"));
                 if (line.Contains("|MODELNAME|")) line = line.Replace("|MODELNAME|", Model);
                 if (line.Contains("|WEAPONNAME|")) line = line.Replace("|WEAPONNAME|", StartWeapon);
                 if (line.Contains("|FILTER|")) line = line.Replace("|FILTER|", (EnableConsoleFilter ? "1" : "0"));
+                if (line.Contains("|MAP_BG|")) line = line.Replace("|MAP_BG|", (MapBG ? "map_background hl2c_" + MapBGname : "exec showconsole.cfg"));
                 if (DontModifyRates && line.Contains("rate ")) continue;
                 else
                 {

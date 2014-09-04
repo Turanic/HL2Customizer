@@ -12,7 +12,8 @@ namespace HL2Customizer
     [Serializable]
     public class BGsManager
     {
-        public string[] LocalsBGs { get; private set; }
+        public string[] Locals2dBGs { get; private set; }
+        public string[] LocalsMapBGs { get; private set; }
         public string LastBGDirPath { get; private set; }
         public string LastBGName { get; private set; }
         public bool SmokeEffects { get; set; }
@@ -29,23 +30,23 @@ namespace HL2Customizer
 
         public void FillLocalBGs()
         {
-            this.LocalsBGs = new string[] { "2dbg_default.vtf" };
+            this.Locals2dBGs = new string[] { "2dbg_default.vtf" };
             if (Directory.Exists(LastBGDirPath))
             {
-                LocalsBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");
-                for (int i = 0; i < LocalsBGs.Count(); i++)
+                Locals2dBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");
+                for (int i = 0; i < Locals2dBGs.Count(); i++)
                 {
-                    string[] aux = LocalsBGs[i].Split('/');
-                    LocalsBGs[i] = aux[aux.Count() - 1];
-                    if (LocalsBGs[i].Contains("widescreen") || LocalsBGs[i].Contains("effect"))
-                        LocalsBGs[i] = null;
+                    string[] aux = Locals2dBGs[i].Split('/');
+                    Locals2dBGs[i] = aux[aux.Count() - 1];
+                    if (Locals2dBGs[i].Contains("widescreen") || Locals2dBGs[i].Contains("effect"))
+                        Locals2dBGs[i] = null;
                 }
             }
-            LocalsBGs = LocalsBGs.Where(x => x != null).ToArray();
-            for (int i = 0; i < LocalsBGs.Count(); i++)
+            Locals2dBGs = Locals2dBGs.Where(x => x != null).ToArray();
+            for (int i = 0; i < Locals2dBGs.Count(); i++)
             {
-                LocalsBGs[i] = LocalsBGs[i].Substring(5);
-                LocalsBGs[i] = LocalsBGs[i].Substring(0, LocalsBGs[i].Length - 4);
+                Locals2dBGs[i] = Locals2dBGs[i].Substring(5);
+                Locals2dBGs[i] = Locals2dBGs[i].Substring(0, Locals2dBGs[i].Length - 4);
             }
         }
 
@@ -97,7 +98,7 @@ namespace HL2Customizer
 
         public void DownloadBG(string BGname, ref UserPaths Paths)
         {
-            if (!this.LocalsBGs.Contains(BGname))
+            if (!this.Locals2dBGs.Contains(BGname))
             {
                 System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("You're going to download \"" + BGname + "\".",
                     "Download confirmation", System.Windows.MessageBoxButton.OKCancel);
@@ -113,7 +114,7 @@ namespace HL2Customizer
 
         public void DownloadMapBG(string Mapname, ref UserPaths Paths)
         {
-            if (!this.LocalsBGs.Contains(Mapname))
+            if (true/*!this.LocalsMapBGs.Contains(Mapname)*/)
             {
                 System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("You're going to download \"" + Mapname + "\".",
                             "Download confirmation", System.Windows.MessageBoxButton.OKCancel);
@@ -122,7 +123,7 @@ namespace HL2Customizer
                     WebClient webClient = new WebClient();
                     string onlineFile = "http://turanic.com/HL2Customizer/dlable_content/3dbg/" + Mapname + ".zip";
                     webClient.DownloadFile(onlineFile, Paths.MapsPath + Mapname + ".zip");
-                    Extracter.Extract(Paths.BackgroundsPath, Mapname + ".zip");
+                    Extracter.Extract(Paths.MapsPath, Mapname + ".zip");
                 }            
             }
         }

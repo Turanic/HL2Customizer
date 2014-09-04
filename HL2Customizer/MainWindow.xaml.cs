@@ -462,7 +462,7 @@ namespace HL2Customizer
 
             // Get list of locals backgrounds
             bgm.FillLocalBGs();
-            foreach (string file in bgm.LocalsBGs)
+            foreach (string file in bgm.Locals2dBGs)
                menueditor_2dbgBox.Items.Add(file);
 
             for (int i = 0; i < menueditor_2dbgBox.Items.Count; i++)
@@ -572,7 +572,8 @@ namespace HL2Customizer
 
                     try
                     {
-                        bgm.DownloadBG(menueditor_2dbgBox.Text, ref Paths);
+                        if (!bgm.MapBG) bgm.DownloadBG(menueditor_2dbgBox.Text, ref Paths);
+                        else bgm.DownloadMapBG(menueditor_3dbgBox.Text, ref Paths);
                     }
                     catch (WebException exc)
                     {
@@ -582,7 +583,7 @@ namespace HL2Customizer
                         menueditor_2dbgBox.SelectedIndex = 0;
                     }
 
-                    if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, menueditor_3dbgBox.Text);
+                    if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, "default"/*menueditor_3dbgBox.Text*/);
                     else bgm.Apply2dBackground(ref Paths, menueditor_2dbgBox.Text);
                     #endregion
 
@@ -703,6 +704,8 @@ namespace HL2Customizer
             float interpTmp = float.Parse(advancedconfigs_interpLabel.Content.ToString(), CultureInfo.InvariantCulture);
             cfgm.SetRate(Convert.ToInt32(advancedconfigs_rateLabel.Content), Convert.ToInt32(advancedconfigs_updateLabel.Content), Convert.ToInt32(advancedconfigs_cmdLabel.Content), interpTmp);
             cfgm.DontModifyRates = (bool)advancedconfigs_dontTuchThisRB.IsChecked;
+            cfgm.MapBG = (bool)menueditor_3dbgRB.IsChecked;
+            cfgm.MapBGname = "rainy_caverns";
             int redAmount;
             switch ((int)advancedconfigs_redScreenScroller.Value)
             {
@@ -1215,10 +1218,17 @@ namespace HL2Customizer
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if(!bgm.LocalsBGs.Contains(line))
+                    if (!bgm.Locals2dBGs.Contains(line))
                         menueditor_2dbgBox.Items.Add(line);
                 }
+                stream = client.OpenRead("http://turanic.com/HL2Customizer/dlable_content/3dbg/bgs_list.txt");
+                reader = new StreamReader(stream);
 
+                while ((line = reader.ReadLine()) != null)
+                {
+                    //if (!bgm.LocalsMapBGs.Contains(line))
+                        menueditor_3dbgBox.Items.Add(line);
+                }
             }
             catch
             {
@@ -1230,7 +1240,7 @@ namespace HL2Customizer
         private void menueditor_dlCB_Unchecked(object sender, RoutedEventArgs e)
         {
             menueditor_2dbgBox.Items.Clear();
-            foreach (string file in bgm.LocalsBGs)
+            foreach (string file in bgm.Locals2dBGs)
                 menueditor_2dbgBox.Items.Add(file);
         }
 
