@@ -1,0 +1,10 @@
+﻿<Window x:Class="HL2Customizer.dl_wait_msg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Wait please" Height="72" Width="300" Icon="Resources/hl2c.ico" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Cursor="None"
+        WindowStyle="None">
+    <Grid>
+        <Label Content="Wait until the download is finished please" HorizontalAlignment="Left" Margin="30,22,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

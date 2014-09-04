@@ -464,9 +464,15 @@ namespace HL2Customizer
             bgm.FillLocalBGs();
             foreach (string file in bgm.Locals2dBGs)
                menueditor_2dbgBox.Items.Add(file);
+            foreach (string file in bgm.LocalsMapBGs)
+                menueditor_3dbgBox.Items.Add(file);
 
+            menueditor_2dbgBox.SelectedIndex = 0;
+            menueditor_3dbgBox.SelectedIndex = 0;
             for (int i = 0; i < menueditor_2dbgBox.Items.Count; i++)
                 if (Convert.ToString(menueditor_2dbgBox.Items[i]) == bgm.LastBGName) menueditor_2dbgBox.SelectedIndex = i;
+            for (int i = 0; i < menueditor_3dbgBox.Items.Count; i++)
+                if (Convert.ToString(menueditor_3dbgBox.Items[i]) == bgm.LastBGName) menueditor_3dbgBox.SelectedIndex = i;
 
             menueditor_2dbgRB.IsChecked = !bgm.MapBG;
             menueditor_3dbgRB.IsChecked = bgm.MapBG;
@@ -566,6 +572,10 @@ namespace HL2Customizer
                     dspm.WriteFile(ref Paths);
 
                     #region bg download and application
+
+                    File.WriteAllBytes(Paths.BackgroundsPath + @"background01.zip", HL2Customizer.Resources.resfile.background01);
+                    Extracter.Extract(Paths.BackgroundsPath, "background01.zip");
+
                     File.WriteAllBytes(Paths.BackgroundsPath + @"defaultBG.zip", HL2Customizer.Resources.resfile.defaultBG);
                     Extracter.Extract(Paths.BackgroundsPath, "defaultBG.zip");
 
@@ -583,7 +593,7 @@ namespace HL2Customizer
                         menueditor_2dbgBox.SelectedIndex = 0;
                     }
 
-                    if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, "default"/*menueditor_3dbgBox.Text*/);
+                    if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, menueditor_3dbgBox.Text);
                     else bgm.Apply2dBackground(ref Paths, menueditor_2dbgBox.Text);
                     #endregion
 
@@ -705,7 +715,7 @@ namespace HL2Customizer
             cfgm.SetRate(Convert.ToInt32(advancedconfigs_rateLabel.Content), Convert.ToInt32(advancedconfigs_updateLabel.Content), Convert.ToInt32(advancedconfigs_cmdLabel.Content), interpTmp);
             cfgm.DontModifyRates = (bool)advancedconfigs_dontTuchThisRB.IsChecked;
             cfgm.MapBG = (bool)menueditor_3dbgRB.IsChecked;
-            cfgm.MapBGname = "rainy_caverns";
+            cfgm.MapBGname = menueditor_3dbgBox.Text ;
             int redAmount;
             switch ((int)advancedconfigs_redScreenScroller.Value)
             {
@@ -727,7 +737,8 @@ namespace HL2Customizer
             }
 
             csm.SetProperties(basicConfigs_mainColorBox.Text, basicConfigs_secColorBox.Text,
-            basicConfigs_crossColorBox.Text, basicConfigs_auxCrossColorBox.Text, (bool)basicConfigs_outlinedRB.IsChecked);
+            basicConfigs_crossColorBox.Text, basicConfigs_auxCrossColorBox.Text,
+            menueditor_txtBox1.Text, (bool)basicConfigs_outlinedRB.IsChecked);
 
             switch ((int)basicConfigs_xhairSizeSlider.Value)
             {
@@ -1226,7 +1237,7 @@ namespace HL2Customizer
 
                 while ((line = reader.ReadLine()) != null)
                 {
-                    //if (!bgm.LocalsMapBGs.Contains(line))
+                    if (!bgm.LocalsMapBGs.Contains(line))
                         menueditor_3dbgBox.Items.Add(line);
                 }
             }

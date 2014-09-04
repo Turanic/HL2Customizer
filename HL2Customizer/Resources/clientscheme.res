@@ -83,12 +83,12 @@ Scheme
 		// Top-left corner of the "Half-Life 2" on the main screen
 		"Main.Title1.X"		"76"
 		"Main.Title1.Y"		"184"
-		"Main.Title1.Color"	"255 255 255 255"
+		"Main.Title1.Color"	"|TITLE_COLOR|"
 		
 		// Top-left corner of the "DEATHMATCH" on the main screen
 		"Main.Title2.X"		"315"
 		"Main.Title2.Y"		"222"
-		"Main.Title2.Color"	"255 255 255 180"
+		"Main.Title2.Color"	"|TITLE_COLOR|"
 
 		// Top-left corner of the menu on the main screen
 		"Main.Menu.X"		"76"

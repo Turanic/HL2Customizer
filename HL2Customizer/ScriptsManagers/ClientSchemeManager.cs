@@ -15,6 +15,7 @@ namespace HL2Customizer
         public string SecondaryColor { get; private set; }
         public string CrossColor { get; private set; }
         public string SecCrossColor { get; private set; }
+        public string TitleColor { get; private set; }
 
         public Boolean OutlinedCrosshairs { get; set; }
         public Boolean KeepXhair { private get; set; }
@@ -36,13 +37,14 @@ namespace HL2Customizer
             OutlinedAdditionnalCrosshairs = new Boolean[12];
         }
 
-        public void SetProperties(string maincolor, string secondarycolor, string crosshaircolor, string seccrosshaircolor, bool outlined)
+        public void SetProperties(string maincolor, string secondarycolor, string crosshaircolor, string seccrosshaircolor, string titlecolor, bool outlined)
         {
             MainColor = maincolor;
             SecondaryColor = secondarycolor;
             CrossColor = crosshaircolor;
             SecCrossColor = seccrosshaircolor;
             OutlinedCrosshairs = outlined;
+            TitleColor = titlecolor;
         }
 
         public void WriteFile(ref UserPaths Paths)
@@ -69,6 +71,7 @@ namespace HL2Customizer
                 if (line.Contains("|MAIN_COLOR|")) line = line.Replace("|MAIN_COLOR|", MainColor);
                 if (line.Contains("|SECOND_COLOR|")) line = line.Replace("|SECOND_COLOR|", SecondaryColor);
                 if (line.Contains("|CROSS_COLOR|")) line = line.Replace("|CROSS_COLOR|", (KeepXhair ? CrossColor : SecCrossColor));
+                if (line.Contains("|TITLE_COLOR|")) line = line.Replace("|TITLE_COLOR|", TitleColor);
                 if (line.Contains("|OUTLINED|")) line = line.Replace("|OUTLINED|", (OutlinedCrosshairs ? "1" : "0"));
                 if (line.Contains("|ANTIALIASED|")) line = line.Replace("|ANTIALIASED|", (OutlinedCrosshairs ? "0" : "1"));
                 if (line.Contains("|CROSS_SIZE|")) line = line.Replace("|CROSS_SIZE|", csize.ToString());

@@ -31,15 +31,26 @@ namespace HL2Customizer
         public void FillLocalBGs()
         {
             this.Locals2dBGs = new string[] { "2dbg_default.vtf" };
+            this.LocalsMapBGs = new string[] { "3dbg_default.vtf" };
             if (Directory.Exists(LastBGDirPath))
             {
                 Locals2dBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");
+                LocalsMapBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");
                 for (int i = 0; i < Locals2dBGs.Count(); i++)
                 {
                     string[] aux = Locals2dBGs[i].Split('/');
                     Locals2dBGs[i] = aux[aux.Count() - 1];
-                    if (Locals2dBGs[i].Contains("widescreen") || Locals2dBGs[i].Contains("effect"))
+                    if (Locals2dBGs[i].Contains("widescreen") || Locals2dBGs[i].Contains("effect")
+                        || Locals2dBGs[i].Contains("3dbg") || LocalsMapBGs[i].Contains("background01"))
                         Locals2dBGs[i] = null;
+                }
+                for (int i = 0; i < LocalsMapBGs.Count(); i++)
+                {
+                    string[] aux = LocalsMapBGs[i].Split('/');
+                    LocalsMapBGs[i] = aux[aux.Count() - 1];
+                    if (LocalsMapBGs[i].Contains("widescreen") || LocalsMapBGs[i].Contains("effect")
+                        || LocalsMapBGs[i].Contains("2dbg") || LocalsMapBGs[i].Contains("background01"))
+                        LocalsMapBGs[i] = null;
                 }
             }
             Locals2dBGs = Locals2dBGs.Where(x => x != null).ToArray();
@@ -47,6 +58,12 @@ namespace HL2Customizer
             {
                 Locals2dBGs[i] = Locals2dBGs[i].Substring(5);
                 Locals2dBGs[i] = Locals2dBGs[i].Substring(0, Locals2dBGs[i].Length - 4);
+            }
+            LocalsMapBGs = LocalsMapBGs.Where(x => x != null).ToArray();
+            for (int i = 0; i < LocalsMapBGs.Count(); i++)
+            {
+                LocalsMapBGs[i] = LocalsMapBGs[i].Substring(5);
+                LocalsMapBGs[i] = LocalsMapBGs[i].Substring(0, LocalsMapBGs[i].Length - 4);
             }
         }
 
@@ -63,7 +80,7 @@ namespace HL2Customizer
                 sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.UnlitGeneric.vmt"));
 
             file = Paths.BackgroundsPath + @"background01.vmt";
-            bgfile = "2dbg_" + BGname + ".vtf";
+            bgfile = (MapBG ? "3dbg_" : "2dbg_") + BGname + ".vtf";
 
             File.WriteAllText(file, "");
             StreamWriter sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
@@ -83,7 +100,7 @@ namespace HL2Customizer
 
             file = Paths.BackgroundsPath + @"background01_widescreen.vmt";
             File.WriteAllText(file, "");
-            bgfile = "2dbg_" + BGname + "_widescreen.vtf";
+            bgfile = (MapBG ? "3dbg_" : "2dbg_") + BGname + "_widescreen.vtf";
 
             sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
 
@@ -105,25 +122,34 @@ namespace HL2Customizer
                 if (messageBoxResult == System.Windows.MessageBoxResult.OK)
                 {
                     WebClient webClient = new WebClient();
+                    dl_wait_msg popup = new dl_wait_msg();
+                    popup.Show();
                     string onlineFile = "http://turanic.com/HL2Customizer/dlable_content/2dbg/" + BGname + ".zip";
                     webClient.DownloadFile(onlineFile, Paths.BackgroundsPath + BGname + ".zip");
                     Extracter.Extract(Paths.BackgroundsPath, BGname + ".zip");
+                    popup.Close();
                 }
             }
         }
 
         public void DownloadMapBG(string Mapname, ref UserPaths Paths)
         {
-            if (true/*!this.LocalsMapBGs.Contains(Mapname)*/)
+            if (!this.LocalsMapBGs.Contains(Mapname))
             {
                 System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("You're going to download \"" + Mapname + "\".",
                             "Download confirmation", System.Windows.MessageBoxButton.OKCancel);
                 if (messageBoxResult == System.Windows.MessageBoxResult.OK)
                 {
                     WebClient webClient = new WebClient();
+                    dl_wait_msg popup = new dl_wait_msg();
+                    popup.Show();
                     string onlineFile = "http://turanic.com/HL2Customizer/dlable_content/3dbg/" + Mapname + ".zip";
                     webClient.DownloadFile(onlineFile, Paths.MapsPath + Mapname + ".zip");
                     Extracter.Extract(Paths.MapsPath, Mapname + ".zip");
+                    onlineFile = "http://turanic.com/HL2Customizer/dlable_content/2dbg/" + Mapname + ".zip";
+                    webClient.DownloadFile(onlineFile, Paths.BackgroundsPath + Mapname + ".zip");
+                    Extracter.Extract(Paths.BackgroundsPath, Mapname + ".zip");
+                    popup.Close();
                 }            
             }
         }

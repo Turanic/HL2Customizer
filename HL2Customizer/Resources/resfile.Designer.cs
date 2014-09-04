@@ -83,6 +83,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] background01 {
+            get {
+                object obj = ResourceManager.GetObject("background01", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] brands {
             get {
                 object obj = ResourceManager.GetObject("brands", resourceCulture);
@@ -295,7 +305,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.5.5.
+        ///   Looks up a localized string similar to 0.5.6.
         /// </summary>
         internal static string Version {
             get {

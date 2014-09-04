@@ -13,7 +13,7 @@
                         <ColumnDefinition Width="284*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Main color :" HorizontalAlignment="Left" Margin="153,56,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="120" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-                    <Image HorizontalAlignment="Left" Height="128" Margin="10,30,0,0" VerticalAlignment="Top" Width="128" Panel.ZIndex="1" Source="Resources/HLogo.png" Grid.ColumnSpan="2"/>
+                    <Image HorizontalAlignment="Left" Height="128" Margin="20,30,0,0" VerticalAlignment="Top" Width="128" Panel.ZIndex="1" Source="Resources/HLogo.png" Grid.ColumnSpan="2"/>
                     <Label Content="Secondary color :" HorizontalAlignment="Left" Margin="153,83,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
                     <Label Content="Crosshair color :" HorizontalAlignment="Left" Margin="153,110,0,0" VerticalAlignment="Top" Panel.ZIndex="2" Height="30" Width="152" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
                     <Label x:Name="basicConfigs_title" Content="HL2 Customizer" Panel.ZIndex="2" Height="30" Width="292" FontSize="16" FontWeight="Bold" Foreground="#FFAE0000" VerticalAlignment="Top" Margin="85,5,241,0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3"/>
@@ -112,8 +112,8 @@
                     <Button Name="menueditor_delButton" HorizontalAlignment="Left" Margin="55,330,0,0" VerticalAlignment="Top" Width="34" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Click="delButton_Click" Grid.Column="1" Height="34">
                         <Image Source="Resources/deleteIcon.png" ClipToBounds="True" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Height="24" Width="24"/>
                     </Button>
-                    <GroupBox Header="Design customization" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="156" Width="309" Grid.Column="1">
-                        <StackPanel>
+                    <GroupBox Header="Design customization" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="143" Width="309" Grid.Column="1">
+                        <StackPanel Margin="0,0,0,12">
                             <Label Content="Title color :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.818,0.734" Height="29"/>
                             <Label Content="Text color :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Height="26"/>
                             <Label Content="Background color :" Margin="10,10,160,0" VerticalAlignment="Top" Height="28"/>
@@ -122,14 +122,14 @@
                     <ComboBox Name="menueditor_txtBox1" Margin="487,30,38,340" Panel.ZIndex="2" Grid.Column="1"/>
                     <ComboBox Name="menueditor_txtBox2" Margin="487,68,38,302" Panel.ZIndex="2" Grid.Column="1"/>
                     <ComboBox Name="menueditor_bgBox" Margin="487,109,38,261" Panel.ZIndex="2" Grid.Column="1"/>
-                    <GroupBox Header="Custom Background" HorizontalAlignment="Left" Margin="325,171,0,0" VerticalAlignment="Top" Height="215" Width="309" Grid.Column="1">
+                    <GroupBox Header="Custom Background" HorizontalAlignment="Left" Margin="325,158,0,0" VerticalAlignment="Top" Height="228" Width="309" Grid.Column="1">
                         <StackPanel Margin="42,0,63,0">
-                            <CheckBox x:Name="menueditor_dlCB" Content="Download online content" HorizontalAlignment="Left" Margin="5,5,5,15" VerticalAlignment="Top" Checked="menueditor_dlCB_Checked" Unchecked="menueditor_dlCB_Unchecked"/>
-                            <RadioButton x:Name="menueditor_2dbgRB" Content="Use 2D backgrounds" Margin="5,5,10,10" Checked="menueditor_2dbgRB_Checked"/>
-                            <CheckBox x:Name="menueditor_smokeEffectCB" Content="Use smoke effects" HorizontalAlignment="Left" Margin="42,5,10,10" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="menueditor_2dbgBox" Height="20" Margin="42,0,42,15" RenderTransformOrigin="0.5,0.5"/>
-                            <RadioButton x:Name="menueditor_3dbgRB" Content="Use map backgrounds" Margin="5,5,10,10" Checked="menueditor_3dbgRB_Checked"/>
-                            <ComboBox x:Name="menueditor_3dbgBox" Height="20" Margin="42,0,42,15" RenderTransformOrigin="0.5,0.5"/>
+                            <CheckBox x:Name="menueditor_dlCB" Content="Download online content" HorizontalAlignment="Left" Margin="5,5,5,10" VerticalAlignment="Top" Checked="menueditor_dlCB_Checked" Unchecked="menueditor_dlCB_Unchecked"/>
+                            <RadioButton x:Name="menueditor_2dbgRB" Content="Use 2D backgrounds" Margin="5,5,10,5" Checked="menueditor_2dbgRB_Checked"/>
+                            <CheckBox x:Name="menueditor_smokeEffectCB" Content="Use smoke effects" HorizontalAlignment="Left" Margin="42,5,10,5" VerticalAlignment="Top"/>
+                            <ComboBox x:Name="menueditor_2dbgBox" Height="20" Margin="42,0,42,10" RenderTransformOrigin="0.5,0.5"/>
+                            <RadioButton x:Name="menueditor_3dbgRB" Content="Use map backgrounds" Margin="5,5,10,5" Checked="menueditor_3dbgRB_Checked"/>
+                            <ComboBox x:Name="menueditor_3dbgBox" Height="20" Margin="42,0,42,10" RenderTransformOrigin="0.5,0.5"/>
                         </StackPanel>
                     </GroupBox>
                 </Grid>
