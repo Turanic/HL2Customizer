@@ -155,6 +155,21 @@ namespace HL2Customizer
             Tuple.Create("Black",  (byte)10,  (byte)10 ,  (byte)10),
             };
 
+        string BGMusicPath; //needed to move the bg music file to the right location when apply
+        #endregion
+
+        //FONT EDITOR
+        #region fonteditor
+        string[] Fonts = new string[]
+        {
+            "Arial",
+            "Courier New",
+            "Defused",
+            //"Dodger", To big :/
+            "DS-Digital",
+            "Turok",
+            "Verdana",
+        };
         #endregion
 
         //AUX EDITOR
@@ -186,15 +201,33 @@ namespace HL2Customizer
 
         public MainWindow()
         {
+            System.Threading.Thread.Sleep(1500);
+            // WPF Bug Workaround: while we have no WPF window open we can`t show MessageBox.
+            Window WpfBugWindow = new Window()
+            {
+                AllowsTransparency = true,
+                Background = System.Windows.Media.Brushes.Transparent,
+                WindowStyle = WindowStyle.None,
+                Top = 0,
+                Left = 0,
+                Width = 1,
+                Height = 1,
+                ShowInTaskbar = false
+            };
+
+            WpfBugWindow.Show();
             try
             {
+                
                 WebClient client = new WebClient();
                 Stream stream = client.OpenRead("http://turanic.com/HL2Customizer/lastVersion.txt");
                 StreamReader reader = new StreamReader(stream);
                 String content = reader.ReadToEnd();
 
                 if (content.Substring(0, 3) != HL2Customizer.Resources.resfile.Version.Substring(0, 3))
+                {
                     System.Windows.MessageBox.Show("HL2Customizer v." + content + " is available online!", "New version!", MessageBoxButton.OK);
+                } 
             }
             catch
             {
@@ -227,6 +260,7 @@ namespace HL2Customizer
                 new BrandSaver());
             }
             Initialize(save);
+            WpfBugWindow.Close();
         }
 
         public MainWindow(SavedData Save)
@@ -477,6 +511,32 @@ namespace HL2Customizer
             menueditor_2dbgRB.IsChecked = !bgm.MapBG;
             menueditor_3dbgRB.IsChecked = bgm.MapBG;
             menueditor_smokeEffectCB.IsChecked = bgm.SmokeEffects;
+            menueditor_CBMusic.IsChecked = cfgm.BGMusic;
+
+            BGMusicPath = "none"; // if the user did not change music
+            #endregion
+
+            //FONT EDITOR
+            #region fonteditor
+            foreach (string font in Fonts)
+            {
+                fonteditor_TxtFontBox.Items.Add(font);
+                fonteditor_NbrFontBox.Items.Add(font);
+                fonteditor_TitleFontBox.Items.Add(font);
+                fonteditor_ChatFontBox.Items.Add(font);
+            }
+            fonteditor_TxtFontBox.SelectedIndex = 0;
+            fonteditor_NbrFontBox.SelectedIndex = 0;
+            fonteditor_TitleFontBox.SelectedIndex = 0;
+            fonteditor_ChatFontBox.SelectedIndex = 0;
+            for (int i = 0; i < fonteditor_TxtFontBox.Items.Count; i++)
+                if (Convert.ToString(fonteditor_TxtFontBox.Items[i]) == csm.TxtFont) fonteditor_TxtFontBox.SelectedIndex = i;
+            for (int i = 0; i < fonteditor_NbrFontBox.Items.Count; i++)
+                if (Convert.ToString(fonteditor_NbrFontBox.Items[i]) == csm.NbrFont) fonteditor_NbrFontBox.SelectedIndex = i;
+            for (int i = 0; i < fonteditor_TitleFontBox.Items.Count; i++)
+                if (Convert.ToString(fonteditor_TitleFontBox.Items[i]) == ssm.TitleFont) fonteditor_TitleFontBox.SelectedIndex = i;
+            for (int i = 0; i < fonteditor_ChatFontBox.Items.Count; i++)
+                if (Convert.ToString(fonteditor_ChatFontBox.Items[i]) == csm.ChatFont) fonteditor_ChatFontBox.SelectedIndex = i;
             #endregion
 
             //FILE SYSTEM
@@ -561,10 +621,16 @@ namespace HL2Customizer
                 SetProperties();
                 try
                 {
+
+                    //Language files creation
+                    File.WriteAllBytes(Paths.ResPath + @"valve_lang_files.zip", HL2Customizer.Resources.resfile.valve_lang_files);
+                    Extracter.Extract(Paths.ResPath, "valve_lang_files.zip");
+
                     cfgm.SetAutoexec(ref Paths);
                     gmm.WriteFile(ref Paths);
                     cfgm.ConfigAutoExec();
                     csm.WriteFile(ref Paths);
+                    csm.WriteChatScheme(ref Paths);
                     csm.AddFonts(ref Paths);
                     ham.WriteFile(ref Paths);
                     wsm.WriteFiles(ref Paths);
@@ -573,6 +639,20 @@ namespace HL2Customizer
 
                     #region bg download and application
 
+
+                    //FIRST, let's apply the choosen mp3 file for bg music
+                    if (cfgm.BGMusic && BGMusicPath != "none")
+                    {
+                        try
+                        {
+                            File.Copy(BGMusicPath, Paths.SoundsPath + @"startup_music.mp3", true);
+                        }
+                        catch
+                        {
+                            System.Windows.MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("I wasn't able to move the mp3 file from your "+
+                                "location for the bg music :(. Maybe you should try another time, or test another file","ERROR", System.Windows.MessageBoxButton.OK);
+                        }
+                    }
                     File.WriteAllBytes(Paths.BackgroundsPath + @"background01.zip", HL2Customizer.Resources.resfile.background01);
                     Extracter.Extract(Paths.BackgroundsPath, "background01.zip");
 
@@ -678,7 +758,7 @@ namespace HL2Customizer
                     Tuple.Create("ypos","32"),
                     Tuple.Create("wide","160"),
                     Tuple.Create("tall","18"),
-                    Tuple.Create("font","DefaultSmall"),
+                    Tuple.Create("font","SmallVerdana"),
                     Tuple.Create("fgcolor_override", basicConfigs_mainColorBox.Text),
                     };
                     hlm.AddElement("Brand", s);
@@ -715,6 +795,7 @@ namespace HL2Customizer
             cfgm.SetRate(Convert.ToInt32(advancedconfigs_rateLabel.Content), Convert.ToInt32(advancedconfigs_updateLabel.Content), Convert.ToInt32(advancedconfigs_cmdLabel.Content), interpTmp);
             cfgm.DontModifyRates = (bool)advancedconfigs_dontTuchThisRB.IsChecked;
             cfgm.MapBG = (bool)menueditor_3dbgRB.IsChecked;
+            cfgm.BGMusic = (bool)menueditor_CBMusic.IsChecked;
             cfgm.MapBGname = menueditor_3dbgBox.Text ;
             int redAmount;
             switch ((int)advancedconfigs_redScreenScroller.Value)
@@ -739,6 +820,10 @@ namespace HL2Customizer
             csm.SetProperties(basicConfigs_mainColorBox.Text, basicConfigs_secColorBox.Text,
             basicConfigs_crossColorBox.Text, basicConfigs_auxCrossColorBox.Text,
             menueditor_txtBox1.Text, (bool)basicConfigs_outlinedRB.IsChecked);
+            csm.TxtFont = fonteditor_TxtFontBox.Text;
+            csm.NbrFont = fonteditor_NbrFontBox.Text;
+            ssm.TitleFont = fonteditor_TitleFontBox.Text;
+            csm.ChatFont = fonteditor_ChatFontBox.Text;
 
             switch ((int)basicConfigs_xhairSizeSlider.Value)
             {
@@ -822,6 +907,9 @@ namespace HL2Customizer
             if (!Directory.Exists(Paths.ScriptsPath)) Directory.CreateDirectory(Paths.ScriptsPath);
             Paths.MapsPath = Paths.HudPath + @"maps/";
             if (!Directory.Exists(Paths.MapsPath)) Directory.CreateDirectory(Paths.MapsPath);
+            Paths.SoundsPath = Paths.HudPath + @"sound/hl2c/";
+            if (!Directory.Exists(Paths.HudPath + @"sound/")) Directory.CreateDirectory(Paths.HudPath + @"sound/");
+            if (!Directory.Exists(Paths.SoundsPath)) Directory.CreateDirectory(Paths.SoundsPath);
 
             //SPECIALE SCOREBOARD
             if (!File.Exists(Paths.UIPath + @"ScoreBoard.res"))
@@ -1269,6 +1357,37 @@ namespace HL2Customizer
             menueditor_3dbgBox.IsEnabled = true;
         }
 
+        private void menueditor_CBMusic_Checked(object sender, RoutedEventArgs e)
+        {
+            menueditor_browseMusic.IsEnabled = true;
+        }
+
+        private void menueditor_CBMusic_Unchecked(object sender, RoutedEventArgs e)
+        {
+            menueditor_browseMusic.IsEnabled = false;
+        }
+
+        private void menueditor_browseMusic_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".mp3";
+            dlg.Filter = "Music Files (*.mp3)|*.mp3";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+                // Get the selected file name
+                if (result == true)
+                {
+                    // Open document 
+                    BGMusicPath = dlg.FileName;
+                }
+
+        }
+
         #endregion
 
         //FILE SYSTEM
@@ -1545,6 +1664,7 @@ namespace HL2Customizer
         }
 
         #endregion
+
 
         #endregion
 

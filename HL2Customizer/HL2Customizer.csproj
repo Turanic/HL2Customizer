@@ -173,6 +173,13 @@
     <EmbeddedResource Include="Resources\UnlitTwoTexture.vmt" />
     <EmbeddedResource Include="Resources\defaultBG.zip" />
     <EmbeddedResource Include="Resources\background01.zip" />
+    <EmbeddedResource Include="Resources\valve_lang_files.zip" />
+    <EmbeddedResource Include="Resources\ChatScheme.res" />
+    <Resource Include="Resources\Icons.ttf" />
+    <Resource Include="Resources\DS-DIGIT.ttf" />
+    <Resource Include="Resources\Dodger.ttf" />
+    <Resource Include="Resources\Defused.ttf" />
+    <Resource Include="Resources\Turok.ttf" />
     <Resource Include="Resources\brands.ttf" />
     <Resource Include="Resources\XHAIR.ttf" />
     <Resource Include="Resources\halflife2.ttf" />
@@ -261,6 +268,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\hl2c.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Resources\splashScreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

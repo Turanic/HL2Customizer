@@ -375,20 +375,20 @@ Scheme
 		{
 			"1"	[$POSIX]
 			{
-				"name"		"Helvetica Bold"
+				"name"		"|TITLE_FONT|"
 				"tall"		"20"
 				"antialias" "1"
 			}
 			"1"	[$WIN32]
 			{
-				"name"		"Verdana" 
+				"name"		"|TITLE_FONT|" 
 				"tall"		"16" 
 				"weight"	"600"
 				"antialias" "1"
 			}
 			"1"	[$X360]
 			{
-				"name"		"Verdana"
+				"name"		"|TITLE_FONT|"
 				"tall"			"14"
 				"tall_hidef"	"20"
 				"weight"	"1200"
@@ -1263,5 +1263,10 @@ Scheme
 		"1"		"resource/HALFLIFE2.ttf"
 		"2"		"resource/HL2EP2.ttf"	
 		"3"		"resource/marlett.ttf"
+		"8"		"resource/fonts/Icons.ttf"
+		"10"	"resource/fonts/Defused.ttf"
+		"11"	"resource/fonts/Turok.ttf"
+		"12"	"resource/fonts/Dodger.ttf"
+		"13"	"resource/fonts/DS-DIGIT.ttf"
 	}
 }

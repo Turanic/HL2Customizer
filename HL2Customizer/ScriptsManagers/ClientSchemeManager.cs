@@ -17,6 +17,10 @@ namespace HL2Customizer
         public string SecCrossColor { get; private set; }
         public string TitleColor { get; private set; }
 
+        public string TxtFont { get; set; }
+        public string NbrFont { get; set; }
+        public string ChatFont { get; set; }
+
         public Boolean OutlinedCrosshairs { get; set; }
         public Boolean KeepXhair { private get; set; }
 
@@ -30,6 +34,10 @@ namespace HL2Customizer
             SecondaryColor = "Orange";
             CrossColor = "Orange";
             SecCrossColor = "White";
+
+            TxtFont = "Verdana";
+            NbrFont = "Verdana";
+            ChatFont = "Verdana";
 
             CrosshairSize = 'S';
             OutlinedCrosshairs = false;
@@ -78,6 +86,9 @@ namespace HL2Customizer
                 if (line.Contains("|CROSS_SIZE2|")) line = line.Replace("|CROSS_SIZE2|", csize.ToString());
                 if (line.Contains("|QINFOS_SIZE|")) line = line.Replace("|QINFOS_SIZE|", (csize/2).ToString());
 
+                if (line.Contains("|TEXT_FONT|")) line = line.Replace("|TEXT_FONT|", TxtFont);
+                if (line.Contains("|NBR_FONT|")) line = line.Replace("|NBR_FONT|", NbrFont);
+
                 if (line.Contains("|PHYSCANNON_ANTIALIASED|")) line = line.Replace("|PHYSCANNON_ANTIALIASED|", (OutlinedAdditionnalCrosshairs[0] ? "0" : "1"));
                 if (line.Contains("|PHYSCANNON_OUTLINED|")) line = line.Replace("|PHYSCANNON_OUTLINED|", (OutlinedAdditionnalCrosshairs[0] ? "1" : "0"));
                 if (line.Contains("|CROWBAR_ANTIALIASED|")) line = line.Replace("|CROWBAR_ANTIALIASED|", (OutlinedAdditionnalCrosshairs[1] ? "0" : "1"));
@@ -110,10 +121,34 @@ namespace HL2Customizer
             sw.Close();
         }
 
+        public void WriteChatScheme(ref UserPaths Paths)
+        {
+            string file = Paths.ResPath + "chatscheme.res";
+            File.WriteAllText(file, "");
+            StreamReader sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("HL2Customizer.Resources.ChatScheme.res"));
+            StreamWriter sw = new StreamWriter(File.Open(file, System.IO.FileMode.OpenOrCreate));
+
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                if (line.Contains("|CHAT_FONT|")) line = line.Replace("|CHAT_FONT|", ChatFont);
+
+                sw.WriteLine(line);
+            }
+
+            sr.Close();
+            sw.Close();
+        }
+
         public void AddFonts(ref UserPaths Paths)
         {
             File.WriteAllBytes(Paths.FontsPath + @"XHAIR.ttf", HL2Customizer.Resources.resfile.XHAIR);
             File.WriteAllBytes(Paths.FontsPath + @"brands.ttf", HL2Customizer.Resources.resfile.brands);
+            File.WriteAllBytes(Paths.FontsPath + @"Defused.ttf", HL2Customizer.Resources.resfile.Defused);
+            File.WriteAllBytes(Paths.FontsPath + @"Dodger.ttf", HL2Customizer.Resources.resfile.Dodger);
+            File.WriteAllBytes(Paths.FontsPath + @"DS-DIGIT.ttf", HL2Customizer.Resources.resfile.DS_DIGIT);
+            File.WriteAllBytes(Paths.FontsPath + @"Icons.ttf", HL2Customizer.Resources.resfile.Icons);
+            File.WriteAllBytes(Paths.FontsPath + @"Turok.ttf", HL2Customizer.Resources.resfile.Turok);
         }
     }
 }

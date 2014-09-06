@@ -332,163 +332,6 @@ Scheme
 		}
 		// fonts listed later in the order will only be used if they fulfill a range not already filled
 		// if a font fails to load then the subsequent fonts will replace
-		Default
-		{
-			"1"
-			{
-				"name"		"Verdana"
-				"tall"		"9"
-				"weight"	"700"
-				"antialias" "1"
-				"yres"	"1 599"
-			}
-			"2"
-			{
-				"name"		"Verdana"
-				"tall"		"12"
-				"weight"	"700"
-				"antialias" "1"
-				"yres"	"600 767"
-			}
-			"3"
-			{
-				"name"		"Verdana"
-				"tall"		"14"
-				"weight"	"900"
-				"antialias" "1"
-				"yres"	"768 1023"
-			}
-			"4"
-			{
-				"name"		"Verdana"
-				"tall"		"20"
-				"weight"	"900"
-				"antialias" "1"
-				"yres"	"1024 1199"
-			}
-			"5"
-			{
-				"name"		"Verdana"
-				"tall"		"24"
-				"weight"	"900"
-				"antialias" "1"
-				"yres"	"1200 10000"
-				"additive"	"1"
-			}
-		}
-		"DefaultSmall"
-		{
-			"1"
-			{
-				"name"		"Verdana"
-				"tall"		"12"
-				"weight"	"0"
-				"range"		"0x0000 0x017F"
-				"yres"	"480 599"
-			}
-			"2"
-			{
-				"name"		"Verdana"
-				"tall"		"13"
-				"weight"	"0"
-				"range"		"0x0000 0x017F"
-				"yres"	"600 767"
-			}
-			"3"
-			{
-				"name"		"Verdana"
-				"tall"		"14"
-				"weight"	"0"
-				"range"		"0x0000 0x017F"
-				"yres"	"768 1023"
-				"antialias"	"1"
-			}
-			"4"
-			{
-				"name"		"Verdana"
-				"tall"		"20"
-				"weight"	"0"
-				"range"		"0x0000 0x017F"
-				"yres"	"1024 1199"
-				"antialias"	"1"
-			}
-			"5"
-			{
-				"name"		"Verdana"
-				"tall"		"24"
-				"weight"	"0"
-				"range"		"0x0000 0x017F"
-				"yres"	"1200 6000"
-				"antialias"	"1"
-			}
-			"6"
-			{
-				"name"		"Arial"
-				"tall"		"12"
-				"range" 		"0x0000 0x00FF"
-				"weight"		"0"
-			}
-		}
-		"DefaultVerySmall"
-		{
-			"1"
-			{
-				"name"		"Verdana"
-				"tall"		"12"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"480 599"
-			}
-			"2"
-			{
-				"name"		"Verdana"
-				"tall"		"13"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"600 767"
-			}
-			"3"
-			{
-				"name"		"Verdana"
-				"tall"		"14"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"768 1023"
-				"antialias"	"1"
-			}
-			"4"
-			{
-				"name"		"Verdana"
-				"tall"		"20"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"1024 1199"
-				"antialias"	"1"
-			}
-			"5"
-			{
-				"name"		"Verdana"
-				"tall"		"24"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"1200 6000"
-				"antialias"	"1"
-			}
-			"6"
-			{
-				"name"		"Verdana"
-				"tall"		"12"
-				"range" 		"0x0000 0x00FF"
-				"weight"		"0"
-			}
-			"7"
-			{
-				"name"		"Arial"
-				"tall"		"11"
-				"range" 		"0x0000 0x00FF"
-				"weight"		"0"
-			}
-		}
 		"MenuTitle"
 		{
 			"1"
@@ -520,6 +363,18 @@ Scheme
 				"antialias" "1"
 				"blur"		"5"
 				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		HudIcons
+		{
+			"1"
+			{
+				"name"		"Icons"
+				"tall"		"42"
+				"weight"	"100"
+				"antialias" "1"
 				"additive"	"1"
 				"custom"	"1"
 			}
@@ -748,7 +603,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"HalfLife2"
+				"name"		"|NBR_FONT|"
 				"tall"		"32"
 				"weight"	"0"
 				"antialias" "1"
@@ -760,7 +615,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"HalfLife2"
+				"name"		"|NBR_FONT|"
 				"tall"		"32"
 				"weight"	"0"
 				"blur"		"4"
@@ -774,8 +629,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"HalfLife2" [!$OSX]
-				"name"		"Helvetica Bold" [$OSX]
+				"name"		"|NBR_FONT|"
 				"tall"		"16"
 				"weight"	"1000"
 				"additive"	"1"
@@ -787,7 +641,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana"
+				"name"		"|NBR_FONT|"
 				"tall"		"11"
 				"weight"	"700"
 				"antialias" "1"
@@ -798,8 +652,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana" [!$OSX]
-				"name"		"Helvetica Bold" [$OSX]
+				"name"		"|TEXT_FONT|"
 				"tall"		"14"
 				"weight"	"1000"
 				"antialias" "1"
@@ -810,8 +663,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana" [!$OSX]
-				"name"		"Helvetica" [$OSX]
+				"name"		"|TEXT_FONT|"
 				"tall"		"11"
 				"weight"	"0"
 				"antialias" "1"
@@ -822,7 +674,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana"
+				"name"		"|TEXT_FONT|"
 				"tall"		"8"
 				"weight"	"700"
 				"antialias" "1"
@@ -830,7 +682,7 @@ Scheme
 			}
 			"2"
 			{
-				"name"		"Verdana"
+				"name"		"|TEXT_FONT|"
 				"tall"		"10"
 				"weight"	"700"
 				"antialias" "1"
@@ -838,7 +690,7 @@ Scheme
 			}
 			"3"
 			{
-				"name"		"Verdana"
+				"name"		"|TEXT_FONT|"
 				"tall"		"12"
 				"weight"	"900"
 				"antialias" "1"
@@ -846,7 +698,7 @@ Scheme
 			}
 			"4"
 			{
-				"name"		"Verdana"
+				"name"		"|TEXT_FONT|"
 				"tall"		"16"
 				"weight"	"900"
 				"antialias" "1"
@@ -854,7 +706,7 @@ Scheme
 			}
 			"5"
 			{
-				"name"		"Verdana"
+				"name"		"|TEXT_FONT|"
 				"tall"		"17"
 				"weight"	"1000"
 				"antialias" "1"
@@ -865,7 +717,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Courier New"
+				"name"		"|TEXT_FONT|"
 				"tall"		"14"
 				"weight"	"400"
 				"outline"	"1"
@@ -1049,7 +901,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana"
+				"name"		"Marlett"
 				"tall"		"12"
 				"weight"	"700"
 				"yres"	"480 599"
@@ -1057,7 +909,7 @@ Scheme
 			}
 			"2"
 			{
-				"name"		"Verdana"
+				"name"		"Marlett"
 				"tall"		"13"
 				"weight"	"700"
 				"yres"	"600 767"
@@ -1065,7 +917,7 @@ Scheme
 			}
 			"3"
 			{
-				"name"		"Verdana"
+				"name"		"Marlett"
 				"tall"		"14"
 				"weight"	"700"
 				"yres"	"768 1023"
@@ -1073,7 +925,7 @@ Scheme
 			}
 			"4"
 			{
-				"name"		"Verdana"
+				"name"		"Marlett"
 				"tall"		"20"
 				"weight"	"700"
 				"yres"	"1024 1199"
@@ -1081,7 +933,7 @@ Scheme
 			}
 			"5"
 			{
-				"name"		"Verdana"
+				"name"		"Marlett"
 				"tall"		"24"
 				"weight"	"700"
 				"yres"	"1200 10000"
@@ -1112,6 +964,59 @@ Scheme
 				"custom" "1" [$OSX]
 		   }
 		}	
+		"SmallVerdana"
+		{
+			"1"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"480 599"
+			}
+			"2"
+			{
+				"name"		"Verdana"
+				"tall"		"13"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"Verdana"
+				"tall"		"14"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"768 1023"
+				"antialias"	"1"
+			}
+			"4"
+			{
+				"name"		"Verdana"
+				"tall"		"20"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1024 1199"
+				"antialias"	"1"
+			}
+			"5"
+			{
+				"name"		"Verdana"
+				"tall"		"24"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1200 6000"
+				"antialias"	"1"
+			}
+			"6"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+		}	
 		// Used by scoreboard and spectator UI for names which don't map in the normal fashion
 		"DefaultVerySmallFallBack"
 		{
@@ -1141,6 +1046,164 @@ Scheme
 				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
 				"yres"		"1200 6000"
 				"antialias"	"1"
+			}
+		}
+		//DEFAULTs fonts
+		Default
+		{
+			"1"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"9"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"1 599"
+			}
+			"2"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"12"
+				"weight"	"700"
+				"antialias" "1"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"14"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"768 1023"
+			}
+			"4"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"20"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"1024 1199"
+			}
+			"5"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"24"
+				"weight"	"900"
+				"antialias" "1"
+				"yres"	"1200 10000"
+				"additive"	"1"
+			}
+		}
+		"DefaultSmall"
+		{
+			"1"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"480 599"
+			}
+			"2"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"13"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"14"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"768 1023"
+				"antialias"	"1"
+			}
+			"4"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"20"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1024 1199"
+				"antialias"	"1"
+			}
+			"5"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"24"
+				"weight"	"0"
+				"range"		"0x0000 0x017F"
+				"yres"	"1200 6000"
+				"antialias"	"1"
+			}
+			"6"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"12"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+		}
+		"DefaultVerySmall"
+		{
+			"1"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"12"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"480 599"
+			}
+			"2"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"13"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"600 767"
+			}
+			"3"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"14"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"768 1023"
+				"antialias"	"1"
+			}
+			"4"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"20"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"1024 1199"
+				"antialias"	"1"
+			}
+			"5"
+			{
+				"name"		"|TEXT_FONT|"
+				"tall"		"24"
+				"weight"	"0"
+				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
+				"yres"	"1200 6000"
+				"antialias"	"1"
+			}
+			"6"
+			{
+				"name"		"Verdana"
+				"tall"		"12"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
+			}
+			"7"
+			{
+				"name"		"Arial"
+				"tall"		"11"
+				"range" 		"0x0000 0x00FF"
+				"weight"		"0"
 			}
 		}
 
@@ -1803,6 +1866,11 @@ Scheme
 		"2"		"resource/HL2crosshairs.ttf"
 		"3"		"resource/fonts/XHAIR.ttf"
 		"7"		"resource/fonts/brands.ttf"
+		"8"		"resource/fonts/Icons.ttf"
+		"10"	"resource/fonts/Defused.ttf"
+		"11"	"resource/fonts/Turok.ttf"
+		"12"	"resource/fonts/Dodger.ttf"
+		"13"	"resource/fonts/DS-DIGIT.ttf"
 	}
 
 }

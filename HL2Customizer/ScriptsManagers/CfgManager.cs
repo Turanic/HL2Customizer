@@ -23,6 +23,7 @@ namespace HL2Customizer
         public bool EnableConsoleFilter { get; private set; }
         public bool DontModifyRates { get; set; }
         public bool MapBG { get; set; }
+        public bool BGMusic { get; set; }
         public string Model { get; private set; }
         public string StartWeapon { get; private set; }
         public string MapBGname { get; set; }
@@ -73,7 +74,8 @@ namespace HL2Customizer
         {
             if (!File.Exists(_showconsole)) File.Create(_showconsole).Close();
 
-            File.WriteAllText(_showconsole, (ConsoleAtstart ? "showconsole" : "hideconsole") + "; play hl2c/startup_music.mp3");
+            File.WriteAllText(_showconsole, (ConsoleAtstart ? "showconsole" : "hideconsole"));
+            if (this.BGMusic) File.AppendAllText(_showconsole, "; play hl2c/startup_music.mp3");
 
             if (!File.Exists(_autoexec)) File.Create(_autoexec).Close();
 

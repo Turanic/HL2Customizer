@@ -15,11 +15,14 @@ namespace HL2Customizer
         public Tuple<string, byte, byte, byte> TxtColor2 { get; set; }
         public Tuple<string, byte, byte, byte> BgColor { get; set; }
 
+        public string TitleFont;
+
         public SourceSchemeManager()
         {
             TxtColor1 = Tuple.Create("White", (byte)160, (byte)160, (byte)160);
             TxtColor2 = Tuple.Create("White", (byte)160, (byte)160, (byte)160);
             BgColor = Tuple.Create("White", (byte)160, (byte)160, (byte)160);
+            TitleFont = "Verdana";
         }
 
         public void SetProperties(Tuple<string, byte, byte, byte> txtColor1, Tuple<string, byte, byte, byte> txtColor2, Tuple<string, byte, byte, byte> bgColor)
@@ -74,6 +77,9 @@ namespace HL2Customizer
                     line = line.Replace("|background-|", (BgColor.Item2 * 0.5).ToString() +
                     " " + (BgColor.Item3 * 0.5).ToString() +
                     " " + (BgColor.Item4 * 0.5).ToString());
+
+                if (line.Contains("|TITLE_FONT|")) line = line.Replace("|TITLE_FONT|", TitleFont);
+
                 sw.WriteLine(line);
             }
 

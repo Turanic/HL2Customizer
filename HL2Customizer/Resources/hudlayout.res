@@ -13,9 +13,10 @@
 
 		"PaintBackgroundType"	"2"
 		
-		"text_xpos" "8"
-		"text_ypos" "20"
-		"digit_xpos" "50"
+		"text_xpos" "5"
+		"text_ypos" "-4"
+		"TextFont"	"HudIcons"
+		"digit_xpos" "40"
 		"digit_ypos" "2"
 	}
 
@@ -93,9 +94,10 @@
 
 		"PaintBackgroundType"	"2"
 
-		"text_xpos" "8"
-		"text_ypos" "20"
-		"digit_xpos" "50"
+		"text_xpos" "5"
+		"text_ypos" "-4"
+		"TextFont"	"HudIcons"
+		"digit_xpos" "40"
 		"digit_ypos" "2"
 	}
 
@@ -104,7 +106,7 @@
 	   "fieldName"   "HudAmmo"
 	   "xpos"   "r150"
 	   "ypos"   "432"
-	   "wide"   "136"
+	   "wide"   "152"
 	   "tall"   "36"
 	   "visible"   "1"
 	   "enabled"   "1"

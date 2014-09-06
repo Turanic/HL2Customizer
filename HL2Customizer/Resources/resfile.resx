@@ -134,7 +134,7 @@
     <value>hudanimations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>0.5.6</value>
+    <value>0.5.7</value>
     <comment>Version de HL2Customizer</comment>
   </data>
   <data name="sourcescheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -220,5 +220,29 @@
   </data>
   <data name="background01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>background01.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="splashScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>splashScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Defused" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Defused.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Turok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Turok.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Dodger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Dodger.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DS_DIGIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>DS-DIGIT.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="valve_lang_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>valve_lang_files.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Icons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Icons.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChatScheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ChatScheme.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

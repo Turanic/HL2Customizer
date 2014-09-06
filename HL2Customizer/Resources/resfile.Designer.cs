@@ -103,6 +103,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ChatScheme {
+            get {
+                object obj = ResourceManager.GetObject("ChatScheme", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] clientscheme {
             get {
                 object obj = ResourceManager.GetObject("clientscheme", resourceCulture);
@@ -131,12 +141,42 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Defused {
+            get {
+                object obj = ResourceManager.GetObject("Defused", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap deleteIcon {
             get {
                 object obj = ResourceManager.GetObject("deleteIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Dodger {
+            get {
+                object obj = ResourceManager.GetObject("Dodger", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] DS_DIGIT {
+            get {
+                object obj = ResourceManager.GetObject("DS_DIGIT", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -267,6 +307,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Icons {
+            get {
+                object obj = ResourceManager.GetObject("Icons", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ScoreBoard {
             get {
                 object obj = ResourceManager.GetObject("ScoreBoard", resourceCulture);
@@ -280,6 +330,26 @@ namespace HL2Customizer.Resources {
         internal static byte[] sourcescheme {
             get {
                 object obj = ResourceManager.GetObject("sourcescheme", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap splashScreen {
+            get {
+                object obj = ResourceManager.GetObject("splashScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Turok {
+            get {
+                object obj = ResourceManager.GetObject("Turok", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -305,7 +375,17 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.5.6.
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] valve_lang_files {
+            get {
+                object obj = ResourceManager.GetObject("valve_lang_files", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.5.7.
         /// </summary>
         internal static string Version {
             get {
