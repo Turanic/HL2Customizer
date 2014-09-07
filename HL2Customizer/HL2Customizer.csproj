@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="ScriptsManagers\BGsManager.cs" />
     <Compile Include="ScriptsManagers\DSPManager.cs" />
+    <Compile Include="ScriptsManagers\LangManager.cs" />
     <Compile Include="ScriptsManagers\WeaponScriptManager.cs" />
     <Compile Include="ToolClasses\BrandSaver.cs" />
     <Compile Include="ToolClasses\Extracter.cs" />
@@ -172,10 +173,10 @@
     <EmbeddedResource Include="Resources\UnlitGeneric.vmt" />
     <EmbeddedResource Include="Resources\UnlitTwoTexture.vmt" />
     <EmbeddedResource Include="Resources\background01.zip" />
-    <EmbeddedResource Include="Resources\valve_lang_files.zip" />
     <EmbeddedResource Include="Resources\ChatScheme.res" />
-    <EmbeddedResource Include="Resources\defaultBG.zip" />
     <EmbeddedResource Include="Resources\defaultMap.zip" />
+    <EmbeddedResource Include="Resources\defaultBG.zip" />
+    <EmbeddedResource Include="Resources\valve_lang_files.zip" />
     <Resource Include="Resources\Manteka.ttf" />
     <Resource Include="Resources\Russo_One.ttf" />
     <Resource Include="Resources\ReturnCastle.ttf" />
@@ -275,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="Resources\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\valve_lang.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

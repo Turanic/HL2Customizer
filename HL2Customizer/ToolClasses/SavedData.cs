@@ -19,11 +19,13 @@ namespace HL2Customizer
         public BGsManager BGm { get; set; }
         public CfgManager Cfgm { get; set; }
         public DSPManager Dspm { get; set; }
+        public LangManager Lgm { get; set; }
         public BrandSaver Brand { get; set; }
+
 
         public SavedData(HudInformations infos, ClientSchemeManager csm, SourceSchemeManager ssm,
             HudLayoutManager hlm, HudAnimationsManager ham, WeaponScriptManager wsm, GameMenuManager gmm,
-            BGsManager bgm, CfgManager cfgm, DSPManager dspm, BrandSaver brand)
+            BGsManager bgm, CfgManager cfgm, DSPManager dspm, LangManager lgm, BrandSaver brand)
         {
              this.Infos = infos;
              this.Csm = csm;
@@ -35,6 +37,7 @@ namespace HL2Customizer
              this.BGm = bgm;
              this.Cfgm = cfgm;
              this.Dspm = dspm;
+             this.Lgm = lgm;
              this.Brand = brand;
         }
     }

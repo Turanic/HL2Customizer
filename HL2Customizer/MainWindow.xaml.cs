@@ -36,6 +36,7 @@ namespace HL2Customizer
         GameMenuManager gmm;
         BGsManager bgm;
         DSPManager dspm;
+        LangManager lgm;
         BrandSaver brand;
 
         //BASIC CONFIGS
@@ -173,6 +174,12 @@ namespace HL2Customizer
             "Turok",
             "Verdana",
         };
+        string[] Icons = new string[]
+        {
+            "Quake style",
+            "CAL style",
+            "CU style",
+        };
         #endregion
 
         //AUX EDITOR
@@ -260,6 +267,7 @@ namespace HL2Customizer
                 new BGsManager(),
                 new CfgManager(),
                 new DSPManager(),
+                new LangManager(),
                 new BrandSaver());
             }
             Initialize(save);
@@ -282,6 +290,7 @@ namespace HL2Customizer
             gmm = save.Gmm;
             bgm = save.BGm;
             dspm = save.Dspm;
+            lgm = save.Lgm;
             brand = save.Brand;
 
             InitializeComponent();
@@ -521,6 +530,11 @@ namespace HL2Customizer
 
             //FONT EDITOR
             #region fonteditor
+            foreach (string style in Icons)
+            {
+                fonteditor_healthIconBox.Items.Add(style);
+                fonteditor_armorIconBox.Items.Add(style);
+            }
             foreach (string font in Fonts)
             {
                 fonteditor_TxtFontBox.Items.Add(font);
@@ -541,6 +555,9 @@ namespace HL2Customizer
             for (int i = 0; i < fonteditor_ChatFontBox.Items.Count; i++)
                 if (Convert.ToString(fonteditor_ChatFontBox.Items[i]) == csm.ChatFont) fonteditor_ChatFontBox.SelectedIndex = i;
             fonteditor_DeletePannelsCB.IsChecked = !csm.KeepPannelBG;
+
+            fonteditor_healthIconBox.SelectedIndex = lgm.NoHealthIcon -1;
+            fonteditor_armorIconBox.SelectedIndex = lgm.NoAmorIcon - 1;
             #endregion
 
             //FILE SYSTEM
@@ -626,10 +643,6 @@ namespace HL2Customizer
                 try
                 {
 
-                    //Language files creation
-                    File.WriteAllBytes(Paths.ResPath + @"valve_lang_files.zip", HL2Customizer.Resources.resfile.valve_lang_files);
-                    Extracter.Extract(Paths.ResPath, "valve_lang_files.zip");
-
                     cfgm.SetAutoexec(ref Paths);
                     gmm.WriteFile(ref Paths);
                     cfgm.ConfigAutoExec();
@@ -640,6 +653,7 @@ namespace HL2Customizer
                     wsm.WriteFiles(ref Paths);
                     ssm.WriteFile(ref Paths);
                     dspm.WriteFile(ref Paths);
+                    lgm.WriteFiles(ref Paths);
 
                     #region bg download and application
 
@@ -778,7 +792,7 @@ namespace HL2Customizer
                     #endregion
 
                     HudInformations infos = new HudInformations("previous");
-                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, brand);
+                    SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, lgm, brand);
                     Serializer.SerializeHudData(save);
                     System.Windows.MessageBox.Show("Done ! Your hud is ready ;D. You can now start Half-life 2 Deathmatch.", "Success !!", MessageBoxButton.OK);
 
@@ -856,6 +870,9 @@ namespace HL2Customizer
             hlm.AuxPowerConfig[2] = auxeditor_tileWidthLabel.Content.ToString();
             hlm.AuxPowerConfig[3] = auxeditor_gapLabel.Content.ToString();
             hlm.AuxPowerLabelPos = auxeditor_auxlabelpos.Text;
+
+            lgm.NoHealthIcon = fonteditor_healthIconBox.SelectedIndex + 1;
+            lgm.NoAmorIcon = fonteditor_armorIconBox.SelectedIndex + 1;
 
             bgm.MapBG = (bool)menueditor_3dbgRB.IsChecked;
             bgm.SmokeEffects = ((bool)menueditor_2dbgRB.IsChecked && (bool)menueditor_smokeEffectCB.IsChecked);
@@ -1422,7 +1439,7 @@ namespace HL2Customizer
         {
             SetProperties();
             HudInformations infos = new HudInformations(file_SaveNameBox.Text);
-            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, brand);
+            SavedData save = new SavedData(infos, csm, ssm, hlm, ham, wsm, gmm, bgm, cfgm, dspm, lgm, brand);
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\HL2Customizer\\" + infos.Name + ".hcd"))
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("You already saved a hud with this name... do you want to erease the previous one?", "Save already exist", MessageBoxButton.YesNo);

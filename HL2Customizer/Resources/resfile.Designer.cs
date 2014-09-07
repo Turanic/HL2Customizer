@@ -415,6 +415,19 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;Tokens&quot;
+        ///{
+        ///&quot;Valve_Hud_HEALTH&quot;		&quot;|HEALTH_ICON|&quot;
+        ///&quot;Valve_Hud_SUIT&quot;		&quot;|ARMOR_ICON|&quot;
+        ///}.
+        /// </summary>
+        internal static string valve_lang {
+            get {
+                return ResourceManager.GetString("valve_lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] valve_lang_files {
@@ -425,7 +438,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.5.8.
+        ///   Looks up a localized string similar to 0.5.9.
         /// </summary>
         internal static string Version {
             get {
