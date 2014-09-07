@@ -41,12 +41,12 @@ namespace HL2Customizer
         //BASIC CONFIGS
         #region basicconfigs
         String[] Colors = new String[] {
-            		"White", "Red", "Orange",
+            		"Black","White", "Red", "Orange",
                     "Yellow", "DarkGreen", "Green",
                     "Lime", "Jade", "Cyan",
                     "Turquoise", "SkyBlue", "Blue",
                     "Navy", "Purple", "Magenta",
-                    "Brown"		
+                    "Brown", "Pink", "Silver"	
         };
 
         Tuple<String, char>[] Crosshairs = new Tuple<String, char>[] {
@@ -1059,6 +1059,10 @@ namespace HL2Customizer
                 case "Magenta": hexaColor = new byte[] { 255, 255, 0, 255 };
                     break;
                 case "White": hexaColor = new byte[] { 255, 255, 255, 255 };
+                    break;
+                case "Pink": hexaColor = new byte[] { 255, 255, 105, 180 };
+                    break;
+                case "Silver": hexaColor = new byte[] { 255, 204, 204, 204 };
                     break;
                
 

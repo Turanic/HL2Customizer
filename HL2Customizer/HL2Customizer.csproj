@@ -63,7 +63,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip.Reduced">
-      <HintPath>..\..\..\..\..\Downloads\zip-v1.9-Reduced\Release\Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
