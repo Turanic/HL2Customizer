@@ -149,22 +149,19 @@
             </TabItem>
             <TabItem Header="Fonts">
                 <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-                    <Label Content="HUD text : " HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Width="63"/>
-                    <ComboBox x:Name="fonteditor_TxtFontBox" HorizontalAlignment="Left" Margin="21,51,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="HUD numbers : " HorizontalAlignment="Left" Margin="163,20,0,0" VerticalAlignment="Top" Width="95"/>
-                    <Label Content="Title : " HorizontalAlignment="Left" Margin="302,20,0,0" VerticalAlignment="Top" Width="95"/>
-                    <Label Content="Chat : " HorizontalAlignment="Left" Margin="442,20,0,0" VerticalAlignment="Top" Width="95"/>
-                    <ComboBox x:Name="fonteditor_NbrFontBox" HorizontalAlignment="Left" Margin="163,51,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="fonteditor_TitleFontBox" HorizontalAlignment="Left" Margin="302,51,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="fonteditor_ChatFontBox" HorizontalAlignment="Left" Margin="442,51,0,0" VerticalAlignment="Top" Width="120"/>
-
-                    <CheckBox x:Name="fonteditor_DeletePannelsCB" Content="Delete HUD pannels" HorizontalAlignment="Left" Margin="438,192,0,0" VerticalAlignment="Top"/>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="84" Margin="232,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="190"/>
-                    <ComboBox x:Name="fonteditor_healthIconBox" HorizontalAlignment="Left" Margin="278,268,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox x:Name="fonteditor_armorIconBox" HorizontalAlignment="Left" Margin="278,324,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="Health icon : " HorizontalAlignment="Left" Margin="161,268,0,0" VerticalAlignment="Top" Width="112"/>
-                    <Label Content="Armor icon: " HorizontalAlignment="Left" Margin="161,320,0,0" VerticalAlignment="Top" Width="112"/>
-                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="84" Margin="467,268,0,0" Stroke="Black" VerticalAlignment="Top" Width="95"/>
+                    <Label Content="HUD text : " HorizontalAlignment="Left" Margin="9,25,0,0" VerticalAlignment="Top" Width="63"/>
+                    <ComboBox x:Name="fonteditor_TxtFontBox" HorizontalAlignment="Left" Margin="9,51,0,0" VerticalAlignment="Top" Width="155"/>
+                    <Label Content="HUD numbers : " HorizontalAlignment="Left" Margin="192,25,0,0" VerticalAlignment="Top" Width="95"/>
+                    <Label Content="Title : " HorizontalAlignment="Left" Margin="370,20,0,0" VerticalAlignment="Top" Width="95"/>
+                    <Label Content="Chat : " HorizontalAlignment="Left" Margin="550,20,0,0" VerticalAlignment="Top" Width="95"/>
+                    <ComboBox x:Name="fonteditor_NbrFontBox" HorizontalAlignment="Left" Margin="192,51,0,0" VerticalAlignment="Top" Width="154"/>
+                    <ComboBox x:Name="fonteditor_TitleFontBox" HorizontalAlignment="Left" Margin="370,51,0,0" VerticalAlignment="Top" Width="155"/>
+                    <ComboBox x:Name="fonteditor_ChatFontBox" HorizontalAlignment="Left" Margin="550,51,0,0" VerticalAlignment="Top" Width="155"/>
+                    <CheckBox x:Name="fonteditor_DeletePannelsCB" Content="Delete HUD pannels" HorizontalAlignment="Left" Margin="550,178,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="fonteditor_healthIconBox" HorizontalAlignment="Left" Margin="234,178,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="fonteditor_armorIconBox" HorizontalAlignment="Left" Margin="370,178,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Health icon : " HorizontalAlignment="Left" Margin="234,147,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Label Content="Armor icon: " HorizontalAlignment="Left" Margin="370,147,0,0" VerticalAlignment="Top" Width="112"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Aux. Power editor">

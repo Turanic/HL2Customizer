@@ -52,17 +52,17 @@ Scheme
 	BaseSettings
 	{
 		"FgColor"			"|MAIN_COLOR|"
-		"BgColor"			"0 0 0 76"
+		"BgColor"			"0 0 0 |BG_ALPHA|"
 
 		"Panel.FgColor"			"|SECOND_COLOR|"
-		"Panel.BgColor"			"0 0 0 76"
+		"Panel.BgColor"			"0 0 0 |BG_ALPHA|"
 		
 		//hud anim. related
 		"AuxColor"			"|SECOND_COLOR|"
 
 		"BrightFg"		"|SECOND_COLOR|"
 
-		"DamagedBg"			"180 0 0 200"
+		"DamagedBg"			"180 0 0 |BG_ALPHAX2|"
 		"DamagedFg"			"180 0 0 230"
 		"BrightDamagedFg"		"255 0 0 255"
 
@@ -81,18 +81,18 @@ Scheme
 		"Caution"			"255 48 0 255"
 
 		// Top-left corner of the "Half-Life 2" on the main screen
-		"Main.Title1.X"		"76"
-		"Main.Title1.Y"		"184"
+		"Main.Title1.X"		"46"
+		"Main.Title1.Y"		"14"
 		"Main.Title1.Color"	"|TITLE_COLOR|"
 		
 		// Top-left corner of the "DEATHMATCH" on the main screen
-		"Main.Title2.X"		"315"
-		"Main.Title2.Y"		"222"
+		"Main.Title2.X"		"285"
+		"Main.Title2.Y"		"52"
 		"Main.Title2.Color"	"|TITLE_COLOR|"
 
 		// Top-left corner of the menu on the main screen
-		"Main.Menu.X"		"76"
-		"Main.Menu.Y"		"240"
+		"Main.Menu.X"		"46"
+		"Main.Menu.Y"		"70"
 
 		// Blank space to leave beneath the menu on the main screen
 		"Main.BottomBorder"	"32"
@@ -1871,6 +1871,9 @@ Scheme
 		"11"	"resource/fonts/Turok.ttf"
 		"12"	"resource/fonts/Dodger.ttf"
 		"13"	"resource/fonts/DS-DIGIT.ttf"
+		"14"	"resource/fonts/ReturnCastle.ttf"
+		"15"	"resource/fonts/Russo_One.ttf"
+		"16"	"resource/fonts/Manteka.ttf"
 	}
 
 }

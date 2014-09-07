@@ -134,7 +134,7 @@
     <value>hudanimations.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>0.5.7</value>
+    <value>0.5.8</value>
     <comment>Version de HL2Customizer</comment>
   </data>
   <data name="sourcescheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -244,5 +244,17 @@
   </data>
   <data name="ChatScheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>ChatScheme.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Manteka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Manteka.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReturnCastle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ReturnCastle.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Russo_One" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Russo_One.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="defaultMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>defaultMap.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

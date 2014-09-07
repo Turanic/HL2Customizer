@@ -23,6 +23,7 @@ namespace HL2Customizer
 
         public Boolean OutlinedCrosshairs { get; set; }
         public Boolean KeepXhair { private get; set; }
+        public Boolean KeepPannelBG {  get; set; }
 
         public Char CrosshairSize { get; set; }
         public Boolean[] OutlinedAdditionnalCrosshairs { get; set; }
@@ -85,6 +86,8 @@ namespace HL2Customizer
                 if (line.Contains("|CROSS_SIZE|")) line = line.Replace("|CROSS_SIZE|", csize.ToString());
                 if (line.Contains("|CROSS_SIZE2|")) line = line.Replace("|CROSS_SIZE2|", csize.ToString());
                 if (line.Contains("|QINFOS_SIZE|")) line = line.Replace("|QINFOS_SIZE|", (csize/2).ToString());
+                if (line.Contains("|BG_ALPHA|")) line = line.Replace("|BG_ALPHA|", (KeepPannelBG ? "76" : "0"));
+                if (line.Contains("|BG_ALPHAX2|")) line = line.Replace("|BG_ALPHAX2|", (KeepPannelBG ? "150" : "0"));
 
                 if (line.Contains("|TEXT_FONT|")) line = line.Replace("|TEXT_FONT|", TxtFont);
                 if (line.Contains("|NBR_FONT|")) line = line.Replace("|NBR_FONT|", NbrFont);
@@ -149,6 +152,9 @@ namespace HL2Customizer
             File.WriteAllBytes(Paths.FontsPath + @"DS-DIGIT.ttf", HL2Customizer.Resources.resfile.DS_DIGIT);
             File.WriteAllBytes(Paths.FontsPath + @"Icons.ttf", HL2Customizer.Resources.resfile.Icons);
             File.WriteAllBytes(Paths.FontsPath + @"Turok.ttf", HL2Customizer.Resources.resfile.Turok);
+            File.WriteAllBytes(Paths.FontsPath + @"ReturnCastle.ttf", HL2Customizer.Resources.resfile.ReturnCastle);
+            File.WriteAllBytes(Paths.FontsPath + @"Russo_One.ttf", HL2Customizer.Resources.resfile.Russo_One);
+            File.WriteAllBytes(Paths.FontsPath + @"Manteka.ttf", HL2Customizer.Resources.resfile.Manteka);
         }
     }
 }

@@ -171,10 +171,14 @@
     <EmbeddedResource Include="Resources\autoexec.cfg" />
     <EmbeddedResource Include="Resources\UnlitGeneric.vmt" />
     <EmbeddedResource Include="Resources\UnlitTwoTexture.vmt" />
-    <EmbeddedResource Include="Resources\defaultBG.zip" />
     <EmbeddedResource Include="Resources\background01.zip" />
     <EmbeddedResource Include="Resources\valve_lang_files.zip" />
     <EmbeddedResource Include="Resources\ChatScheme.res" />
+    <EmbeddedResource Include="Resources\defaultBG.zip" />
+    <EmbeddedResource Include="Resources\defaultMap.zip" />
+    <Resource Include="Resources\Manteka.ttf" />
+    <Resource Include="Resources\Russo_One.ttf" />
+    <Resource Include="Resources\ReturnCastle.ttf" />
     <Resource Include="Resources\Icons.ttf" />
     <Resource Include="Resources\DS-DIGIT.ttf" />
     <Resource Include="Resources\Dodger.ttf" />

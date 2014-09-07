@@ -143,6 +143,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] defaultMap {
+            get {
+                object obj = ResourceManager.GetObject("defaultMap", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Defused {
             get {
                 object obj = ResourceManager.GetObject("Defused", resourceCulture);
@@ -317,6 +327,36 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Manteka {
+            get {
+                object obj = ResourceManager.GetObject("Manteka", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ReturnCastle {
+            get {
+                object obj = ResourceManager.GetObject("ReturnCastle", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Russo_One {
+            get {
+                object obj = ResourceManager.GetObject("Russo_One", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ScoreBoard {
             get {
                 object obj = ResourceManager.GetObject("ScoreBoard", resourceCulture);
@@ -385,7 +425,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.5.7.
+        ///   Looks up a localized string similar to 0.5.8.
         /// </summary>
         internal static string Version {
             get {

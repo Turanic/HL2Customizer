@@ -167,6 +167,9 @@ namespace HL2Customizer
             "Defused",
             //"Dodger", To big :/
             "DS-Digital",
+            "Manteka",
+            "RUSREturn to castle",
+            "Russo One",
             "Turok",
             "Verdana",
         };
@@ -537,6 +540,7 @@ namespace HL2Customizer
                 if (Convert.ToString(fonteditor_TitleFontBox.Items[i]) == ssm.TitleFont) fonteditor_TitleFontBox.SelectedIndex = i;
             for (int i = 0; i < fonteditor_ChatFontBox.Items.Count; i++)
                 if (Convert.ToString(fonteditor_ChatFontBox.Items[i]) == csm.ChatFont) fonteditor_ChatFontBox.SelectedIndex = i;
+            fonteditor_DeletePannelsCB.IsChecked = !csm.KeepPannelBG;
             #endregion
 
             //FILE SYSTEM
@@ -659,6 +663,8 @@ namespace HL2Customizer
                     File.WriteAllBytes(Paths.BackgroundsPath + @"defaultBG.zip", HL2Customizer.Resources.resfile.defaultBG);
                     Extracter.Extract(Paths.BackgroundsPath, "defaultBG.zip");
 
+                    File.WriteAllBytes(Paths.MapsPath + @"defaultMap.zip", HL2Customizer.Resources.resfile.defaultMap);
+                    Extracter.Extract(Paths.MapsPath, "defaultMap.zip");
 
                     try
                     {
@@ -834,6 +840,7 @@ namespace HL2Customizer
                 default: goto case 0;
             }
 
+            csm.KeepPannelBG = !(bool)fonteditor_DeletePannelsCB.IsChecked;
             csm.KeepXhair = (bool)basicConfigs_dontChangeCrosshairRB.IsChecked;
             wsm.KeepXhair = (bool)basicConfigs_dontChangeCrosshairRB.IsChecked;
             ssm.SetProperties(MenuColors[menueditor_txtBox1.SelectedIndex],

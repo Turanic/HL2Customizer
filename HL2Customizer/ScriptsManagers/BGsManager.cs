@@ -31,7 +31,7 @@ namespace HL2Customizer
         public void FillLocalBGs()
         {
             this.Locals2dBGs = new string[] { "2dbg_default.vtf" };
-            this.LocalsMapBGs = new string[] { "3dbg_default.vtf" };
+            this.LocalsMapBGs = new string[] { "3dbg_rainy_caverns.vtf" };
             if (Directory.Exists(LastBGDirPath))
             {
                 Locals2dBGs = Directory.GetFiles(LastBGDirPath, "*.vtf");

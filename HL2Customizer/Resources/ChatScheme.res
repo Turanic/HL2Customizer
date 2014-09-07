@@ -769,5 +769,8 @@ Scheme
 		"11"	"resource/fonts/Turok.ttf"
 		"12"	"resource/fonts/Dodger.ttf"
 		"13"	"resource/fonts/DS-DIGIT.ttf"
+		"14"	"resource/fonts/ReturnCastle.ttf"
+		"15"	"resource/fonts/Russo_One.ttf"
+		"16"	"resource/fonts/Manteka.ttf"
 	}
 }
