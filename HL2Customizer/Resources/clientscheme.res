@@ -17,7 +17,6 @@ Scheme
 		"OrangeDim"			"255 176 0 120"
 		"LightOrange"		"188 112 0 128"
 		
-		"Black"				"0 0 0 196"
 		"TransparentBlack"	"0 0 0 196"
 		"TransparentLightBlack"	"0 0 0 90"
 
@@ -43,8 +42,8 @@ Scheme
 		"Magenta"			"255 0 255 255"
 		"White"				"255 255 255 255"
 		"Pink"				"255 105 180 255"
-		"Silver"			"204 204 204 255"
-
+		"Silver"			"180 180 180 255"
+		//"Black"				"010 010 010 255"
 	}
 	
 	///////////////////// BASE SETTINGS ////////////////////////
@@ -158,7 +157,7 @@ Scheme
 
 		ListPanel.TextColor					"|SECOND_COLOR|"
 		ListPanel.BgColor					"TransparentBlack"
-		ListPanel.SelectedTextColor			"Black"
+		ListPanel.SelectedTextColor			"TransparentBlack"
 		ListPanel.SelectedBgColor			"Red"
 		ListPanel.SelectedOutOfFocusBgColor	"Red"
 		ListPanel.EmptyListInfoTextColor	"|SECOND_COLOR|"
@@ -205,9 +204,9 @@ Scheme
 		SectionedListPanel.TextColor		"|SECOND_COLOR|"
 		SectionedListPanel.BrightTextColor	"|SECOND_COLOR|"
 		SectionedListPanel.BgColor			"TransparentLightBlack" //scoreboard's background
-		SectionedListPanel.SelectedTextColor			"Black"
+		SectionedListPanel.SelectedTextColor			"TransparentBlack"
 		SectionedListPanel.SelectedBgColor				"Red"
-		SectionedListPanel.OutOfFocusSelectedTextColor	"Black"
+		SectionedListPanel.OutOfFocusSelectedTextColor	"TransparentBlack"
 		SectionedListPanel.OutOfFocusSelectedBgColor	"255 255 255 32"  //Horizontal line highlighting your nickname
 
 		Slider.NobColor				"108 108 108 255"
@@ -221,7 +220,7 @@ Scheme
 		TextEntry.CursorColor		"|SECOND_COLOR|"
 		TextEntry.DisabledTextColor	"|SECOND_COLOR|"
 		TextEntry.DisabledBgColor	"Blank"
-		TextEntry.SelectedTextColor	"Black"
+		TextEntry.SelectedTextColor	"TransparentBlack"
 		TextEntry.SelectedBgColor	"Red"
 		TextEntry.OutOfFocusSelectedBgColor	"Red"
 		TextEntry.FocusEdgeColor	"TransparentBlack"

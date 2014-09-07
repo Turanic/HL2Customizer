@@ -42,12 +42,12 @@ namespace HL2Customizer
         //BASIC CONFIGS
         #region basicconfigs
         String[] Colors = new String[] {
-            		"Black","White", "Red", "Orange",
+            		"White","Silver", "Red", "Orange",
                     "Yellow", "DarkGreen", "Green",
                     "Lime", "Jade", "Cyan",
                     "Turquoise", "SkyBlue", "Blue",
-                    "Navy", "Purple", "Magenta",
-                    "Brown", "Pink", "Silver"	
+                    "Navy", "Pink", "Magenta", "Purple",
+                    "Brown",  /*"Black"*/
         };
 
         Tuple<String, char>[] Crosshairs = new Tuple<String, char>[] {
