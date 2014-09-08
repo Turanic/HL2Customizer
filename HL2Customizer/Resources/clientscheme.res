@@ -271,17 +271,17 @@ Scheme
 		// Top-left corner of the "Counter-Strike" on the main screen
 		"Main.Title1.X"		"32"
 		"Main.Title1.Y"		"180"
-		"Main.Title1.Color"	"255 255 255 255"
+		"Main.Title1.Color"	"|TITLE_COLOR|"
 
 		// Top-left corner of the "SOURCE" on the main screen
 		"Main.Title2.X"		"380"	
 		"Main.Title2.Y"		"205"
-		"Main.Title2.Color"	"255 255 255 80"
+		"Main.Title2.Color"	"|TITLE_COLOR|"
 
 		// Top-left corner of the "BETA" on the main screen
 		"Main.Title3.X"		"460"
 		"Main.Title3.Y"		"-10"
-		"Main.Title3.Color"	"255 255 0 255"
+		"Main.Title3.Color"	"|TITLE_COLOR|"
 
 		// Top-left corner of the menu on the main screen
 		"Main.Menu.X"		"32"
@@ -1875,6 +1875,8 @@ Scheme
 		"14"	"resource/fonts/ReturnCastle.ttf"
 		"15"	"resource/fonts/Russo_One.ttf"
 		"16"	"resource/fonts/Manteka.ttf"
+		"17"	"resource/fonts/Akbar.ttf"
+		"18"	"resource/fonts/RobotoCn.ttf"
 	}
 
 }

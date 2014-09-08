@@ -318,7 +318,7 @@ Scheme
 			"1"
 			{
 				"name"		"|CHAT_FONT|"
-				"tall"		"11"
+				"tall"		"13"
 				"weight"	"1000"
 				"yres"		"480 599"
 				"outline"	"1"
@@ -326,7 +326,7 @@ Scheme
 			"2"
 			{
 				"name"		"|CHAT_FONT|"
-				"tall"		"12"
+				"tall"		"15"
 				"weight"	"1000"
 				"yres"		"600 767"
 				"outline"	"1"
@@ -334,7 +334,7 @@ Scheme
 			"3"
 			{
 				"name"		"|CHAT_FONT|"
-				"tall"		"13"
+				"tall"		"17"
 				"weight"	"1000"
 				"yres"		"768 1023"
 				"outline"	"1"
@@ -342,7 +342,7 @@ Scheme
 			"4"
 			{
 				"name"		"|CHAT_FONT|"
-				"tall"		"14"
+				"tall"		"19"
 				"weight"	"1000"
 				"yres"		"1024 1199"
 				"outline"	"1"
@@ -350,7 +350,7 @@ Scheme
 			"5"
 			{
 				"name"		"|CHAT_FONT|"
-				"tall"		"21"
+				"tall"		"22"
 				"weight"	"1000"
 				"yres"		"1200 10000"
 				"outline"	"1"
@@ -772,5 +772,7 @@ Scheme
 		"14"	"resource/fonts/ReturnCastle.ttf"
 		"15"	"resource/fonts/Russo_One.ttf"
 		"16"	"resource/fonts/Manteka.ttf"
+		"17"	"resource/fonts/Akbar.ttf"
+		"18"	"resource/fonts/RobotoCn.ttf"
 	}
 }

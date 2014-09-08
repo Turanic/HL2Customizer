@@ -13,6 +13,6 @@ namespace HL2Customizer
             ResPath, FontsPath, UIPath,
             ScriptsPath, CfgPath,
             MaterialsPath, BackgroundsPath,
-            MapsPath, SoundsPath; 
+            MapsPath, SoundsPath, MediaPath; 
     }
 }

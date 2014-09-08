@@ -61,6 +61,16 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] akbar {
+            get {
+                object obj = ResourceManager.GetObject("akbar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap applyButton {
@@ -347,6 +357,16 @@ namespace HL2Customizer.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Roboto_BoldCondensed {
+            get {
+                object obj = ResourceManager.GetObject("Roboto_BoldCondensed", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Russo_One {
             get {
                 object obj = ResourceManager.GetObject("Russo_One", resourceCulture);
@@ -438,7 +458,7 @@ namespace HL2Customizer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.5.9.
+        ///   Looks up a localized string similar to 0.6.0.
         /// </summary>
         internal static string Version {
             get {

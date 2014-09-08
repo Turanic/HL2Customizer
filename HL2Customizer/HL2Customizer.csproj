@@ -177,6 +177,8 @@
     <EmbeddedResource Include="Resources\defaultMap.zip" />
     <EmbeddedResource Include="Resources\defaultBG.zip" />
     <EmbeddedResource Include="Resources\valve_lang_files.zip" />
+    <Resource Include="Resources\akbar.ttf" />
+    <Resource Include="Resources\Roboto-BoldCondensed.ttf" />
     <Resource Include="Resources\Manteka.ttf" />
     <Resource Include="Resources\Russo_One.ttf" />
     <Resource Include="Resources\ReturnCastle.ttf" />

@@ -164,11 +164,13 @@ namespace HL2Customizer
         string[] Fonts = new string[]
         {
             "Arial",
+            "Akbar",
             "Courier New",
             "Defused",
             //"Dodger", To big :/
             "DS-Digital",
             "Manteka",
+            "Roboto Cn",
             "RUSREturn to castle",
             "Russo One",
             "Turok",
@@ -455,8 +457,8 @@ namespace HL2Customizer
             PmsLabels = new MenuElement[] 
             {
                 new MenuElement(30, "==========================", "", true),
-                new MenuElement(31, "Start 1v1 match", "engine start 1v1", true),
-                new MenuElement(32, "Start 2v2 match", "engine start 2v2", true),
+                new MenuElement(31, "Start 1v1 match", "engine start cu1v1", true),
+                new MenuElement(32, "Start 2v2 match", "engine start cu2v2;", true),
                 new MenuElement(33, "Start quick match", "engine start shorty", true),
             };
             AdminLabels = new MenuElement[] 
@@ -640,6 +642,8 @@ namespace HL2Customizer
             else
             {
                 SetProperties();
+                // Disable valve intro
+                File.Create(Paths.MediaPath + @"startupvids.txt");
                 try
                 {
 
@@ -692,6 +696,9 @@ namespace HL2Customizer
                         menueditor_2dbgRB.IsChecked = true;
                         menueditor_2dbgBox.SelectedIndex = 0;
                     }
+
+
+                    bgm.FillLocalBGs();
 
                     if (bgm.MapBG) bgm.Apply2dBackground(ref Paths, menueditor_3dbgBox.Text);
                     else bgm.Apply2dBackground(ref Paths, menueditor_2dbgBox.Text);
@@ -931,6 +938,8 @@ namespace HL2Customizer
             if (!Directory.Exists(Paths.ScriptsPath)) Directory.CreateDirectory(Paths.ScriptsPath);
             Paths.MapsPath = Paths.HudPath + @"maps/";
             if (!Directory.Exists(Paths.MapsPath)) Directory.CreateDirectory(Paths.MapsPath);
+            Paths.MediaPath = Paths.HudPath + @"media/";
+            if (!Directory.Exists(Paths.MediaPath)) Directory.CreateDirectory(Paths.MediaPath);
             Paths.SoundsPath = Paths.HudPath + @"sound/hl2c/";
             if (!Directory.Exists(Paths.HudPath + @"sound/")) Directory.CreateDirectory(Paths.HudPath + @"sound/");
             if (!Directory.Exists(Paths.SoundsPath)) Directory.CreateDirectory(Paths.SoundsPath);

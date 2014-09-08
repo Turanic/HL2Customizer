@@ -35,7 +35,7 @@
                         <Slider x:Name="basicConfigs_xhairSizeSlider" HorizontalAlignment="Left" Margin="18,247,0,0" VerticalAlignment="Top" Width="163" SmallChange="1" Maximum="3" ValueChanged="basicConfigs_xhairSizeSlider_ValueChanged"/>
                     </GroupBox>
                     <Button x:Name="basicConfigs_creditsButton" Content="About" HorizontalAlignment="Left" Margin="203,5,0,0" VerticalAlignment="Top" Width="74" Click="creditsButton_Click" Grid.Column="3"/>
-                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="125,193,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="44" Panel.ZIndex="2" Grid.Column="3"/>
+                    <Label x:Name="basicConfigs_previewCrosshair" Content="h" HorizontalAlignment="Left" Margin="125,193,0,0" VerticalAlignment="Top" FontFamily="./Resources/#XHAIR" Height="128" Width="128" HorizontalContentAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontSize="40" Panel.ZIndex="2" Grid.Column="3"/>
                     <CheckBox x:Name="basicConfigs_keepQuickInfosRB" Content="Keep quickinfos brackets" HorizontalAlignment="Left" Margin="153,203,0,0" VerticalAlignment="Top" Height="24" Width="160" Panel.ZIndex="2" IsChecked="True" Grid.Column="1"/>
                     <Button x:Name="basicConfigs_help" Content="?" Grid.Column="3" HorizontalAlignment="Left" Margin="95,5,0,0" VerticalAlignment="Top" Width="22" Click="basicConfigs_help_Click"/>
                     <Label Content="Size: " Grid.Column="1" HorizontalAlignment="Left" Margin="144,280,0,0" VerticalAlignment="Top"/>

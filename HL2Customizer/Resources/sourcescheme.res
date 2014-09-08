@@ -1271,5 +1271,7 @@ Scheme
 		"14"	"resource/fonts/ReturnCastle.ttf"
 		"15"	"resource/fonts/Russo_One.ttf"
 		"16"	"resource/fonts/Manteka.ttf"
+		"17"	"resource/fonts/Akbar.ttf"
+		"18"	"resource/fonts/RobotoCn.ttf"
 	}
 }

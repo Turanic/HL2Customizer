@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2CAD0781D4A62AFBF03DA9805FFF20EF"
+        "MsmKey" = "8:_2F5CA0AE4ED398F8562D7A35FB9221D8"
         "OwnerKey" = "8:_E42EB7ACEEDC4DF8BA61AC06718033F8"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2CAD0781D4A62AFBF03DA9805FFF20EF"
+        "OwnerKey" = "8:_2F5CA0AE4ED398F8562D7A35FB9221D8"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -158,14 +158,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2CAD0781D4A62AFBF03DA9805FFF20EF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F5CA0AE4ED398F8562D7A35FB9221D8"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2CAD0781D4A62AFBF03DA9805FFF20EF"
+                    "_2F5CA0AE4ED398F8562D7A35FB9221D8"
                     {
                     "Name" = "8:Ionic.Zip.Reduced.dll"
                     "Attributes" = "3:512"
@@ -245,15 +245,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HL2Customizer"
-        "ProductCode" = "8:{9E28E7F6-4BD6-430E-8FB3-040F1B6404D7}"
-        "PackageCode" = "8:{7647A0B2-A6CE-44AC-8B1F-150EDCA8EAC9}"
+        "ProductCode" = "8:{272FF62B-20AA-4060-BBDF-7CA386F8B777}"
+        "PackageCode" = "8:{BAF1B03E-7BE3-40C0-9B58-5AD48E127CA9}"
         "UpgradeCode" = "8:{DB655E85-FABF-4223-B57A-F568F61CF0A9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.5.9"
+        "ProductVersion" = "8:0.6.0"
         "Manufacturer" = "8:Turanic"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://37.59.61.210/HL2Customizer/index.html"

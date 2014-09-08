@@ -155,6 +155,8 @@ namespace HL2Customizer
             File.WriteAllBytes(Paths.FontsPath + @"ReturnCastle.ttf", HL2Customizer.Resources.resfile.ReturnCastle);
             File.WriteAllBytes(Paths.FontsPath + @"Russo_One.ttf", HL2Customizer.Resources.resfile.Russo_One);
             File.WriteAllBytes(Paths.FontsPath + @"Manteka.ttf", HL2Customizer.Resources.resfile.Manteka);
+            File.WriteAllBytes(Paths.FontsPath + @"Akbar.ttf", HL2Customizer.Resources.resfile.akbar);
+            File.WriteAllBytes(Paths.FontsPath + @"RobotoCn.ttf", HL2Customizer.Resources.resfile.Roboto_BoldCondensed);
         }
     }
 }
